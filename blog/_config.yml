@@ -1,7 +1,7 @@
 # Site settings
 title: Catjaw Blog
 SEOTitle: 刘锴昭的博客 | Catjaw Blog
-header-img: img/post-bg-desk.jpg
+header-img: blog/img/post-bg-desk.jpg
 email: mrzt1222@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Catjaw, Math"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: blog/img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
