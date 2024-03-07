@@ -1,51 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title></title>
-</head>
-<body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Kaizhao Liu</div>
-<div class="menu-item"><a href="index.html">Home</a></div>
-<div class="menu-item"><a href="publications.html" class="current">Publications</a></div>
-<div class="menu-item"><a href="teaching.html">Teaching</a></div>
-<div class="menu-item"><a href="studying.html">Studying</a></div>
-<div class="menu-item"><a href="CV/cv.pdf">CV</a></div>
-<div class="menu-item"><a href="fun.html">Fun</a></div>
-</td>
-<td id="layout-content">
-<h3></h3>
+---
+layout: default
+title: Kaizhao Liu (刘锴昭)
+---
+
 <h3></h3>
 <h2>Published Papers</h2>
 <ul>
-<li><p><a href="https://www.cnki.com.cn/Article/CJFDTotal-ZDSX201802005.htm">帕斯卡定理的推广</a><br /> 
-陈凌峰， 刘锴昭， 任勇钢 <br /> 
-中等数学, 2018</p>
-</li>
+  {% for publication in site.publications %}
+    {% if publication.published == 1 %}
+    <li>
+      <p>
+        <a href="{{publication.link}}">{{publication.title}}</a><br /> 
+        {{publication.author}} <br /> 
+        {{publication.journal}}, {{publication.year}} <br />
+        {{publication.content| markdownify}}
+      </p>
+    </li>
+    {% endif %}
+  {% endfor %}
+
 </ul>
+
 <h3></h3>
 <h2>Unpublished Manuscripts</h2>
 <ul>
-<li><p><a href="https://arxiv.org/abs/2311.15221">The Local Landscape of Phase Retrieval Under Limited Samples</a><br /> 
-*Kaizhao Liu, *Zihao Wang, Lei Wu <br /> 
-arXiv preprint, 2023</p>
-</li>
+  {% for publication in site.publications %}
+    {% if publication.published == 0 %}
+    <li>
+      <p>
+        <a href="{{publication.link}}">{{publication.title}}</a><br /> 
+        {{publication.author}} <br /> 
+        {{publication.journal}}, {{publication.year}} <br />
+        {{publication.content| markdownify}}
+      </p>
+    </li>
+    {% endif %}
+  {% endfor %}
 </ul>
 <h3></h3>
-<div id="footer">
-<div id="footer-text">
-Last update time: 2023-11-29.
-</div>
-</div>
-</td>
-</tr>
-</table>
-</body>
-</html>

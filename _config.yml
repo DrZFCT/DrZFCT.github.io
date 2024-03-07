@@ -1,0 +1,16 @@
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
