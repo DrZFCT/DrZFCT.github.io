@@ -1,0 +1,34 @@
+---
+layout: post
+title: Dr.North's Fault
+author: 刘锴昭
+---
+
+来看GRE中的一道所谓逻辑单题，classic of classics，不考GRE的也应该当fable看一看。
+
+Professor Hassan: In support of the broad claim that the mainstream press accepts and propagates biased assumptions and never presents countervailing information, Dr. North cites a large number of newspaper articles that incorporate such assumptions and then provides evidence against those assumptions. Few would wish to defend the articles that Dr. North cites, but the procedure Dr. North used in gathering evidence against the assumptions in the articles undermines North's overall claim.
+
+Which of the following, if true, provides the strongest foundation for Professor Hassan's judgment of Dr. North's analysis?
+
+A. Print journalists rarely have the time or space in which to present a full and scholarly investigation of a topic.
+
+B. Readers of the mainstream press are not uncritical of what they find in it, since events have often proved previously accepted information to have been incorrect.
+
+C. The evidence that Dr. North uses to contradict assumptions inherent in selected newspapelarticles would be equally effective for exposing errors made in broadcast journalism.
+
+D. Dr. North has selected newspaper articles that focus on only a small number of the many assumptions prevalent in the mainstream press.
+
+E. Most of the evidence Dr.North uses to contradict the assumptions in the article comes from the mainstream press.
+
+<details>
+<summary>
+答案为E。Dr.North想要证明主流媒体传播偏见，固然走出了第一步，精神可嘉；但却用了主流媒体本身提供的证据来证明其为偏见，最终还是没有挣脱主流媒体的桎梏。Dr.North欣喜地觉得自己打破了主流媒体的桎梏，可他自己哪知，自己的“真知灼见”，还不是在主流媒体的把玩之下？主流媒体乐意看到盲从的乌合之众，更乐意与Dr.North一起演一场戏，Dr.North身在其中乐呵呵，以为自己打败了什么，却不知已是对手的牵线木偶（marionette）！
+
+The Stoics的哲学（Stoic）说个体面对决定的命运应该改变自己的心态，来为获利者辩护。现在我们可以想象这样的情况：命运是非决定论的，个体决定自己的命运；所以个体需要努力奋斗，让自己变得更好。此时个体和Dr.North一样，身在其中，不断拼搏，看到自己的劳动的成果，被主流的价值观所认可，获得心灵的满足。个体自娱自乐，获利者看着他们的快乐，并享受着他们劳动的果实。
+
+譬如，一开始野兽被圈养在牢笼里，Dr.North说它不幸福；Dr.North说应该给它一些活动空间才能幸福，于是它在家里随意走动，成为宠物，看着它幸福的样子，Dr.North发自内心地笑了。但这时，Dr.North就不会不知道，野兽应该有更大的活动空间。可是现实中，又有多少人犯了Dr.North的错误呢？
+</summary>
+</details>
+
+
+
