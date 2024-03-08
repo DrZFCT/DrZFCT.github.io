@@ -1,0 +1,6 @@
+---
+layout: post
+title: 一类几何构型的探究
+author: 刘锴昭
+---
+

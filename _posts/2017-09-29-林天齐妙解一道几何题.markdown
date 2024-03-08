@@ -1,0 +1,6 @@
+---
+layout: post
+title: 林天齐妙解一道几何题
+author: 林天齐
+---
+
