@@ -3,8 +3,8 @@ layout: post
 title: 静电学等效
 author: 刘锴昭
 ---
-<p><a href="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版">Download PDF</a>.</p>
+<p><a href="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版.pdf">Download PDF</a>.</p>
 
-<object data="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版" type="application/pdf" width="750px" height="750px">
-    <embed src="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版" type="application/pdf">
+<object data="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版.pdf" type="application/pdf" width="750px" height="750px">
+    <embed src="/assets/pdfs/2021-6-18-刘锴昭-静电学等效-第二版.pdf" type="application/pdf">
 </object>

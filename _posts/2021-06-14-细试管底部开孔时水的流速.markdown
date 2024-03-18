@@ -3,8 +3,8 @@ layout: post
 title: 细试管底部开孔时水的流速
 author: 刘锴昭
 ---
-<p><a href="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版">Download PDF</a>.</p>
+<p><a href="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版.pdf">Download PDF</a>.</p>
 
-<object data="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版" type="application/pdf" width="750px" height="750px">
-    <embed src="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版" type="application/pdf">
+<object data="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版.pdf" type="application/pdf" width="750px" height="750px">
+    <embed src="/assets/pdfs/2021-6-14-刘锴昭-细试管底部开孔时水的流速-第三版.pdf" type="application/pdf">
 </object>

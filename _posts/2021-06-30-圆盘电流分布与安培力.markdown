@@ -1,0 +1,10 @@
+---
+layout: post
+title: 圆盘电流分布与安培力
+author: 刘锴昭
+---
+<p><a href="/assets/pdfs/2021-6-30-刘锴昭-圆盘电流分布与安培力-第二版.pdf">Download PDF</a>.</p>
+
+<object data="/assets/pdfs/2021-6-30-刘锴昭-圆盘电流分布与安培力-第二版.pdf" type="application/pdf" width="750px" height="750px">
+    <embed src="/assets/pdfs/2021-6-30-刘锴昭-圆盘电流分布与安培力-第二版.pdf" type="application/pdf">
+</object>
