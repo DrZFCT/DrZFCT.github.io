@@ -1,0 +1,69 @@
+---
+layout: post
+title: "Converse"
+author: 刘锴昭
+---
+
+先看这样一道GRE填空题目：
+
+Whereas unimaginative novelists were once routinely accused of simply changing the personal names in works thatwould otherwise have been (i)___      , today it is more common to learn conversely, that a genuine piece of (ii)___      has been (iii)___      a writer's true confessions.
+
+| Blank (i)          | Blank (ii)  | Blank (iii)   |
+|:--------------------:|:-------------:|:---------------:|
+| A.failures        | D.analysis  | G.modeled on |
+| B.romances        | E.fiction   | H.sold as    |
+| C.autobiographies | F.inquiry   | I.revealed as|
+
+
+原文出处：[Shelf Life](www.thenation.com/article/archive/shelf-life-29/)
+
+
+<details>
+<summary>
+点击查看答案 
+</summary>
+
+
+Whereas unimaginative novelists were once routinely accused of changing the personal names in works that would otherwise have been autobiographies, today it's more common to learn that a genuine piece of fiction has been sold as a writer's 'true confessions.'
+
+此题答案为：CEH
+
+
+
+
+</details>
+
+在逻辑学中,对于一个条件命题，我们有如下三种：
+
+| Name                   | Logic       |
+|:------------------------------:|:--------------------------:|
+| Statement                | If p, then q.           |
+| Converse                     | If q, then p.           |
+| Inverse                      | If not p, then not q.   |
+| Contrapositive               | If not q, then not p.   |
+
+
+
+
+converse statement与inverse statement是逻辑等价的。
+
+而conversely在英语中通常用于连接原命题与（广泛意义上的）inverse statement。
+
+比如Merriam-Webster网站上的例句：
+
+If this active gene is a mutation that would otherwise have been recessive, it can lead to disease. Conversely, if the silenced gene is harmful in some way, imprinting can be beneficial.
+
+以及另一道GRE题目：
+
+Laws protecting intellectual property are intended to stimulate creativity, yet some forms of creative work have never enjoyed legal protection-a situation that ought to be of great interest. If we see certain forms of creative endeavor (i)_____ as a result of uncontrolled copying, we might decide to (ii)_____ intellectual property law. Conversely, if unprotected creative work (iii)_____ in the absence of legal rules against copying, we would do well to know how such flourishing is sustained.
+
+| Blank (i)         | Blank (ii)    | Blank (iii)           |
+| :-----------------: |:-------------: | :---------------------: |
+| A.languishing     | D.jettison    | G.declines in originality |
+| B.proliferating   | E.extend      | H.manages to thrive   |
+| C.diversifying    | F.relax       | I.openly invite imitation |
+
+
+此题(iii)应该与flourishing相同，故选H。根据conversely的逻辑，(i)(iii)应该意思相对立，所以(i)选A，这时(ii)自然选E。
+
+回到原题，根据conversely的逻辑，(iii)应该与accused of意思相对立，原来把小说内容写的像作者自传会被人指责，那么现在这么写应该会受人欢迎，所以是sell as。如果不强调conversely的逻辑，其他的选项放到句子里也能说得通。
