@@ -3,10 +3,8 @@ layout: post
 title: 变折射率干涉场
 author: 刘锴昭，王鹏尧
 ---
-
+<p><a href="/assets/pdfs/刘锴昭-变折射率干涉场-第二版.pdf">Download PDF</a>.</p>
 
 <object data="/assets/pdfs/刘锴昭-变折射率干涉场-第二版.pdf" type="application/pdf" width="750px" height="750px">
     <embed src="/assets/pdfs/刘锴昭-变折射率干涉场-第二版.pdf" type="application/pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/pdfs/刘锴昭-变折射率干涉场-第二版.pdf">Download PDF</a>.</p>
-    </embed>
 </object>
