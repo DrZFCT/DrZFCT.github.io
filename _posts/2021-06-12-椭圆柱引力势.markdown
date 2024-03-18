@@ -1,0 +1,10 @@
+---
+layout: post
+title: 细试管底部开孔时水的流速
+author: 刘锴昭
+---
+<p><a href="/assets/pdfs/2021-6-12-刘锴昭-椭圆柱引力势-第四版">Download PDF</a>.</p>
+
+<object data="/assets/pdfs/2021-6-12-刘锴昭-椭圆柱引力势-第四版" type="application/pdf" width="750px" height="750px">
+    <embed src="/assets/pdfs/2021-6-12-刘锴昭-椭圆柱引力势-第四版" type="application/pdf">
+</object>
