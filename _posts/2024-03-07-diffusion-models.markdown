@@ -146,13 +146,13 @@ $$
 and the reversed Lindblad operators can be expressed by
 
 $$
-X_b = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
- 0 & \sqrt{\frac{\lambda_1(t)}{\lambda_2(t)}}\\
- \sqrt{\frac{\lambda_2(t)}{\lambda_1(t)}} & 0
+X_b(t) = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+ 0 & \sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
+ \sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} & 0
 \end{pmatrix},\quad 
 Y_b = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
- 0 & i\sqrt{\frac{\lambda_1(t)}{\lambda_2(t)}}\\
- -i\sqrt{\frac{\lambda_2(t)}{\lambda_1(t)}} & 0
+ 0 & i\sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
+ -i\sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} & 0
 \end{pmatrix},\quad 
 Z_b = \sqrt{\frac{\gamma}{4}}Z.
 $$
