@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Quantum Computing</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Quantum Computing</h1>
+              <p class="meta">Mar 30, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this article, we first recall the basic postulates of quantum computing.
+Then we mainly focus on the mathematical structures behind it.</p>
+
+<h1 id="postulates-of-quantum-mechanics">Postulates of Quantum Mechanics</h1>
+
+<h4 id="postulate-1-associated-to-any-isolated-physical-system-is-a-complex-hilbert-space-aka-state-space-of-the-system-the-system-is-completely-described-by-its-state-vector-which-is-a-unit-vector-in-the-systems-state-space">Postulate 1: Associated to any isolated physical system is a complex Hilbert space (<em>a.k.a. state space of the system</em>). The system is completely described by its state vector, which is a unit vector in the system’s state space.</h4>
+
+<p>Quantum mechanics does not tell us what the state space is for a given physical system, nor does the state vector. <em>Figuring that out for a specific system is a difficult problem for which physicists have developed many intricate and beautiful rules, for example quantum electrodynamics.</em></p>
+
+<p>The simplest quantum mechanical system is the <strong>qubit</strong>. A qubit has a two-dimensional state space. Suppose $\ket{0}$ and $\ket{1}$ form an orthonormal basis for that state space</p>
+
+<h4 id="postulate-2-the-evolution-of-a-closed-quantum-system-is-described-by-a-unitary-transformation-that-is-the-state-ketpsi-of-the-system-at-time-t_1-is-related-to-the-state-ketpsi-of-the-system-at-time-t_2-by-a-unitary-operator-u-which-depends-only-on-the-times-t_1-and-t_2-ketpsi--uketpsi">Postulate 2: The evolution of a closed quantum system is described by a unitary transformation. That is, the state $\ket{\psi}$ of the system at time $t_1$ is related to the state $\ket{\psi’}$ of the system at time $t_2$ by a unitary operator $U$ which depends only on the times $t_1$ and $t_2$, $\ket{\psi’} = U\ket{\psi}$.</h4>
+
+<p>Quantum mechanics does not tell us which unitary operators $U$ describe real-world quantum dynamics.
+In the case of single qubits, it turns out that any unitary operator at all can be realized in realistic systems.</p>
+
+<p>A more refined version of this postulate can be given which describes the evolution of a quantum system in continuous time. From this more refined postulate we will recover Postulate 2.</p>
+
+<h4 id="postulate-2-the-time-evolution-of-the-state-of-a-closed-quantum-system-is-described-by-the-schrödinger-equation">Postulate 2’: The time evolution of the state of a closed quantum system is described by the Schrödinger equation,</h4>
+
+\[i\hbar \frac{\mathrm{d}\ket{\psi}}{\mathrm{d}t}=H\ket{\psi},\]
+
+<h4 id="where-h-is-a-fixed-hermitian-operator-known-as-the-hamiltonian-of-the-closed-system">where $H$ is a fixed Hermitian operator known as the Hamiltonian of the closed system.</h4>
+
+<p>When experimentists observe the system, it becomes no longer closed.</p>
+
+<h4 id="posulate-3-quantum-measurements-are-described-by-a-collection-m_m-of-measurement-operators-these-are-operators-acting-on-the-state-space-of-the-system-being-measured-the-index-m-refers-to-the-measurement-outcomes-that-may-occur-in-the-experiment-if-the-state-of-the-quantum-system-is-ketpsi-immediately-before-the-measurement-then-the-probability-that-result-m-occurs-is-given-by">Posulate 3: Quantum measurements are described by a collection ${M_m}$ of measurement operators. These are operators acting on the state space of the system being measured. The index m refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is $\ket{\psi}$ immediately before the measurement then the probability that result $m$ occurs is given by</h4>
+
+\[p(m)=\bra{\psi}M_m^\dagger M_m\ket{\psi},\]
+
+<h4 id="and-the-state-of-the-system-after-the-measurement-is">and the state of the system after the measurement is</h4>
+
+\[\frac{M_m\ket{\psi}}{\sqrt{\bra{\psi}M_m^\dagger M_m\ket{\psi}}}.\]
+
+<h4 id="the-measurement-operators-satisfy-the-completeness-equation">The measurement operators satisfy the completeness equation,</h4>
+
+\[\sum_m M_m^\dagger M_m =I.\]
+
+<h4 id="postulate-4-the-state-space-of-a-composite-physical-system-is-the-tensor-product-of-the-state-spaces-of-the-component-physical-systems">Postulate 4: The state space of a composite physical system is the tensor product of the state spaces of the component physical systems.</h4>
+
+<h1 id="density-matrix">Density Matrix</h1>
+
+<p>The density matrix formulation is mathematically equivalent to the state vector appraoch, but it provides a convenient tool for describing quantum systems whose state is not completely known.</p>
+
+<p>Suppose a quantum system is in one of a number of states $\ket{\psi_i}$, where $i$ is an index, with respective probabilities $p_i$. We shall call ${ p_i, \ket{\psi_i} }$ an ensemble of pure states. The density operator for the system is defined by the equation:</p>
+
+\[\rho \equiv \sum_i p_i\ket{\psi_i}\bra{\psi_i}.\]
+
+<h4 id="reformulation-of-posulate-2-rho-mapsto-urho-udagger">Reformulation of Posulate 2: $\rho \mapsto U\rho U^\dagger$.</h4>
+
+<h4 id="reformulation-of-posulate-3-pmtrm_mrho-m_mdagger-and-the-density-matrix-after-measurement-is">Reformulation of Posulate 3: $p(m)=\tr(M_m\rho M_m^\dagger)$, and the density matrix after measurement is</h4>
+
+\[\frac{M_m\rho M_m^\dagger}{\tr(M_m\rho M_m^\dagger)}\]
+
+<h3 id="characterization-of-density-matrices">Characterization of density matrices</h3>
+
+<p>An operator $\rho$ is the density operator associated to some ensemble ${ p_i, \ket{\psi_i} }$ if and only if</p>
+
+<p>(i) (<strong>Trace condition</strong>) $\rho$ has trace equal to one.</p>
+
+<p>(ii) (<strong>Positive condition</strong>) $\rho$ is a positive operator.</p>
+
+<h3 id="when-do-two-sets-of-ensemble-generate-the-same-density-matrix">When do two sets of ensemble generate the same density matrix?</h3>
+
+<p>We say the set $\ket{\tilde{\psi}_i}$ <em>generates</em> the operator $\rho\equiv \sum_i\ket{\tilde{\psi}_i}\bra{\tilde{\psi}_i}$.</p>
+
+<p>The sets $\ket{\tilde{\psi}_i}$ and $\ket{\tilde{\varphi}_i}$ generate the same density matrix if and only if</p>
+
+\[\ket{\tilde{\varphi}_i}=\sum_j u_{ij}\ket{\tilde{\psi}_i},\]
+
+<p>where $u_{ij}$ is a unitary matrix of complex numbers.</p>
+
+<h1 id="questions">Questions</h1>
+
+<p>Understand Choi’s matrix paper and Quantum Process Tomography. Lindblad’s paper also.</p>
+
+<p>Learn something from Moyang Cheng, Yuchen Guo, Hanyu Xue, Yuxiang Wang.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

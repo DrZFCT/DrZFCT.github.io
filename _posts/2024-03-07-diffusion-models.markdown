@@ -55,5 +55,125 @@ $$ A -\frac{1}{2}\rho^{-\frac{1}{2}}A\rho^{\frac{1}{2}}-\frac{1}{2}\rho^{\frac{1
 
 is Hermitian with zero diagonal elements.
 
+
+In summary, the reverse Lindblad's equation can be expressed by 
+
+$$ 
+\begin{align}
+    &\dot{\overleftarrow{\rho}}= -i[H_b,\overleftarrow{\rho}]+\sum_i \cD[L_{b,i}](\overleftarrow{\rho})\\
+    &H_b = -H + \sum_i H_c(\rho,L_i), \\
+    & L_{b,i} = \rho^{\frac{1}{2}}L_i^\dagger\rho^{-\frac{1}{2}},
+\end{align}
+
+$$
+
+where 
+
+$$
+\begin{align}
+    &H_c(\rho,L)=-\frac{i}{2}\sum_{i,j}\frac{\sqrt{\lambda_i}-\sqrt{\lambda_j}}{\sqrt{\lambda_i}+\sqrt{\lambda_j}}\bra{i} M(\rho,L) \ket{j}\ket{i}\bra{j},\\ 
+    &M(\rho,L)=L^\dagger L +\rho^{-\frac{1}{2}}L\rho L^\dagger \rho^{\frac{1}{2}}
+\end{align}
+
+$$
+
 # Qubit Channel
+
+For an arbitary density matrix $\rho$, we have the formula
+
+$$
+\frac{I}{2}=\frac{1}{4}(\rho + X\rho X^\dagger+ Y\rho Y^\dagger +Z\rho Z^\dagger)
+$$
+
+where 
+
+$$
+X = \begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}\quad
+Y=\begin{pmatrix}
+0  & -i\\
+i  & 0
+\end{pmatrix}\quad
+Z = \begin{pmatrix}
+1  & 0\\
+0  & -1
+\end{pmatrix}
+$$
+
+The lindblad equation for quantum qubit channel can be written as 
+
+$$
+\dot{\rho}=-\gamma (\rho - \frac{I}{2}),
+$$
+
+or in the Lindblad's form as
+
+$$
+\dot{\rho}=\frac{\gamma}{4}(\cD[X](\rho)+\cD[Y](\rho)+\cD[Z](\rho))
+$$
+
+At $t=0$, $\rho(0)$ has an eigenvalue decomposition $\rho(0)=U\Lambda(0) U^\dagger$, where $U$ is unitary and $\Lambda(0)$ is diagonal. As the qubit channel admits the unitary freedom, we can focus on the case where $U=I$, and the result can be easily generalized to arbitary $U$. Say
+
+$$
+\Lambda(0)=\begin{pmatrix}
+\lambda_1(0)  & \\
+  & \lambda_2(0)
+\end{pmatrix}
+$$
+
+where $\lambda_i(0)\geq 0$ for $i\in [2]$ and $\lambda_1(0)+\lambda_2(0)=1$.
+
+At time $t$, solving the Lindblad equation yields
+
+$$
+\Lambda(t)=\begin{pmatrix}
+\lambda_1(t)  & \\
+  & \lambda_2(t)
+\end{pmatrix}=\begin{pmatrix}
+\frac{1}{2}+e^{-\gamma t}(\lambda_1(0)-\frac{1}{2})  & \\
+  & \frac{1}{2}+e^{-\gamma t}(\lambda_2(0)-\frac{1}{2})
+\end{pmatrix} .
+$$
+
+The reversed Hamiltonian can be expressed by 
+
+$$
+H_b = 0
+$$
+
+and the reversed Lindblad operators can be expressed by
+
+$$
+X_b = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+ 0 & \sqrt{\frac{\lambda_1(t)}{\lambda_2(t)}}\\
+ \sqrt{\frac{\lambda_2(t)}{\lambda_1(t)}} & 0
+\end{pmatrix},\quad 
+Y_b = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+ 0 & i\sqrt{\frac{\lambda_1(t)}{\lambda_2(t)}}\\
+ -i\sqrt{\frac{\lambda_2(t)}{\lambda_1(t)}} & 0
+\end{pmatrix},\quad 
+Z_b = \sqrt{\frac{\gamma}{4}}Z.
+$$
+
+For general $U$, the reversed Lindblad operators can be obtained by 
+the transformation $X \mapsto U^\dagger X U$. Note that the operator $Z$ can actually be dropped.
+
+# $d$-dimensional channel 
+
+For $d$-dimensional density matrix, notice that $I = \tr(\rho)I$ can be expressed as an operator sum.
+
+# Questions
+
+For quantum state preparation, we already know the $\Lambda(0)$ we want and we want to prepare this from the state $I/2$, we do not need to learn anything, just apply the reversed Lindblad operators.
+
+Maybe I have some misunderstanding here for we have discussed to "learn" something via quantum process tomography just like diffusion models. 
+
+How to physically implement a given (time-dependent) Lindblad operator  ? To prepare a pure state, the reversed Lindblad operators seems to blow up.
+
+For $d$-dimensional channel, it seems thaat $d^2$ Lindblad operators are necessary, which suffers from the curse of dimensionality.
+
+
+
 
