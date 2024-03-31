@@ -5,7 +5,7 @@ author: Kaizhao Liu
 
 ---
 
-Here I summarize some good lecture notes in statistics that I find inspiring.
+Here I summarize some good lecture notes in statistics that I find inspiring. This post will be subsumed to other posts later, where I will add reference.
 
 # Learning Theory
 
