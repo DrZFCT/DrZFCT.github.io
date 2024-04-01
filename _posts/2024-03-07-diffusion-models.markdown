@@ -10,10 +10,10 @@ $x\sim \mathcal{P}$
 
 # Reversing Lindblad Equation
 
-The quantum version of Fokker-Planck equation, also named Lindblad equation, is the following:
+The quantum version of Fokker-Planck equation, also named (Markovian) Lindblad equation, is the following:
 
 $$
-\dot{\rho}=-i[H,\rho]+\sum_i \cD[L_i](\rho),
+\dot{\rho}(t)=-i[H,\rho(t)]+\sum_i \cD[L_i](\rho(t)), \quad t\in[0,T]
 $$
 
 where 
@@ -22,7 +22,7 @@ $$
 \cD[L](\rho):=L\rho L^\dagger -\frac{1}{2}\{L^\dagger L,\rho\}.
 $$  
 
-Here $[A,B]=AB-BA$ is the commutator and $\{A,B\}=AB+BA$ is the anticommutator. Note that $H$ is Hermitian.
+Here $[A,B]=AB-BA$ is the commutator and $\{A,B\}=AB+BA$ is the anticommutator. Note that the Hamiltonian $H$ is Hermitian. Here we assume that $H$ and $L_i$'s are not time dependent.
 
 To reverse a Lindblad operator $L$, exactly similar to what we have done in standard diffusion model, what we need to do is solve this equation for $L_b$ and $H_b$, where $H_b$ is Hermitian:
 
@@ -60,9 +60,9 @@ In summary, the reverse Lindblad's equation can be expressed by
 
 $$ 
 \begin{align}
-    &\dot{\overleftarrow{\rho}}= -i[H_b,\overleftarrow{\rho}]+\sum_i \cD[L_{b,i}](\overleftarrow{\rho})\\
-    &H_b = -H + \sum_i H_c(\rho,L_i), \\
-    & L_{b,i} = \rho^{\frac{1}{2}}L_i^\dagger\rho^{-\frac{1}{2}},
+    &\dot{\overleftarrow{\rho}}= -i[H_b,\overleftarrow{\rho}]+\sum_i \cD[L_{b,i}](\overleftarrow{\rho}),\quad t\in[0,T]\\
+    &H_b(t) = -H + \sum_i H_c(\rho(T-t),L_i), \\
+    & L_{b,i}(t) = \rho(T-t)^{\frac{1}{2}}L_i^\dagger{\rho(T-t)}^{-\frac{1}{2}},
 \end{align}
 
 $$
@@ -105,13 +105,13 @@ $$
 The lindblad equation for quantum qubit channel can be written as 
 
 $$
-\dot{\rho}=-\gamma (\rho - \frac{I}{2}),
+\dot{\rho}(t)=-\gamma (\rho(t) - \frac{I}{2}),\quad t\in [0,T]
 $$
 
 or in the Lindblad's form as
 
 $$
-\dot{\rho}=\frac{\gamma}{4}(\cD[X](\rho)+\cD[Y](\rho)+\cD[Z](\rho))
+\dot{\rho}(t)=\frac{\gamma}{4}\left(\cD[X](\rho(t))+\cD[Y](\rho(t))+\cD[Z](\rho(t))\right)
 $$
 
 At $t=0$, $\rho(0)$ has an eigenvalue decomposition $\rho(0)=U\Lambda(0) U^\dagger$, where $U$ is unitary and $\Lambda(0)$ is diagonal. As the qubit channel admits the unitary freedom, we can focus on the case where $U=I$, and the result can be easily generalized to arbitary $U$. Say
@@ -150,15 +150,14 @@ X_b(t) = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
  0 & \sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
  \sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} & 0
 \end{pmatrix},\quad 
-Y_b = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+Y_b(t) = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
  0 & i\sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
  -i\sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} & 0
 \end{pmatrix},\quad 
 Z_b = \sqrt{\frac{\gamma}{4}}Z.
 $$
 
-For general $U$, the reversed Lindblad operators can be obtained by 
-the transformation $X \mapsto U^\dagger X U$. Note that the operator $Z$ can actually be dropped.
+For general $U$, the reversed Lindblad operators can be obtained by applying the transformation $X \mapsto U^\dagger X U$. Note that the operator $Z$ can actually be dropped.
 
 # $d$-dimensional channel 
 
