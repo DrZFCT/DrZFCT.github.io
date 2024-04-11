@@ -21,10 +21,12 @@ $$
 
 where $D:=\frac{1}{2}\sigma\sigma^T$.
 
-Now consider the reverse time stochastic process $(\overleftarrow{Y}_s)_{s\in [0,T]}$ satisfying 
+Now consider the reverse time stochastic process $$(\overleftarrow{Y}_s)_{s\in [0,T]}$$ satisfying 
+
 $$
 p_{\overleftarrow{Y}}(\cdot,t)=\overleftarrow{p}_Y(\cdot,t):=p_Y(\cdot,T-t)
 $$ 
+
 for every $t\in [0,T]$. We ask for a SDE description of this process.
 
 Using the Fokker-Planck equation of $Y_s$, we have 
@@ -36,7 +38,7 @@ $$
 The negative divergence prohibits us from directly viewing the above equation as a Fokker-Planck equation. However, we can write
 
 $$
-\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)=\text{div}(\overleftarrow{D})\overleftarrow{p}_Y+\overleftarrow{D}\nabla \overleftarrow{p}_Y= (\text{div}(\overleftarrow{D})+\overleftarrow{D}\nabla\log \overleftarrow{p}_Y)\overleftarrow{p}_Y
+\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)=\text{div}(\overleftarrow{D})\overleftarrow{p}_Y+\overleftarrow{D}\nabla \overleftarrow{p}_Y= (\text{div}(\overleftarrow{D})+\overleftarrow{D}\nabla\log \overleftarrow{p}_Y)\overleftarrow{p}_Y.
 $$
 
 In this way, once we know $\nabla\log \overleftarrow{p}_Y$, we can cpnvert the negative divergence term to the drift term.
@@ -122,8 +124,9 @@ $$
 
 $$
 
-# Reversing Lindblad Equation via 
+# Reversing Lindblad Equation via Stochastic Unraveling
 
+$\CC^n$-valued diffusion process
 
 
 # Qubit Channel

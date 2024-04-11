@@ -49,8 +49,41 @@
             </header>
           
             <article class="post-content">
-            <p>For an arbitary high-dimensional distribution 
-$x\sim \mathcal{P}$</p>
+            <p>Let us first recall how to reverse a classical diffusion process.</p>
+
+<p>Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^d\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE</p>
+
+\[\mathrm{d}Y_s=f(Y_s,s)\mathrm{d}s+\sigma(Y_s,s)\mathrm{d}B_s\]
+
+<p>where $B_s$ is a standard $d$-dimensional Brownian motion. Assume that $Y$ has density $p_Y$, which satisfies the Fokker-Planck equation given by</p>
+
+\[\partial_t p_Y=\text{div}(\text{div}(Dp_Y)-fp_Y),\]
+
+<p>where $D:=\frac{1}{2}\sigma\sigma^T$.</p>
+
+<p>Now consider the reverse time stochastic process \((\overleftarrow{Y}_s)_{s\in [0,T]}\) satisfying</p>
+
+\[p_{\overleftarrow{Y}}(\cdot,t)=\overleftarrow{p}_Y(\cdot,t):=p_Y(\cdot,T-t)\]
+
+<p>for every $t\in [0,T]$. We ask for a SDE description of this process.</p>
+
+<p>Using the Fokker-Planck equation of $Y_s$, we have</p>
+
+\[\partial_t \overleftarrow{p}_Y=\text{div}(-\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)+\overleftarrow{f}\overleftarrow{p}_Y).\]
+
+<p>The negative divergence prohibits us from directly viewing the above equation as a Fokker-Planck equation. However, we can write</p>
+
+\[\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)=\text{div}(\overleftarrow{D})\overleftarrow{p}_Y+\overleftarrow{D}\nabla \overleftarrow{p}_Y= (\text{div}(\overleftarrow{D})+\overleftarrow{D}\nabla\log \overleftarrow{p}_Y)\overleftarrow{p}_Y.\]
+
+<p>In this way, once we know $\nabla\log \overleftarrow{p}_Y$, we can cpnvert the negative divergence term to the drift term.</p>
+
+<p>As a special case, if we choose to maintain the original diffusion term, then we obtain the following SDE:</p>
+
+\[\mathrm{d}\overleftarrow{Y}_s=\overleftarrow{\mu}(\overleftarrow{Y}_s,s)\mathrm{d}s+\overleftarrow{\sigma}(\overleftarrow{Y}_s,s)\mathrm{d}B_s,\quad \overleftarrow{Y}_0\sim Y_T\]
+
+<p>where</p>
+
+\[\mu:=2\text{div}(D)+2D\nabla\log p_Y-f.\]
 
 <h1 id="reversing-lindblad-equation">Reversing Lindblad Equation</h1>
 
@@ -105,6 +138,10 @@ Then</p>
     &amp;H_c(\rho,L)=-\frac{i}{2}\sum_{i,j}\frac{\sqrt{\lambda_i}-\sqrt{\lambda_j}}{\sqrt{\lambda_i}+\sqrt{\lambda_j}}\bra{i} M(\rho,L) \ket{j}\ket{i}\bra{j},\\ 
     &amp;M(\rho,L)=L^\dagger L +\rho^{-\frac{1}{2}}L\rho L^\dagger \rho^{\frac{1}{2}}
 \end{align}\]
+
+<h1 id="reversing-lindblad-equation-via-stochastic-unraveling">Reversing Lindblad Equation via Stochastic Unraveling</h1>
+
+<p>$\CC^n$-valued diffusion process</p>
 
 <h1 id="qubit-channel">Qubit Channel</h1>
 
@@ -185,6 +222,8 @@ Z_b = \sqrt{\frac{\gamma}{4}}Z.\]
 <p>How to physically implement a given (time-dependent) Lindblad operator  ? To prepare a pure state, the reversed Lindblad operators seems to blow up.</p>
 
 <p>For $d$-dimensional channel, it seems thaat $d^2$ Lindblad operators are necessary, which suffers from the curse of dimensionality.</p>
+
+<p>#</p>
 
 
             </article>
