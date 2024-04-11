@@ -5,8 +5,53 @@ author: Kaizhao Liu
 
 ---
 
-For an arbitary high-dimensional distribution 
-$x\sim \mathcal{P}$
+Let us first recall how to reverse a classical diffusion process.
+
+Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^d\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE 
+
+$$
+\mathrm{d}Y_s=f(Y_s,s)\mathrm{d}s+\sigma(Y_s,s)\mathrm{d}B_s
+$$
+
+where $B_s$ is a standard $d$-dimensional Brownian motion. Assume that $Y$ has density $p_Y$, which satisfies the Fokker-Planck equation given by 
+
+$$
+\partial_t p_Y=\text{div}(\text{div}(Dp_Y)-fp_Y),
+$$
+
+where $D:=\frac{1}{2}\sigma\sigma^T$.
+
+Now consider the reverse time stochastic process $(\overleftarrow{Y}_s)_{s\in [0,T]}$ satisfying 
+$$
+p_{\overleftarrow{Y}}(\cdot,t)=\overleftarrow{p}_Y(\cdot,t):=p_Y(\cdot,T-t)
+$$ 
+for every $t\in [0,T]$. We ask for a SDE description of this process.
+
+Using the Fokker-Planck equation of $Y_s$, we have 
+
+$$
+\partial_t \overleftarrow{p}_Y=\text{div}(-\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)+\overleftarrow{f}\overleftarrow{p}_Y).
+$$
+
+The negative divergence prohibits us from directly viewing the above equation as a Fokker-Planck equation. However, we can write
+
+$$
+\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)=\text{div}(\overleftarrow{D})\overleftarrow{p}_Y+\overleftarrow{D}\nabla \overleftarrow{p}_Y= (\text{div}(\overleftarrow{D})+\overleftarrow{D}\nabla\log \overleftarrow{p}_Y)\overleftarrow{p}_Y
+$$
+
+In this way, once we know $\nabla\log \overleftarrow{p}_Y$, we can cpnvert the negative divergence term to the drift term.
+
+As a special case, if we choose to maintain the original diffusion term, then we obtain the following SDE:
+
+$$
+\mathrm{d}\overleftarrow{Y}_s=\overleftarrow{\mu}(\overleftarrow{Y}_s,s)\mathrm{d}s+\overleftarrow{\sigma}(\overleftarrow{Y}_s,s)\mathrm{d}B_s,\quad \overleftarrow{Y}_0\sim Y_T
+$$
+
+where 
+
+$$
+\mu:=2\text{div}(D)+2D\nabla\log p_Y-f.
+$$
 
 # Reversing Lindblad Equation
 
