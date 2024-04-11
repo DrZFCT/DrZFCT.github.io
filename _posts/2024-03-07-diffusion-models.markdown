@@ -77,6 +77,10 @@ $$
 
 $$
 
+# Reversing Lindblad Equation via 
+
+
+
 # Qubit Channel
 
 For an arbitary density matrix $\rho$, we have the formula
@@ -173,6 +177,7 @@ How to physically implement a given (time-dependent) Lindblad operator  ? To pre
 
 For $d$-dimensional channel, it seems thaat $d^2$ Lindblad operators are necessary, which suffers from the curse of dimensionality.
 
+# 
 
 
 

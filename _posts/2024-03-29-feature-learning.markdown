@@ -57,3 +57,22 @@ $$
 
 Reference:
 ![Note on N-dimensional hermite polynomials]()
+
+
+# Single-Index Model
+
+$$
+f^*(x)=\varphi (\left\langle w_*,x\right\rangle)
+$$
+
+isotonic regression 
+
+
+
+# Picture: Small Initialization
+
+
+
+# Standard Initialization
+
+$w_j\sim \cN(0,\frac{I_d}{d})$, $x\sim \SS^{d-1}$
