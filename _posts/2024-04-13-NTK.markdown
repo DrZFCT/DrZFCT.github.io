@@ -1,0 +1,16 @@
+---
+layout: post
+title: NTK
+author: Kaizhao Liu
+
+---
+
+In this article, we explain the Neural Tangent Kernel.
+
+
+# Gram-Matrix 
+
+
+
+# Lazy Training
+
