@@ -5,6 +5,8 @@ author: Kaizhao Liu
 
 ---
 
+In this article, I breifly review the theory of point estimation.
+
 Let $X = (X_1, \cdots , X_n)$ be a sample from a population
 $\PP_\theta \in \cP$, where $\theta \in \Theta$.
 An estimator of $\gamma(\theta)$ is a measurable function from the range of $X$ to $\gamma(\Theta)$.
@@ -43,7 +45,7 @@ $$
 
 Some other weaker theoretical properties is explained in the next section.
 
-# Admissibility, Unbiasedness, Consistency
+# Admissibility, Unbiasedness, Invariance, Consistency
 
 A decision rule $T \in \cT$ is called **admissible** if and only if there does not exist any $T' \in \cT$ that has samller risk than $T$ uniformly over $\PP_\theta$.
 
@@ -59,10 +61,12 @@ $$
 $$
 
 The UMVUE is defined to be a minimax optimal estimator among the class of all unbiased estimators. Statisticians have developed some interesting methods to find UMVUEs, see *Lehmann–Scheffé theorem* for example. 
-
 The minimum risk of an unbiased estimator is constrained by *Cramér–Rao lower bound*.
 
+The
+
 If $T(X)\to_P \gamma(\theta)$ as $n\to\infty$, then $T(X)$ is called **consistent**. When dealing with large sample properties like this, a statistic $T(X)$ is often denoted by $T_n$ to emphasize its dependence on the sample size $n$.
+
 
 
 # Moment Estimation, MLE
@@ -90,3 +94,4 @@ $$
 
 An interesting connection between bayesian estimator and minimax estimator is the following.
 Suppose that $T$ is the Bayes estimator for $\gamma(\theta)$ w.r.t some prior. If the risk $R_T$ does not depend on $\theta$, then $T$ is minimax optimal (among all estimators).
+
