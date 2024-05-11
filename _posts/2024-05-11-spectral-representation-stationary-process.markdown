@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Tail Estimation
+title: The Spectral Representation of a Stationary Prcoess
 author: Kaizhao Liu
 
 ---
 
-In this article, I breifly introduce some current methods of estimating the tail of a heavy tail distributions.
+The spectral representation of a stationary process $\{X_t,\}$
+
 
 
