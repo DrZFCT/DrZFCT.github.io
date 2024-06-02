@@ -12,13 +12,42 @@ One notable difference between traditional machine learning algorithms and deep 
 # 1D Hermite Polynomials
 
 
-The $k$-th order probabilist's Hermite polynomial
+The $k$-th order probabilist's Hermite polynomial is defined to be
 
 $$
-h_k(z)=\frac{(-1)^k}{\sqrt{k!}}\frac{}{}
+h_k(z)=\frac{(-1)^k}{\sqrt{k!}}\frac{\gamma^{(k)}(z)}{\gamma(z)},
 $$
 
-A key fact is that normalized Hermite polynomials form a complet orthonormal basis of $L^2(\mu)$, where $\mu=\cN(0,1)$.
+where $\gamma(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$ is the pdf of 1D standard Gaussian distribution.
+
+
+A key fact is that normalized Hermite polynomials form a complet orthonormal basis of $L^2(\gamma)$, where $\gamma=\cN(0,1)$ by a benign abuse of notation.
+
+### Properties of Unnormalized Hermite Polynomials
+
+The unnormalized one is 
+
+$$
+\text{He}_k(z)=\sqrt{k!}h_k(z).
+$$
+
+- $\text{He}_{k}(-z)=(-1)^k\text{He}_k(z)$
+- $\text{He}_{k+1}(z)=z\text{He}_k(z)-\text{He}'_k(z)$
+  - take the derivative of $\gamma(z)\text{He}_{k}(z)=(-1)^k\gamma^{(k)}(z)$
+  - note that $\gamma'(z)=-z\gamma(z)$
+- $\text{He}'_{k+1}(z)=(k+1)\text{He}_k(z)$
+  - proof by induction
+  - take the derivative of $\gamma^{(k+1)}(z)+z\gamma^{(k)}(z)=-k\gamma^{(k-1)}(z)$
+- $\text{He}''_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
+  - combine the above two identities
+  - *differential eqaution formulation*
+- (**Stein's Lemma**) Assume $$f\in C^k\cap  L^2(\gamma)$, then $\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)$$
+
+### Physicist's Hermite Polynomials
+
+The physicist's Hermite polynomial is given by $\text{H}_k(z)=(-1)^ke^{-x^2}\frac{\mathrm d^k}{\mathrm dz^k}e^{-x^2}$.
+
+### Properties of Probabilist's Hermite Polynomials
 
 For any $f\in L^2(\mu)$, 
 
