@@ -55,11 +55,15 @@ For any $f\in L^2(\mu)$,
 The following facts will be useful:
 
 In practice, we often focus on the study of high-dimensional function of the form $f(\left\langle u,x\right\rangle)$.
-Let $\gamma_d=\cN(0,I_d)$. For any $f,g\in L^2(\mu)$ and $u,v\in\SS^{d-1}$, we have 
+Let $\gamma_d=\cN(0,I_d)$. For any $f,g\in L^2(\mu)$ and $u,v\in\SS^{d-1}$, we have (*Inner Product Formula*):
 
 $$
 \EE_{x\sim\gamma_d} f(\left\langle u,x\right\rangle)g(\left\langle v,x\right\rangle)=\sum_{k=0}^\infty \hat f_k \hat g_k \left\langle u,v\right\rangle^k 
 $$
+
+- Proof:
+  - expand $f$ and $g$
+  - 
 
 # Hermite Tensors
 
