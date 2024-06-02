@@ -41,7 +41,7 @@ $$
 - $\text{He}''_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
   - combine the above two identities
   - *differential eqaution formulation*
-- (**Stein's Lemma**) Assume $$f\in C^k\cap  L^2(\gamma)$, then $\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)$$
+- (**Stein's Lemma**) Assume $f\in C^k\cap  L^2(\gamma)$, then $$\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)$$
 
 ### Physicist's Hermite Polynomials
 
