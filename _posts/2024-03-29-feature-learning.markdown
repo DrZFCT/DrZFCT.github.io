@@ -38,10 +38,14 @@ $$
 - $\text{He}'_{k+1}(z)=(k+1)\text{He}_k(z)$
   - proof by induction
   - take the derivative of $\gamma^{(k+1)}(z)+z\gamma^{(k)}(z)=-k\gamma^{(k-1)}(z)$
-- $\text{He}''_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
+- $\text{He}{''}_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
   - combine the above two identities
   - *differential eqaution formulation*
 - (**Stein's Lemma**) Assume $f\in C^k\cap  L^2(\gamma)$, then $$\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)$$
+- (**Poincare Inequality**) Assume $f\in C^1\cap  L^2(\gamma)$ and $f'\in L^2(\gamma)$, then $$\Var f\leq \|f'\|^2_{L^2(\gamma)}  $$
+  - Let $f=\sum_{m=0}^\infty \hat{f}_m h_m(z)$
+  - $\Var f=\sum_{m=1}^\infty \hat{f}^2_m$
+  - $\|f'\|^2_{L^2(\gamma)}=\sum_{m=1}^\infty m\hat{f}^2_m$
 
 ### Physicist's Hermite Polynomials
 
