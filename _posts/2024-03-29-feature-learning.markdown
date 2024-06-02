@@ -85,7 +85,7 @@ $$
 $$
 
 Reference:
-![Note on N-dimensional hermite polynomials]()
+![Note on N-dimensional hermite polynomials](https://onlinelibrary.wiley.com/doi/10.1002/cpa.3160020402)
 
 
 # Single-Index Model
