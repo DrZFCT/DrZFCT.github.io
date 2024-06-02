@@ -38,14 +38,15 @@ $$
 - $\text{He}'_{k+1}(z)=(k+1)\text{He}_k(z)$
   - proof by induction
   - take the derivative of $\gamma^{(k+1)}(z)+z\gamma^{(k)}(z)=-k\gamma^{(k-1)}(z)$
-- $\text{He}{''}_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
+- $\text{He}^{(2)}_{k}(z)-z\text{He}'_k(z)+k\text{He}(z)=0$
   - combine the above two identities
   - *differential eqaution formulation*
 - (**Stein's Lemma**) Assume $f\in C^k\cap  L^2(\gamma)$, then $$\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)$$
-- (**Poincare Inequality**) Assume $f\in C^1\cap  L^2(\gamma)$ and $f'\in L^2(\gamma)$, then $$\Var f\leq \|f'\|^2_{L^2(\gamma)}  $$
-  - Let $f=\sum_{m=0}^\infty \hat{f}_m h_m(z)$
-  - $\Var f=\sum_{m=1}^\infty \hat{f}^2_m$
-  - $\|f'\|^2_{L^2(\gamma)}=\sum_{m=1}^\infty m\hat{f}^2_m$
+  - integration by parts
+- (**Poincare Inequality**) Assume $f\in C^1\cap  L^2(\gamma)$ and $f'\in L^2(\gamma)$, then $$\text{Var} f\leq \|f'\|^2_{L^2(\gamma)}  $$
+  - expand $f=\sum_{m=0}^\infty \hat{f}_m h_m(z)$
+  - $$\text{Var} f=\sum_{m=1}^\infty \hat{f}^2_m$$
+  - $$ \|f'\|^2_{L^2(\gamma)}=\sum_{m=1}^\infty m\hat{f}^2_m $$
 
 ### Physicist's Hermite Polynomials
 
@@ -66,7 +67,7 @@ $$
 $$
 
 - Proof:
-  - expand $f$ and $g$
+  - expand $$f=\sum_{m=0}^\infty \hat{f}_m h_m(z)$$ and $$g=\sum_{m=0}^\infty \hat{g}_m h_m(z)$$
   - 
 
 # Hermite Tensors
@@ -77,23 +78,23 @@ Such a procedure lacks symmetry, and there is sometimes an advantage to be gaine
 The Hermite tensors are defined by:
 
 $$
-He_k(x)=\frac{(-1)^k}{\sqrt{k!}}
+\text{He}_k(x)=\frac{(-1)^k}{\sqrt{k!}}
 $$
 
 If $\|u\|=1$, we have 
 
 $$
-h_k(\left\langle u,x\right\rangle) = \left\langle He_k(x),u^{\otimes k}\right\rangle
+h_k(\left\langle u,x\right\rangle) = \left\langle \text{He}_k(x),u^{\otimes k}\right\rangle
 $$
 
 Generalized Stein's lemma
 
 $$
-\sqrt{k!}\EE_{x\sim\gamma} f(x)He_k(x) = \EE_{x\sim\gamma} \nabla_x^k f(x)
+\sqrt{k!}\EE_{x\sim\gamma} f(x)\text{He}_k(x) = \EE_{x\sim\gamma} \nabla_x^k f(x)
 $$
 
 Reference:
-![Note on N-dimensional hermite polynomials](https://onlinelibrary.wiley.com/doi/10.1002/cpa.3160020402)
+[Note on N-dimensional hermite polynomials](https://onlinelibrary.wiley.com/doi/10.1002/cpa.3160020402)
 
 
 # Single-Index Model

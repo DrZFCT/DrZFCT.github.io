@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Spectral Representation of a Stationary Prcoess</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>The Spectral Representation of a Stationary Prcoess</h1>
+              <p class="meta">May 11, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>The spectral representation of a stationary process ${X_t}$ essentially decomposes ${X_t}$ into a sum of sinusoidal components with uncorrelated random coefficients. This is an analogue of the more familiar Fourier representation of deterministic functions.</p>
+
+<p>The analysis of stationary process by means of their spectral representations is often referred to as the <em>frequency domain</em> analysis of time series. It is equivalent to <em>time domain</em> analysis based on the autocovariance function, but provides an alternative way of viewing the process which for some applications may be more illuminating. The spectral point of view is particularly advantageous in the analysis of multivariate stationary processes and in the analysis of very large datasets, for which numerical calculations can be performed rapidly using the FFT.</p>
+
+<h1 id="complex-valued-stationary-time-series">Complex-Valued Stationary Time Series</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A process ${X_t}$ is a <strong>complex-valued stationary process</strong> if $\EE</td>
+      <td>X_t</td>
+      <td>^2&lt;\infty$, $\EE X_t$ is independent of $t$,and $\EE (X_{t+h}\bar{X_t})$ is independent of $t$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Its <strong>autocovariance function</strong> $\gamma$ is defined to be</p>
+
+\[\gamma(h)=\EE(X_{t+h}\bar{X}_t)-\EE X_{t+h}\EE \bar{X}_t.\]
+
+<p>It can be seen immediately that $\gamma$ satisfies</p>
+
+\[\begin{align}
+    &amp; \gamma(0)\geq 0\\
+    &amp; |\gamma(h)|\leq \gamma(0),\quad\forall h\in\ZZ \\
+    &amp; \gamma(h)=\overline{\gamma(-h)},\quad\forall h\in\ZZ
+\end{align}\]
+
+<p>Conversely, a function $K$ defined on the integers is the autocovariance function of a stationary time series if and only if $K$ is Hermitian and non-negative definite.</p>
+
+<h1 id="herglotzs-theorem">Herglotz’s Theorem</h1>
+
+<p>A complex-valued function $\gamma$ defined on the integers is non-negative definite if and only if</p>
+
+\[\gamma(h)=\int_{-\pi}^\pi e^{ihx}\mathrm{d} F(x), \forall h\in\ZZ\]
+
+<p>where $F$ is a right-continuous, non-decreasing, bounded function on $[-\pi,\pi]$ and $F(-\pi)=0$.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

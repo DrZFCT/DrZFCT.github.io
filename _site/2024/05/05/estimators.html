@@ -49,7 +49,9 @@
             </header>
           
             <article class="post-content">
-            <p>Let $X = (X_1, \cdots , X_n)$ be a sample from a population
+            <p>In this article, I breifly review the theory of point estimation.</p>
+
+<p>Let $X = (X_1, \cdots , X_n)$ be a sample from a population
 $\PP_\theta \in \cP$, where $\theta \in \Theta$.
 An estimator of $\gamma(\theta)$ is a measurable function from the range of $X$ to $\gamma(\Theta)$.</p>
 
@@ -79,7 +81,7 @@ An estimator of $\gamma(\theta)$ is a measurable function from the range of $X$ 
 
 <p>Some other weaker theoretical properties is explained in the next section.</p>
 
-<h1 id="admissibility-unbiasedness-consistency">Admissibility, Unbiasedness, Consistency</h1>
+<h1 id="admissibility-unbiasedness-invariance-consistency">Admissibility, Unbiasedness, Invariance, Consistency</h1>
 
 <p>A decision rule $T \in \cT$ is called <strong>admissible</strong> if and only if there does not exist any $T’ \in \cT$ that has samller risk than $T$ uniformly over $\PP_\theta$.</p>
 
@@ -92,9 +94,10 @@ $R_{T_1}(\theta) \leq  R_{T_0} (\theta )$.</em></p>
 
 \[\EE_{\PP_\theta} T(X)=\gamma (\theta).\]
 
-<p>The UMVUE is defined to be a minimax optimal estimator among the class of all unbiased estimators. Statisticians have developed some interesting methods to find UMVUEs, see <em>Lehmann–Scheffé theorem</em> for example.</p>
+<p>The UMVUE is defined to be a minimax optimal estimator among the class of all unbiased estimators. Statisticians have developed some interesting methods to find UMVUEs, see <em>Lehmann–Scheffé theorem</em> for example. 
+The minimum risk of an unbiased estimator is constrained by <em>Cramér–Rao lower bound</em>.</p>
 
-<p>The minimum risk of an unbiased estimator is constrained by <em>Cramér–Rao lower bound</em>.</p>
+<p>The</p>
 
 <p>If $T(X)\to_P \gamma(\theta)$ as $n\to\infty$, then $T(X)$ is called <strong>consistent</strong>. When dealing with large sample properties like this, a statistic $T(X)$ is often denoted by $T_n$ to emphasize its dependence on the sample size $n$.</p>
 
@@ -121,6 +124,7 @@ that minimizes $R_{\text{Bayes}}(\pi, T )$ over all estimators $T$. A good prope
 
 <p>An interesting connection between bayesian estimator and minimax estimator is the following.
 Suppose that $T$ is the Bayes estimator for $\gamma(\theta)$ w.r.t some prior. If the risk $R_T$ does not depend on $\theta$, then $T$ is minimax optimal (among all estimators).</p>
+
 
             </article>
           

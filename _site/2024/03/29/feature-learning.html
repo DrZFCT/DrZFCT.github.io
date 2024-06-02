@@ -53,20 +53,81 @@
 
 <h1 id="1d-hermite-polynomials">1D Hermite Polynomials</h1>
 
-<p>The $k$-th order probabilist’s Hermite polynomial</p>
+<p>The $k$-th order probabilist’s Hermite polynomial is defined to be</p>
 
-\[h_k(z)=\frac{(-1)^k}{\sqrt{k!}}\frac{}{}\]
+\[h_k(z)=\frac{(-1)^k}{\sqrt{k!}}\frac{\gamma^{(k)}(z)}{\gamma(z)},\]
 
-<p>A key fact is that normalized Hermite polynomials form a complet orthonormal basis of $L^2(\mu)$, where $\mu=\cN(0,1)$.</p>
+<p>where $\gamma(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$ is the pdf of 1D standard Gaussian distribution.</p>
+
+<p>A key fact is that normalized Hermite polynomials form a complet orthonormal basis of $L^2(\gamma)$, where $\gamma=\cN(0,1)$ by a benign abuse of notation.</p>
+
+<h3 id="properties-of-unnormalized-hermite-polynomials">Properties of Unnormalized Hermite Polynomials</h3>
+
+<p>The unnormalized one is</p>
+
+\[\text{He}_k(z)=\sqrt{k!}h_k(z).\]
+
+<ul>
+  <li>$\text{He}_{k}(-z)=(-1)^k\text{He}_k(z)$</li>
+  <li>$\text{He}_{k+1}(z)=z\text{He}_k(z)-\text{He}’_k(z)$
+    <ul>
+      <li>take the derivative of $\gamma(z)\text{He}_{k}(z)=(-1)^k\gamma^{(k)}(z)$</li>
+      <li>note that $\gamma’(z)=-z\gamma(z)$</li>
+    </ul>
+  </li>
+  <li>$\text{He}’_{k+1}(z)=(k+1)\text{He}_k(z)$
+    <ul>
+      <li>proof by induction</li>
+      <li>take the derivative of $\gamma^{(k+1)}(z)+z\gamma^{(k)}(z)=-k\gamma^{(k-1)}(z)$</li>
+    </ul>
+  </li>
+  <li>$\text{He}^{(2)}_{k}(z)-z\text{He}’_k(z)+k\text{He}(z)=0$
+    <ul>
+      <li>combine the above two identities</li>
+      <li><em>differential eqaution formulation</em></li>
+    </ul>
+  </li>
+  <li>(<strong>Stein’s Lemma</strong>) Assume $f\in C^k\cap  L^2(\gamma)$, then \(\EE_{z\sim\gamma} f(z)\text{He}_{k}(z)=\EE_{z\sim\gamma} f^{(k)}(z)\)
+    <ul>
+      <li>integration by parts</li>
+    </ul>
+  </li>
+  <li>(<strong>Poincare Inequality</strong>) Assume $f\in C^1\cap  L^2(\gamma)$ and $f’\in L^2(\gamma)$, then \(\text{Var} f\leq \|f'\|^2_{L^2(\gamma)}\)
+    <ul>
+      <li>expand $f=\sum_{m=0}^\infty \hat{f}_m h_m(z)$</li>
+      <li>
+\[\text{Var} f=\sum_{m=1}^\infty \hat{f}^2_m\]
+      </li>
+      <li>
+\[\|f'\|^2_{L^2(\gamma)}=\sum_{m=1}^\infty m\hat{f}^2_m\]
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="physicists-hermite-polynomials">Physicist’s Hermite Polynomials</h3>
+
+<p>The physicist’s Hermite polynomial is given by $\text{H}_k(z)=(-1)^ke^{-x^2}\frac{\mathrm d^k}{\mathrm dz^k}e^{-x^2}$.</p>
+
+<h3 id="properties-of-probabilists-hermite-polynomials">Properties of Probabilist’s Hermite Polynomials</h3>
 
 <p>For any $f\in L^2(\mu)$,</p>
 
 <p>The following facts will be useful:</p>
 
 <p>In practice, we often focus on the study of high-dimensional function of the form $f(\left\langle u,x\right\rangle)$.
-Let $\gamma=\cN(0,I_d)$. For any $f,g\in L^2(\mu)$ and $u,v\in\SS^{d-1}$, we have</p>
+Let $\gamma_d=\cN(0,I_d)$. For any $f,g\in L^2(\mu)$ and $u,v\in\SS^{d-1}$, we have (<em>Inner Product Formula</em>):</p>
 
-\[\EE_{x\sim\gamma} f(\left\langle u,x\right\rangle)g(\left\langle v,x\right\rangle)=\sum_{k=0}^\infty \hat f_k \hat g_k \left\langle u,v\right\rangle^k\]
+\[\EE_{x\sim\gamma_d} f(\left\langle u,x\right\rangle)g(\left\langle v,x\right\rangle)=\sum_{k=0}^\infty \hat f_k \hat g_k \left\langle u,v\right\rangle^k\]
+
+<ul>
+  <li>Proof:
+    <ul>
+      <li>expand \(f=\sum_{m=0}^\infty \hat{f}_m h_m(z)\) and \(g=\sum_{m=0}^\infty \hat{g}_m h_m(z)\)</li>
+      <li></li>
+    </ul>
+  </li>
+</ul>
 
 <h1 id="hermite-tensors">Hermite Tensors</h1>
 
@@ -75,18 +136,18 @@ Such a procedure lacks symmetry, and there is sometimes an advantage to be gaine
 
 <p>The Hermite tensors are defined by:</p>
 
-\[He_k(x)=\frac{(-1)^k}{\sqrt{k!}}\]
+\[\text{He}_k(x)=\frac{(-1)^k}{\sqrt{k!}}\]
 
 <p>If $|u|=1$, we have</p>
 
-\[h_k(\left\langle u,x\right\rangle) = \left\langle He_k(x),u^{\otimes k}\right\rangle\]
+\[h_k(\left\langle u,x\right\rangle) = \left\langle \text{He}_k(x),u^{\otimes k}\right\rangle\]
 
 <p>Generalized Stein’s lemma</p>
 
-\[\sqrt{k!}\EE_{x\sim\gamma} f(x)He_k(x) = \EE_{x\sim\gamma} \nabla_x^k f(x)\]
+\[\sqrt{k!}\EE_{x\sim\gamma} f(x)\text{He}_k(x) = \EE_{x\sim\gamma} \nabla_x^k f(x)\]
 
 <p>Reference:
-<img src="" alt="Note on N-dimensional hermite polynomials" /></p>
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/cpa.3160020402">Note on N-dimensional hermite polynomials</a></p>
 
 <h1 id="single-index-model">Single-Index Model</h1>
 
