@@ -24,7 +24,7 @@ where $\rho(t)$ is positive unit-trace operator
 
 From a mathematical point of view the Lindblad master equation is a complex matrix differential equation.
 To use dynamical systems tools to study its stationary solutions and the stability, it is desirable to find a real representation for $\ref{eq:lindblad}$
-by choosing an orthonormal basis $\fbf \sigma=\\{\sigma_k\\}_{k=1}^{N^2}$ for all Hermitian matrices on $\cH$.
+by choosing an orthonormal basis $\bm \sigma=\\{\sigma_k\\}_{k=1}^{N^2}$ for all Hermitian matrices on $\cH$.
 
 
 # Characterization of the Stationary States
