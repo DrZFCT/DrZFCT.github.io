@@ -63,6 +63,128 @@
 
 \[f(x)=\frac{1}{2}x^\top Ax .\]
 
+<h1 id="gd-converges-to-max-margin-solutions">GD Converges to Max-Margin Solutions</h1>
+
+<p>Consider the binary classification problem. Let $\{(x_i,y_i)\}_{i=1}^n$ with $x_i\in\RR^d$ and $y_i\in\{-1,+1\}$ be the training data.
+Assume</p>
+<ul>
+  <li>(<em>linear separability</em>) there exists a $w\in\RR^d$ such that $w^\top x_iy_i\geq 0$.</li>
+  <li>$\max_i \|x_i\|\leq B$.</li>
+</ul>
+
+<p>We use a linear model $f_w(x)=w^\top x$ and consider the solution find by GD</p>
+
+\[w_{t+1}=w_t-\eta \nabla L(w_t)\]
+
+<p>under the exponential loss</p>
+
+\[L(w)=\frac{1}{n}\sum_{i=1}^ne^{-w^\top x_iy_i}.\]
+
+<p>We will show that regardless of initialization, $w_t$ converges to the max-margin solution $w^*$</p>
+
+\[w^*=\arg\max_{\|w\|=1}\gamma(w)\qquad \gamma^*=\gamma(w^*)\]
+
+<p>where $\gamma(w)=\min_{i\in[n]}w^\top x_iy_i$ is the margin.</p>
+
+<h3 id="why-max-margin-solutions">Why Max-Margin Solutions?</h3>
+
+<p>We first need to understand the minimizers of $L(\cdot)$.</p>
+<ul>
+  <li>For any $w\in\RR^d$ that perfectly classifies all data, $L(\lambda w)\to 0$ as $\lambda\to\infty$.</li>
+  <li>This shows that the minimizers of $L(\cdot)$ are unbounded.</li>
+</ul>
+
+<p>Now note that</p>
+
+\[\nabla L(w)=-\frac{1}{n}\sum_{i=1}^ne^{-w^\top x_iy_i}x_iy_i,\]
+
+<p>when $\|w\|\to\infty$, the dominant term is</p>
+
+<h3 id="property-of-exponetial-loss">Property of Exponetial Loss</h3>
+
+<p>Exponential loss has very nice properties. As loss decreases to zero, sharpness decreases to zero.
+Moreover, the gradient is well-controlled by the loss.</p>
+<ul>
+  <li>$v^\top \nabla^2 L(w)v\leq BL(w)\|v\|^2$</li>
+  <li>$\gamma^*L(w)\leq \|\nabla L(w)\|\leq BL(w)$</li>
+</ul>
+
+<h3 id="convergence-to-max-margin">Convergence to Max-Margin</h3>
+
+<p>To provide a rigorous proof, note that mathematically, the problem at hand is to prove the convergence of a number sequence to a limit, and determine its convergence rate.</p>
+
+<p>As</p>
+
+\[\gamma\left(\frac{w_{t+1}}{\|w_{t+1}\|}\right)=\frac{\min_i w_{t+1}^\top x_iy_i}{\|w_{t+1}\|}\leq \gamma^*,\]
+
+<p>we only need to lower bound $\min_i w_{t+1}^\top x_iy_i$ and upper bound $\|w_{t+1}\|$ by something we can handle.</p>
+
+<p>The norm can also be upper bounded by the derivative of the loss:</p>
+
+\[\|w_{t+1}\|\leq \|w_0\|+\eta\sum_{s=0}^t \|\nabla L(w_s)\|\]
+
+<p>The margin can be lower bounded by the loss:</p>
+
+\[\min_i w_{t+1}^\top x_iy_i\geq -\log L(w_t) -\log n.\]
+
+<p>To proceed we need a refined version of descent lemma:</p>
+
+<p>Assume $\eta$ to be sufficiently small s.t. in each step $L(w_{t+1})\leq L(w_t)$, then</p>
+
+\[\begin{align*}
+    L(w_{t+1})&amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2}{2}\inf_{\beta\in[0,1]}\nabla L(w_t)^\top \nabla^2 L(w_t-\beta\eta \nabla L(w_t))\nabla L(w_t)\\
+        &amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2\inf_{\beta\in[0,1]}L(w_t-\beta\eta \nabla L(w_t))\\
+        &amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2L(w_t).
+\end{align*}\]
+
+<p>Proceeding, we have</p>
+
+\[\begin{align*}
+    L(w_{t+1})&amp;\leq L(w_t)\left(1+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2-\eta \frac{\|\nabla L(w_t)\|^2}{L(w_t)}\right)\\
+        &amp;\leq L(w_t)\left(1+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2-\eta\gamma^* \|\nabla L(w_t)\|\right)\\
+        &amp;\leq L(w_t)\exp\left(\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2-\eta\gamma^* \|\nabla L(w_t)\|\right)
+\end{align*}\]
+
+<p>and thus</p>
+
+\[-\log L(w_t)\geq -\log L(w_0) + \eta\gamma^* \sum_{s=0}^t \|\nabla L(w_s)\| - \frac{\eta^2B}{2}\sum_{s=0}^t \|\nabla L(w_s)\|^2.\]
+
+<p>Therefore, as long as these two summation condition holds:</p>
+<ul>
+  <li>$\lim_{t\to\infty}\sum_{s=0}^t \|\nabla L(w_s)\|=+\infty$</li>
+  <li>$\lim_{t\to\infty}\sum_{s=0}^t \|\nabla L(w_s)\|^2&lt;\infty$</li>
+</ul>
+
+<p>we will have $\lim_{t\to\infty}\gamma\left(\frac{w_{t+1}}{\|w_{t+1}\|}\right)\geq \gamma^*$.</p>
+
+<h3 id="convergence-rate">Convergence Rate</h3>
+
+<p>To explain why the above summation condition holds and to prepare for the proof of the $O(\frac{1}{\log t})$ convergence rate, let us first consider the convergence of loss.</p>
+
+<p>Inspired by standard results in convex optimization, we can expect that $L(w_t)=O(\frac{1}{t})$.</p>
+
+<p>If $L(w_t)=\Theta(\frac{1}{t})$, then $\sum_{s=0}^t \|\nabla L(w_s)\| \asymp \sum_{s=1}^t\frac{1}{s}$ and $\lim_{t\to\infty}\sum_{s=0}^t \|\nabla L(w_s)\|^2\asymp \sum_{s=1}^t\frac{1}{s^2}$, so the summation condition holds and the convergence rate is $O(\frac{1}{\log t})$.</p>
+
+<p>Note that we can not directly apply those results as they require that the minima are located in a compact domain, which is not the case here.
+So we need an alternative proof of</p>
+
+\[L(w_t)=\Theta(\frac{1}{t}).\]
+
+<p>The basic tool is still the descent lemma. Assume the learning rate is small s.t. $\eta\leq \frac{1}{BL(w_t)}$, we have</p>
+
+\[L(w_{t+1})\leq L(w_t) - \frac{\eta}{2} \|\nabla L(w_t)\|^2\]
+
+<p>and we also have</p>
+
+\[L(w_{t+1})\geq L(w_t) - \eta \|\nabla L(w_t)\|^2.\]
+
+<p>From these equations we can obtain $L(w_t)=\Theta(\frac{1}{t})$, guided by $\frac{1}{t+1}-\frac{1}{t}=\Theta(\frac{1}{t^2})$.
+Formally, for a positive sequence $a_t$ that satisfies $a_{t+1}\leq a_t -\epsilon a_t^2$ where $\epsilon$ is a small positive number, we can deduce</p>
+
+\[\begin{align*}
+    \frac{1}{a_{t+1}}&amp;\geq \frac{1}{a_t}+\frac{\epsilon}{1-\epsilon a_t}\\
+        &amp;\geq \frac{1}{a_t}+\epsilon .
+\end{align*}\]
 
             </article>
           

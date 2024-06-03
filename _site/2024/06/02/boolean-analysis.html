@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Boolean Analysis</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Boolean Analysis</h1>
+              <p class="meta">Jun 2, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>Denote</p>
+
+\[x^S=\prod_{i\in S} x_i \quad (\text{with } x^\emptyset=1\text{ by convention})\]
+
+<p>we also use the notation $\chi_S(x):=x^S$ to think of the monomial $x^S$ as a function on $x=(x_1,\cdots,x_n)\in\mathbb R^n$.</p>
+
+<h1 id="fourier-expansion">Fourier Expansion</h1>
+
+<p>Define an inner product on pairs of function $f,g:\{-1,1\}^n\to\mathbb R$ by</p>
+
+\[\left\langle f,g \right\rangle := \frac{1}{2^n}\sum_{x\in\{-1,1\}^n} f(x)g(x) = \EE_{x\sim\{-1,1\}^n} f(x)g(x).\]
+
+<p>Then the $2^n$ parity functions $\chi_S$ forms an orthonormal basis for the vector space $V$ of functions $\{-1,1\}\to\RR^n$.</p>
+
+<p>Thus every function $f:\{-1,1\}^n\to\mathbb R$ can be uniquely expressed as a multilinear polynomial,</p>
+
+\[f(x)=\sum_{S\subset [n]}\hat{f}(S)\chi_S(x),\]
+
+<p>where the fourier coefficients are given by</p>
+
+\[\hat{f}(S)=\left\langle f,\chi_S(x) \right\rangle .\]
+
+<p>Examples:</p>
+<ul>
+  <li>$\text{min}_2(x_1,x_2)=-\frac{1}{2}+\frac{1}{2}x_1+\frac{1}{2}x_2+\frac{1}{2}x_1x_2$</li>
+  <li>$\text{min}_3(x_1,x_2,x_3)=-\frac{3}{4}+\frac{1}{4}x_1+\frac{1}{4}x_2+\frac{1}{4}x_3+\frac{1}{4}x_1x_2+\frac{1}{4}x_2x_3+\frac{1}{4}x_1x_3+\frac{1}{4}x_1x_2x_3$</li>
+</ul>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
