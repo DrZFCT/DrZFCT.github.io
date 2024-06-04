@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Estimation of Heavy Tails</title>
+        <title>Stability of Lindblad's Equation</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,13 +44,35 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Estimation of Heavy Tails</h1>
-              <p class="meta">May 11, 2024 • Kaizhao Liu</p>
+              <h1>Stability of Lindblad's Equation</h1>
+              <p class="meta">Jun 3, 2024 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>In this article, I breifly introduce some current methods of estimating the tail of a heavy tail distributions.</p>
+            <p>Under certain conditions the evolution of a quantum system interacting with its environment can be described by a quantum dynamical semigroup and shown to satisfy a Lindblad master equation</p>
 
+\[\begin{equation}\label{eq:lindblad}
+    \dot{\rho}(t)=-i[H,\rho]+\cL_D\rho(t)
+\end{equation}\]
+
+<p>where $\rho(t)$ is positive unit-trace operator</p>
+
+<h1 id="bloch-representation">Bloch Representation</h1>
+
+<p>From a mathematical point of view the Lindblad master equation is a complex matrix differential equation.
+To use dynamical systems tools to study its stationary solutions and the stability, it is desirable to find a real representation for $\ref{eq:lindblad}$
+by choosing an orthonormal basis $\bm \sigma=\{\sigma_k\}_{k=1}^{N^2}$ for all Hermitian matrices on $\cH$.</p>
+
+<h1 id="characterization-of-the-stationary-states">Characterization of the Stationary States</h1>
+
+<p>Let</p>
+
+\[\mathfrak{E}=\{\rho|\dot{\rho}=\cL(\rho)=0\}\]
+
+<p>be the set of steady states for the dynamic given by $\ref{eq:lindblad}$</p>
+
+<p>Reference: <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.81.062306">Stabilizing open quantum systems by Markovian reservoir engineering
+</a></p>
 
             </article>
           

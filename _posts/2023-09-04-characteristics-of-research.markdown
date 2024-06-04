@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unlocking the Essential Characteristics of Research"
+title: "Unlocking the Essential Characteristics of Doing Research"
 author: Kaizhao Liu
 ---
 

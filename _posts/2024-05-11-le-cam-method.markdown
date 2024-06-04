@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Le Cam Method
+title: Le Cam Methods
 author: Kaizhao Liu
 
 ---

@@ -13,7 +13,6 @@ $$
 \begin{equation}\label{eq:lindblad}
     \dot{\rho}(t)=-i[H,\rho]+\cL_D\rho(t)
 \end{equation}
- 
 $$
 
 where $\rho(t)$ is positive unit-trace operator

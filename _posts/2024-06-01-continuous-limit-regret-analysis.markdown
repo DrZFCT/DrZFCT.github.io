@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Continuos Regret Analysis
+title: Continuous Regret Analysis
 author: Kaizhao Liu
 
 ---

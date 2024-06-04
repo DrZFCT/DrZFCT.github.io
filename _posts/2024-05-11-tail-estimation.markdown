@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tail Estimation
+title: Estimation of Heavy Tails 
 author: Kaizhao Liu
 
 ---

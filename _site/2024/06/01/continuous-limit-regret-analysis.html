@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Continuos Regret Analysis</title>
+        <title>Continuous Regret Analysis</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,13 +44,35 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Continuos Regret Analysis</h1>
+              <h1>Continuous Regret Analysis</h1>
               <p class="meta">Jun 1, 2024 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
             <p>lexing’s paper</p>
 
+<h1 id="online-linear-optimization">Online Linear Optimization</h1>
+
+<p>At each round $t=1,\cdots,T$</p>
+<ul>
+  <li>The learner picks $x_t\in X$.</li>
+  <li>The opponent picks reward $r_t\in [0,1]^d$.</li>
+  <li>The learner observes $r_t$ and gets reward $x_t^\top r_t$.</li>
+</ul>
+
+<p>The regret is defined as</p>
+
+\[R=\max_{x\in X} x^\top \sum_{t=0}^T r_t - \sum_{t=0}^T  x_t^Tr_t .\]
+
+<p>Regret is defined as the difference between the reward that could have been achieved by a <strong>single</strong> action,
+given the choices of the opponent, and what was actually achieved.</p>
+
+<p>Note that the “best action” is chosen with full knowledge of the
+opponent’s whole sequence of actions, whereas the action of the learner at time $t$ must be based solely on the past history $r_0,\cdots,r_{t-1}$.</p>
+
+<p>Also note that the opponent can be adversarial as the reward $r_t$ can be based on the learner’s action $x_t$</p>
+
+<p>Is there any game theoretical explanation???</p>
 
             </article>
           
