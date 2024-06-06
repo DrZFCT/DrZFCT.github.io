@@ -22,8 +22,34 @@ To analysis the effect of finite learning rate, let us first investigate a *phen
 Namely we consider the quadratic loss:
 
 $$
-f(x)=\frac{1}{2}x^\top Ax .
+f(x,y)=\frac{1}{2}y^\top H(x) y .
 $$
+
+where $x\in \RR^m$, $y\in\RR^n$, and $H(x)\in \RR^{n+m}$ is positive definite.
+Then it is easy to see the global minima is $M=\\{(x,y):y=0\\}$.
+
+The GD update is
+
+$$
+\left\{\begin{matrix}
+ x_{t+1}=x_t-\frac{\eta}{2}y_t^\top\nabla H(x)y_t   \\
+  y_{t+1}=y_t-\eta H(x)y_t
+\end{matrix}\right. .
+$$
+
+The Hessian near $M$ is 
+
+$$
+\nabla^2f=\begin{pmatrix}
+ y^\to\nabla^2 H(x) & \nabla H(x) y\\
+ y^\top \nabla H(x) & H(x)
+\end{pmatrix}\approx
+\begin{pmatrix}
+0  &  0\\
+0  & H(x)
+\end{pmatrix}.
+$$
+
 
 
 # GD Converges to Max-Margin Solutions

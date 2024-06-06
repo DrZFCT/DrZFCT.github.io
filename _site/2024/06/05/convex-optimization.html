@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Convex Optimization</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Convex Optimization</h1>
+              <p class="meta">Jun 5, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>Consider the general constrained optimization problem (P) shown below, where we have not assumed anything regarding
+the functions $f$, $h$, $l$ (like convexity).</p>
+
+\[\begin{array}{ll}
+&amp;\text{(P)}\\  \min\limits_{x} &amp;f(x) \\
+ \text{subject to} 
+&amp; h_i(x) \leq 0, \quad i = 1, \ldots, m \\
+&amp; l_j(x) = 0, \quad j = 1, \ldots, r
+\end{array}\]
+
+<h1 id="langrangian">Langrangian</h1>
+
+<p>Define the Lagrangian</p>
+
+\[L(x, u, v) = f(x) + \sum_{i=1}^{m} u_i h_i(x) + \sum_{j=1}^{r} v_j l_j(x).\]
+
+<p>where $u\in\RR^m$, $v\in\RR^r$, and $u\geq 0$.</p>
+
+<p>Then we have</p>
+
+\[L(x, u, v)\leq f(x),\]
+
+<p>i.e. the Lagrangian $L(x, u, v)$ is always a lower bound for the primal criterion
+$f(x)$ for any dual feasible $u,v$.</p>
+
+<p>And so, we have that if $f^*$ is the primal optimal value and $C$ is the primal feasible set, then</p>
+
+\[f^*\geq \min_{x\in C} L(x,u,v)\geq \min_x L(x,u,v):=g(u,v),\]
+
+<p>where the function</p>
+
+\[g(u, v) = \min_{x} L(x, u, v)\]
+
+<p>is called the Lagrange dual function, and it provides a lower bound on the optimal value $f^*$ for any dual feasible $u,v$.</p>
+
+<h1 id="dual-problem">Dual Problem</h1>
+
+<p>We define $G$ as the dual of $P$ by maximizing $g(u,v)$ over all dual feasible $u, v$.</p>
+
+\[\begin{array}{ll}
+&amp;\text{(G)} \\ \max\limits_{u,v} &amp;g(u,v) \\
+ \text{subject to} 
+&amp; u \geq 0
+\end{array}\]
+
+<p>A very interesting property is that the dual problem is a convex optimization problem (even if the primal problem is non-convex) problem in $u, v$,
+as $g(u, v)$ can be expressed as the negative of pointwise maximum of convex functions in $(u, v)$.</p>
+
+<h3 id="weak-duality">Weak Duality</h3>
+
+<p>If the dual optimal value is $g^*$, then</p>
+
+\[f^*\geq g^*.\]
+
+<p>This always holds (even if the primal problem is nonconvex) and is called the <strong>weak duality property</strong>.</p>
+
+<h3 id="slaters-condition">Slater’s Condition</h3>
+
+<p>In some problems, we have $f^* = g^*$, known as <strong>strong duality</strong>. For example, if <strong>Slater’s condition</strong> holds, then we have strong duality.</p>
+
+<p>Slater’s condition:</p>
+<ul>
+  <li>The primal is a convex problem, i.e. $f$ is convex, $h_i$ is convex, and $l_j$ is affine.</li>
+  <li>There exists at least one strictly feasible $x\in\RR^n$, i.e. $h_i(x)&lt;0$ for every $i$.
+    <ul>
+      <li>An extension maintains that strict inequalities only need to hold over $h_i (x)$ that are not affine.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="duality-gap">Duality Gap</h3>
+
+<p>The duality gap for $x,u,v$ is $f (x) − g (u, v)$. It satisfies</p>
+
+\[0\leq f(x)-f^*\leq f(x)-g(u,v).\]
+
+<p>This implies that a zero duality gap indicates an optimal value for both the primal and the dual.</p>
+
+<h1 id="kkt-conditions">KKT Conditions</h1>
+
+<p>We first state the KKT conditions associated with problem $P$, they are:</p>
+
+<ul>
+  <li><strong>Stationarity Condition</strong>: for the given dual variable pair $u, v$, the point $x$ minimizes the lagrangian $L(x, u, v)$</li>
+</ul>
+
+\[0 \in \partial \left( f(x) + \sum_{i=1}^{m} u_i h_i(x) + \sum_{j=1}^{r} v_j l_j(x) \right)\]
+
+<ul>
+  <li><strong>Complementary Slackness</strong></li>
+</ul>
+
+\[u_i \cdot h_i(x) = 0, \quad i = 1, \ldots, m\]
+
+<ul>
+  <li><strong>Primal feasibility</strong></li>
+</ul>
+
+\[h_i(x) \leq 0, \quad i = 1, \ldots, m\]
+
+\[l_j(x) = 0, \quad j = 1, \ldots, r\]
+
+<ul>
+  <li><strong>Dual Feasibility</strong></li>
+</ul>
+
+\[u_i \geq 0, \quad i = 1, \ldots, m\]
+
+<p>KKT conditions on $x, u, v$ are in a very broad sense equivalent to having an optimal primal solution $x$ and optimal dual solution $u, v$ at the same time.</p>
+
+<h3 id="necessity">Necessity</h3>
+
+<p>First we show that if  $x^* , u^* , v^* $ are the primal and dual solutions respectively <em>with zero duality gap</em>, then they satisfy the KKT conditions.</p>
+
+\[\begin{align*}
+    f(x^*)&amp;=g(u^*,v^*)\\
+    &amp;=\min_x f(x)+\sum_{i=1}^{m} u_i^* h_i(x) + \sum_{j=1}^{r} v_j^* l_j(x)\\
+    &amp;\leq f(x^*)+\sum_{i=1}^{m} u_i^* h_i(x^*) + \sum_{j=1}^{r} v_j^* l_j(x^*)\\
+    &amp;\leq f(x^*)
+\end{align*}\]
+
+<p>which means that all inequalities can be replaced by equalities, yielding the KKT conditions.</p>
+
+<h3 id="sufficiency">Sufficiency</h3>
+
+<p>Next we show that if there exists $x^* , u^* , v^* $ that satisfy KKT conditions, then $x^* , u^* , v^* $ are primal and dual optimal.</p>
+
+\[\begin{align*}
+    g(u^*,v^*)&amp;=f(x^*)+\sum_{i=1}^{m} u_i^* h_i(x^*) + \sum_{j=1}^{r} v_j^* l_j(x^*)\\
+    &amp;=f(x^*)
+\end{align*}\]
+
+<p>which indicates zero duality gap.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
