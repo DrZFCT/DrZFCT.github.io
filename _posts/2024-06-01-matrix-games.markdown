@@ -198,7 +198,7 @@ $$
 f(x)=\frac{C_1}{x}+C_2.
 $$
 
-Plugging this to $$\sum_{i\ne j} \pi_if(\frac{\pi_i}{\pi_j})=-C\pi$$ yields $C_2=0$ and $C=(1-n)C_1$. So $C_1=0$ and $f\equiv 0$, which is absurd.
+Plugging this to $$\sum_{i\ne j} \pi_if(\frac{\pi_i}{\pi_j})=-C\pi_j$$ yields $C_2=0$ and $C=(1-n)C_1$. So $C_1=0$ and $f\equiv 0$, which is absurd.
 
 Note that if we allow $C$ to depend on $n$, this is exactly the payoff matrix in Equation $\ref{eq:ratio}$.
 
