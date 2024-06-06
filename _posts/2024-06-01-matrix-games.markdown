@@ -74,26 +74,29 @@ Let us reformulated it into a convex optimization problem.
 
 
 $$
-\begin{aligned}
-&\text{(P)}\\  
+\begin{equation}\tag{P}
+    \begin{aligned}
 \min_{\pi}\quad\quad\quad &\max_j \sum_{i=1}^n\alpha_{ij}\pi_i \\
 \text{subject to} \ \
 & -\pi_i \leq 0, \quad i = 1, \ldots, n \\
 & \sum_{i=1}^n \pi_i- 1=0
 \end{aligned}
+\end{equation}
+
 $$
 
 Let us further reformulate this problem into the epigraph form by introducing a single varaible $t\in\mathbb{R}$.
 
 $$
-\begin{aligned}
-&\text{(P)}\\  
+\begin{equation}\tag{P}
+    \begin{aligned}
 \min_{\pi,t}\quad\quad\quad &t \\
 \text{subject to}  \ \ 
 & \sum_{i=1}^n\alpha_{ij}\pi_i-t\leq 0, \quad j = 1, \ldots, n \\
 & -\pi_i \leq 0, \quad i = 1, \ldots, n \\
 & \sum_{i=1}^n \pi_i- 1=0
 \end{aligned}
+\end{equation}
 $$
 
 We can easily see that Slater's condition is satisfied for this problem, so the KKT points are equivalent to primal and dual solutions.
@@ -145,7 +148,7 @@ or
 
 $$
 \begin{equation}\label{eq:ratio}
-    \alpha_{ij}=-\frac{\pi_j^*}{\pi_i^*}+n\delta_{ij}
+    \alpha_{ij}=-\frac{\pi_j^*}{\pi_i^*}+n\delta_{ij}\tag{1}
 \end{equation}
 $$
 
@@ -197,5 +200,5 @@ $$
 
 Plugging this to $$\sum_{i\ne j} \pi_if(\frac{\pi_i}{\pi_j})=-C\pi$$ yields $C_2=0$ and $C=(1-n)C_1$. So $C_1=0$ and $f\equiv 0$, which is absurd.
 
-Note that if we allow $C$ to depend on $n$, this is exactly the payoff matrix $$\alpha_{ij}=-\frac{\pi_j^*}{\pi_i^*}+n\delta_{ij}$$ we have encountered above.
+Note that if we allow $C$ to depend on $n$, this is exactly the payoff matrix in Equation $\ref{eq:ratio}$.
 
