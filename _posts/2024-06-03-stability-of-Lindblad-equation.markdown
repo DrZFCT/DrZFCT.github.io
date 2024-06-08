@@ -41,19 +41,41 @@ $$
 
 and $\sigma_{N^2}=\frac{1}{\sqrt{N}}\II$.
 
-The state of the systen $\rho$ can then be represented as a real vector $\br$
+The state of the systen $\rho$ can then be represented as a real vector $\br=(r_k)\in\RR^{N^2}$ of coordinates with respect to this basis $$\{\sigma_k\}$$,
 
+$$
+\rho=\sum_{k=1}^{N^2}r_k\sigma_k,
+$$
 
+where $r_k$ can be calculated by $\tr(\rho\sigma_k)$.
+
+Thus the Lindblad dynamics $\ref{eq:lindblad}$ can be rewritten as a real systems of differential equations:
+
+$$
+\dot{\br}=(\bL+\sum_d \bD^{(d)})\br,
+$$
+
+where $\bL,\bD^{(d)}$ are real $N^2\times N^2$ matrices with entries
+
+$$
+\begin{align}
+    &L_{mn}=\tr(iH[\sigma_m,\sigma_n])\\
+    &D^{(d)}_{mn}=\tr(V_d^\dagger\sigma_m V_d\sigma_n)-\frac{1}{2}\tr(V_d^\dagger V_d\{\sigma_m,\sigma_n\})
+\end{align}
+$$
 
 # Characterization of the Stationary States
 
 Let
 
 $$
-\mathfrak{E}=\{\rho|\dot{\rho}=\cL(\rho)=0\}
+\mathfrak{E}_{ss}=\{\rho|\dot{\rho}=\cL(\rho)=0\}
 $$
 
 be the set of steady states for the dynamic given by Equation $\ref{eq:lindblad}$.
+It is convex as Equation $\ref{eq:lindblad}$ is linear.
+
+We can show that $\mathfrak{E}_{ss}$ is always non-empty using Brouwer's Fixed Point Theorem.
 
 
 
