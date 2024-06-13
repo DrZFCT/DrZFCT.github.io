@@ -84,6 +84,7 @@ If $\rho_s=s\rho_0+(1-s)\rho_1$ is a convex combination of the positive operator
 then the support of $\rho_0$ and $\rho_1$ is contained in the support of $\rho_s$. Further, $\text{rank}(\rho_s)$ is constant for all $0<s<1$.
 - The support of $\rho$ is defined by $\text{supp}(\rho)^\perp:=\{v\in\cH|v^\dagger\rho v=0\}$. As $\rho$ is positive, we have $\{v|v^\dagger\rho v=0\}=\{v\in\cH|\rho v=0\}=\ker \rho$, so $\text{supp}(\rho)=\text{im}\rho$.
 - For $v\in \text{supp}(\rho_s)^\perp$, $0=v^\dagger\rho_s v = s v^\dagger\rho_0 v + (1-s)v^\dagger\rho_1 v$. Thus, $v^\dagger\rho_0 v=v^\dagger\rho_1 v=0$, so $\text{supp}(\rho_0)\subset\text{supp}(\rho_s)$ and $\text{supp}(\rho_1)\subset\text{supp}(\rho_s)$.
+- For $s\neq t$ and $s,t\in (0,1)$, $\rho_s$ can be written as a convex combination of $\rho_t$ and either $\rho_0$ or $\rho_1$, and vice versa. So $\text{supp}(\rho_s)=\text{supp}(\rho_t)$. Notice that $\text{rank}(\rho_s)=\dim\text{im}\rho$, we yield the desired result.
 
 
 Reference: [Stabilizing open quantum systems by Markovian reservoir engineering
