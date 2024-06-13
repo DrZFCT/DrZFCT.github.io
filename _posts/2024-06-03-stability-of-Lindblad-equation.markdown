@@ -77,6 +77,10 @@ It is convex as Equation $\ref{eq:lindblad}$ is linear.
 
 We can show that $\mathfrak{E}_{ss}$ is always non-empty using Brouwer's Fixed Point Theorem.
 
+As any convex set is the convex hull of its extremal points,
+next we want to characterize the extremal points of $\mathfrak{E}_{ss}$.
+
+
 
 
 Reference: [Stabilizing open quantum systems by Markovian reservoir engineering
