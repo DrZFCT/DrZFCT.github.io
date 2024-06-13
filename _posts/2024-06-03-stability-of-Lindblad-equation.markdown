@@ -80,7 +80,10 @@ We can show that $\mathfrak{E}_{ss}$ is always non-empty using Brouwer's Fixed P
 As any convex set is the convex hull of its extremal points,
 next we want to characterize the extremal points of $\mathfrak{E}_{ss}$.
 
-
+If $\rho_s=s\rho_0+(1-s)\rho_1$ is a convex combination of the positive operators $\rho_0,\rho_1$ with $0<s<1$,
+then the support of $\rho_0$ and $\rho_1$ is contained in the support of $\rho_s$. Further, $\text{rank}(\rho_s)$ is constant for all $0<s<1$.
+- The support of $\rho$ is defined by $\text{supp}(\rho)^\perp:=\{v\in\cH|v^\dagger\rho v=0\}$. As $\rho$ is positive, we have $\{v|v^\dagger\rho v=0\}=\{v\in\cH|\rho v=0\}=\ker \rho$, so $\text{supp}(\rho)=\text{im}\rho$.
+- For $v\in \text{supp}(\rho_s)^\perp$, $0=v^\dagger\rho_s v = s v^\dagger\rho_0 v + (1-s)v^\dagger\rho_1 v$. Thus, $v^\dagger\rho_0 v=v^\dagger\rho_1 v=0$, so $\text{supp}(\rho_0)\subset\text{supp}(\rho_s)$ and $\text{supp}(\rho_1)\subset\text{supp}(\rho_s)$.
 
 
 Reference: [Stabilizing open quantum systems by Markovian reservoir engineering
