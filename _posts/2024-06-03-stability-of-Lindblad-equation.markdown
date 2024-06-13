@@ -15,7 +15,7 @@ $$
 \end{equation}
 $$
 
-where $\rho(t)$ is positive unit-trace operator on the system's Hilbert space $\cH$, and $$\cL_D\rho(t)=\sum_d \cD[V_d]\rho(t)$$  ,where $V_d$ are operators on $\cH$ and 
+where $\rho(t)$ is positive unit-trace operator on the system's Hilbert space $\cH$, and $$\cL_D\rho(t)=\sum_d \cD[V_d]\rho(t)$$, where $V_d$ are operators on $\cH$ and 
 
 $$
 \cD[V_d]\rho(t):=V_d\rho V_d^\dagger -\frac{1}{2}\{V_d^\dagger V_d,\rho\}.
