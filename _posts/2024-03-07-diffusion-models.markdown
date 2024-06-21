@@ -135,7 +135,7 @@ $$
 where $B_s$ is a standard $m$-dimensional Brownian motion. Assume that $Z$ has density $p_Z$, which satisfies the Fokker-Planck equation given by 
 
 $$
-\partial_t p_Z=\text{Re} \frac{1}{2}\sum_{i,j}\frac{\partial^2 p_Z(\sigma\sigma^\top)_{ij}}{\partial z_i \partial z_j}+\frac{\partial^2 p_Z(\sigma\sigma^\dagger)_{ij}}{\partial z_i \partial \bar{z_j}} - \sum_{i=1}^n \frac{\partial f_i p_Z}{\partial z_i}.
+\partial_t p_Z=\text{Re}\left\{ \frac{1}{2}\sum_{i,j}\left(\frac{\partial^2 p_Z(\sigma\sigma^\top)_{ij}}{\partial z_i \partial z_j}+\frac{\partial^2 p_Z(\sigma\sigma^\dagger)_{ij}}{\partial z_i \partial \bar{z_j}}\right) - \sum_{i=1}^n \frac{\partial f_i p_Z}{\partial z_i} \right\}.
 $$
 
 
