@@ -20,4 +20,11 @@ In more formal terms, if $\cL$ is an operator describing the system, coercivity 
 
 
 
+# A Theorectical Framework for Bounding the Mixing Time of Lindbladian Dynamics
 
+
+### Notation
+
+
+
+### Intuition

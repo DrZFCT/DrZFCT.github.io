@@ -10,6 +10,8 @@ Then we mainly focus on the mathematical structures behind it.
 
 # Postulates of Quantum Mechanics
 
+---
+
 #### Postulate 1: Associated to any isolated physical system is a complex Hilbert space (*a.k.a. state space of the system*). The system is completely described by its state vector, which is a unit vector in the system’s state space.
 
 Quantum mechanics does not tell us what the state space is for a given physical system, nor does the state vector. *Figuring that out for a specific system is a difficult problem for which physicists have developed many intricate and beautiful rules, for example quantum electrodynamics.*
@@ -55,7 +57,10 @@ $$
 #### Postulate 4: The state space of a composite physical system is the tensor product of the state spaces of the component physical systems.
 
 
+
 # Density Matrix
+
+---
 
 The density matrix formulation is mathematically equivalent to the state vector appraoch, but it provides a convenient tool for describing quantum systems whose state is not completely known.
 
@@ -96,8 +101,22 @@ $$
 where $u_{ij}$ is a unitary matrix of complex numbers.
 
 
+# Composite Systems 
+
+(**Schmidt decomposition**) For every vector $\ket{\psi}\in \cH_A\otimes\cH_B$, there exist orthonormal basis $\\{e_j\in \cH_A\\}$ and $\\{f_j\\}\in\cH_B$ such that 
+
+$$
+\ket{\psi}=\sum_{j=1}^d\lambda_j\ket{e_j}\otimes\ket{f_j}
+$$
 
 
+This is easily proved by an application of singular value decomposition.
+
+(**Tricks with maximal entanglement**) If all Schmidt coefficients of a pure state $\phi$ are $\lambda_j=\frac{1}{d}$, then $\phi$ is called *maximally entangled* of dimension $d$. Every maximally entanged state is of the form $\phi=(\mathbb 1\otimes U)\ket{\Omega}$ where $U$ is any unitary and 
+
+$$
+\ket{\Omega}=\frac{1}{\sqrt{d}}\sum_{j=1}^d \ket{j}\otimes\ket{j}.
+$$
 
 
 # Questions 

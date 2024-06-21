@@ -92,5 +92,9 @@ From this, we can see that the steady state of $\mathfrak{E}_{ss}$ is extremal i
 - 
 
 
+# Uniqueness Implies Asymptotic Stability
+
+A steady state of ? is attractive if and only if it is unique.
+
 Reference: [Stabilizing open quantum systems by Markovian reservoir engineering
 ](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.81.062306)

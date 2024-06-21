@@ -7,13 +7,13 @@ author: Kaizhao Liu
 
 Let us first recall how to reverse a classical diffusion process.
 
-Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^d\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE 
+Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^m\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE 
 
 $$
 \mathrm{d}Y_s=f(Y_s,s)\mathrm{d}s+\sigma(Y_s,s)\mathrm{d}B_s
 $$
 
-where $B_s$ is a standard $d$-dimensional Brownian motion. Assume that $Y$ has density $p_Y$, which satisfies the Fokker-Planck equation given by 
+where $B_s$ is a standard $m$-dimensional Brownian motion. Assume that $Y$ has density $p_Y$, which satisfies the Fokker-Planck equation given by 
 
 $$
 \partial_t p_Y=\text{div}(\text{div}(Dp_Y)-fp_Y),
@@ -123,6 +123,25 @@ $$
 \end{align}
 
 $$
+
+# Complex Fokker-Planck Equation
+
+Let $f:\CC^d\times [0,T]\to \CC^d$ and $\sigma:\CC^m\times [0,T]\to \CC^d$, let the $\CC^d$-valued stochastic process $Z=(Z_s)_{s\in [0,T]}$ be the solution to the SDE 
+
+$$
+\mathrm{d}Z_s=f(Z_s,s)\mathrm{d}s+\sigma(Z_s,s)\mathrm{d}B_s
+$$
+
+where $B_s$ is a standard $m$-dimensional Brownian motion. Assume that $Z$ has density $p_Z$, which satisfies the Fokker-Planck equation given by 
+
+$$
+\partial_t p_Z=\text{Re} \sum_{i,j}\frac{\partial^2 p(\sigma\sigma^\top)_{ij}}{\partial z_i \partial z_j}+frac{\partial^2 p(\sigma\sigma^\dagger)_{ij}}{\partial z_i \partial \bar{z_j}} - \sum_{i=1}^n \frac{\partial bp}{\partial z_i}.
+$$
+
+
+
+
+
 
 # Reversing Lindblad Equation via Stochastic Unraveling
 
