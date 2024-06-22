@@ -143,9 +143,43 @@ $$
 
 
 
-# Reversing Lindblad Equation via Stochastic Unraveling
+# Stochastic Unraveling
 
-$\CC^n$-valued diffusion process
+Unraveling means a stochastic wave-equation that recovers the evolution of density matrices $ρ(t)$ in expectation. More specifically, it looks for a stochastic process $X_t(\omega)$ on the Hilbert space $\CC^d$, such that the expectation $ρ(t):=\EE X_t(\omega)X_t^\dagger (\omega)$ solves the Lindblad equation. 
+
+Formally, a density matrix is an expectation of pure states $\ket{\phi}\bra{\phi}$. We seek a SDE that describes the evolution of each $\ket{\phi}$:
+
+$$
+\ket{\mathrm d \phi}=\ket{v}\mathrm d t+\sum_j \ket{u_j}\mathrm d \xi_j
+$$
+
+where $\xi_j$ are independent complex Brownian motions.
+
+
+
+Using Ito calculus,
+
+$$
+\mathrm d \ket{\phi}\bra{\phi}=  \ket{\mathrm d\phi}\bra{\phi} + \ket{\phi}\bra{\mathrm d\phi} + \ket{\mathrm d\phi}\bra{\mathrm d\phi}.
+$$
+
+Noting that 
+
+$$
+\mathrm d \xi_j^\dagger \mathrm d \xi_k = 2\delta_{jk}\mathrm d t ,
+$$
+
+we obtain
+
+$$
+\mathrm d \ket{\phi}\bra{\phi}= \left(\ket{v}\bra{\phi}+\ket{\phi}\bra{v}+2\sum_j \ket{u_j}\bra{u_j} \right)\mathrm d t .
+$$
+
+Matching this with the Lindblad equation, we require
+
+$$
+\ket{v}\bra{\phi}+\ket{\phi}\bra{v}+2\sum_j \ket{u_j}\bra{u_j} = \cL (\ket{\phi}\bra{\phi}) .
+$$
 
 
 # Qubit Channel
