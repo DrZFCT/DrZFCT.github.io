@@ -21,3 +21,13 @@ author: Kaizhao Liu
 In [Permute-and-Flip: An optimally robust and watermarkable decoder for LLMs](https://arxiv.org/abs/2402.05864), the authors propose a new *sampling-based* decoding method
 
 Similar to the idea of Gumbel watermark, we can inject psuedo-randomness during the sampling
+
+# Sampling 
+
+- **Gumbel-Max** 
+
+- **Inverse Transform**
+
+- **Alias Method**
+
+Given a 
