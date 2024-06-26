@@ -11,6 +11,46 @@ In this article, I recap the classical gradient descent analysis.
 # Gradient Flow
 
 
+# Smoothness Analysis
+A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-smooth if 
+$$
+\|\nabla f(y) - \nabla f(x)\| \leq L \|y - x\| 
+$$
+holds for any $x, y \in \mathbb{R}^d$.
+
+If $f \in C^2(\mathbb{R}^d)$, the above condition is equivalent to 
+$$
+ \sup_{x} \| \nabla^2 f(x) \|_2 \leq L. 
+$$
+Consequently, we can show that smooth functions grow at most quadratically:
+
+If $f$ is $L$-smooth, we have 
+$$
+f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .
+$$
+
+### Convergence to Stationary Point
+
+Consider the following gradient descent (GD) iterates as follows:
+$$
+x_{t+1} = x_t - \eta_t \nabla f(x_t)
+$$
+where $\eta_t$ is the learning rate (also called step size) of the $t$-th step.
+
+If $\eta_t<\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.
+
+If $\eta_t=\eta<\frac{2}{L}$, then we have 
+
+$$
+f(x_{t+1})  \leq  f(x_t) + \langle x_{t+1} - x_t, \nabla f(x_t) \rangle + \frac{L}{2} \|x_{t+1} - x_t\|^2 = \left( -\eta_t + \frac{L \eta_t^2}{2} \right) \|\nabla f(x_t)\|^2 .
+$$
+
+Rearranging, we get 
+
+$$
+\|\nabla f(x_t)\|^2 \leq f(x_t)-f(x_{t+1})
+$$
+
 
 # Convex Analysis
 
