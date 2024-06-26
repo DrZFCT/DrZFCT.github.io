@@ -11,3 +11,4 @@ Deriving the asymptotics
 
 
 
+[The Laplace asymptotic expansion in high dimensions: a nonasymptotic analysis](https://arxiv.org/abs/2406.12706)
