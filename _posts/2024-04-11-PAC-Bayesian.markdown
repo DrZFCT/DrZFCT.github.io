@@ -50,3 +50,13 @@ with the optimal value
 $$
 \log \EE_\pi [e^V] = \sup_{p\in \cP(\cX)} (\EE_p[V]-\text{KL}(p||\pi)).
 $$
+
+The proof of this variational principle is based on the following observation:
+
+$$
+\begin{align}
+    \EE_p[V]-\text{KL}(p||\pi) &= \int V(x)p(x)\mathrm dx - \int p(x)\log(\frac{p(x)}{\pi(x)})\mathrm dx \\
+    &= -\int p(x)\log(\frac{p(x)}{\pi(x)e^{V(x)}})\mathrm dx \\
+    &= -\text{KL}(p||\pi_V)+\log \EE_\pi [e^V] .
+\end{align}
+$$
