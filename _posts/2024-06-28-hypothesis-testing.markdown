@@ -6,8 +6,11 @@ author: Kaizhao Liu
 ---
 
 
-# Why Hypothesis Testing Instead of Classification?
+What is the difference between Hypothesis Testing and Classification?
 
+
+
+# Neymann-Pearson Paradigm
 
 
 # Multiple Hypothesis Testing
