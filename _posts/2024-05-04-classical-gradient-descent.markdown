@@ -24,7 +24,7 @@ $$
 $$
 Consequently, we can show that smooth functions grow at most quadratically:
 
-> If $f$ is $L$-smooth, we have 
+If $f$ is $L$-smooth, we have 
 $$
 f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .
 $$
