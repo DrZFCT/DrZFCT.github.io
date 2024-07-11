@@ -55,3 +55,20 @@ Another less elegant way is to recursively differentiate $Y(t)$ and comparing th
 
 # Dyson Series
 
+
+
+
+# Wick's Theorem
+
+In probability theory, Isserlis' theorem is a formula that allows one to compute higher-order moments of the multivariate normal distribution in terms of its covariance matrix.
+This theorem is introduced to particle physics by Wick, so it is known as Wick's theorem.
+
+If $(X_1, \dots, X_n)$ is a zero-mean multivariate normal random vector, then
+
+$$
+\operatorname{E} [X_1 X_2 \cdots X_n] = \sum_{p \in P_{n}^{2}} \prod_{\{i,j\} \in p} \operatorname{E} [X_i X_j] = \sum_{p \in P_{n}^{2}} \prod_{\{i,j\} \in p} \operatorname{Cov} (X_i, X_j),
+$$
+
+where the sum is over all the pairings of $\{1, \ldots, n\}$, i.e., all distinct ways of partitioning $\{1, \ldots, n\}$ into pairs $\{i,j\}$, and the product is over the pairs contained in $p$.
+
+More generally, if $(Z_1, \dots, Z_n)$ is a zero-mean complex-valued multivariate normal random vector, then the formula still holds. This is because the formula is linear on both sides, so we get the complex case from real case for free.

@@ -136,7 +136,6 @@ and noticing that
 
 $$
 \frac{\mathrm d J(t)}{\mathrm d t} = f(x_t) - f(\bar{x}) - t \|\nabla f(x_t)\|^2 + \langle \bar{x} - x_t, \nabla f(x_t) \rangle \leq -t \|\nabla f(x_t)\|^2 \leq 0 .
-
 $$
 
 
@@ -154,6 +153,15 @@ $$
 In particular, when $\alpha = 1$, it is often referred to as the Polyak-Lojasiewicz (PL) inequality.
 
 
+$$
+\begin{align*}
+    f(x_{t+1})-f(x^*)&\leq f(x_t)-f(x^*)-\frac{1}{2L}\|\nabla f(x_t)\|^2 \\
+    &\leq f(x_t)-f(x^*)-\frac{\mu}{2L}(f(x_t)-f(x^*))^\alpha 
+\end{align*}
+$$
+
+When $\alpha=1$, this lead to exponential convergence as 
+
 ### Special Case: Strongly Convexity
 
 A function $f\in C^1(\RR^d)$ is $\lambda$-strongly convex if 
@@ -170,7 +178,23 @@ $$
 
 and then taking $y$ to be the minimum.
 
+Note that we can also yield the convergence of $x_t$.
 
+### Gradient Flow Version
+
+Suppose $\inf_x f(x)=0$.
+
+$$
+\frac{\mathrm d f(x_t)}{\mathrm dt}=-\|\nabla f(x_t)\|^2\leq -\mu f(x_t)^\alpha .
+$$
+
+- If $\alpha > 1$, then $f(x_t) \sim t^{-1/(\alpha - 1)}$.
+- If $\alpha = 1$, then $f(x_t) \sim e^{-t}$.
+- If $\alpha < 1$, then
+    $$
+    f(x_t) \leq (f(x_0) - \lambda(1 - \alpha)t)^{1/(1 - \alpha)} \quad \forall t < \frac{f(x_0)^{1 - \alpha}}{\lambda(1 - \alpha)}.
+    $$
+    This means that $x_t$ stops at finite time.
 
 
 
