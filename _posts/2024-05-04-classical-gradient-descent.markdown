@@ -156,7 +156,7 @@ In particular, when $\alpha = 1$, it is often referred to as the Polyak-Lojasiew
 $$
 \begin{align*}
     f(x_{t+1})-f(x^*)&\leq f(x_t)-f(x^*)-\frac{1}{2L}\|\nabla f(x_t)\|^2 \\
-    &\leq f(x_t)-f(x^*)-\frac{\mu}{2L}(f(x_t)-f(x^*))^\alpha 
+    &\leq f(x_t)-f(x^*)-\frac{\mu}{L}(f(x_t)-f(x^*))^\alpha 
 \end{align*}
 $$
 
@@ -170,7 +170,7 @@ $$
 f(y)\geq f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2.
 $$
 
-If f is strongly convex with constant $\lambda$, then f also satisfy the PL condition with constant $\lambda$. This can be easily verified by noting that 
+If f is strongly convex with constant $\lambda$, then f also satisfy the PL condition with constant $2\lambda$. This can be easily verified by noting that 
 
 $$
  f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2 \geq -\frac{1}{2\lambda}\|\nabla f(x)\|^2 ,
