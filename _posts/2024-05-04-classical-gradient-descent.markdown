@@ -8,7 +8,6 @@ author: Kaizhao Liu
 In this article, I recap the classical gradient descent analysis.
 
 
-# Gradient Flow
 
 
 # Smoothness Analysis
@@ -24,7 +23,7 @@ $$
 $$
 Consequently, we can show that smooth functions grow at most quadratically:
 
-If $f$ is $L$-smooth, we have 
+> If $f$ is $L$-smooth, we have 
 $$
 f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .
 $$
@@ -33,9 +32,11 @@ $$
 ### Convergence to Stationary Point
 
 Consider the following gradient descent (GD) iterates as follows:
+
 $$
 x_{t+1} = x_t - \eta_t \nabla f(x_t)
 $$
+
 where $\eta_t$ is the learning rate (also called step size) of the $t$-th step.
 
 If $\eta_t<\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.
@@ -52,8 +53,53 @@ $$
 \eta (1-\frac{L}{2}\eta)\cdot\|\nabla f(x_t)\|^2 \leq  f(x_t)-f(x_{t+1}).
 $$
 
+From this we can immediately see 
+
+$$
+\min_{s< T}\|\nabla f(x_t)\| \leq \sqrt{\frac{f(x_0)-\inf_x f(x)}{\eta (1-\frac{L}{2}\eta) T}}.
+$$
+
+Notice that it is not a guarantee on the last iterate $\|\nabla f(x_T)\|$. We may get near a flat region at some point, but bounce out later.
+
+### Gradient Flow Version
+
+The gradient flow (GF) is 
+
+$$
+\dot{x_t}=-\nabla f(x_t).
+$$
+
+> Let $f\in C^1(\RR^d)$. Then we have 
+$$
+\inf_{s\in [0,T]} \|\nabla f(x_s)\| \leq \sqrt{\frac{f(x_0)-\inf_x f(x)}{T}}.
+$$
+
+We can prove this by noting that 
+
+$$
+\frac{\mathrm d f(x_t)}{\mathrm dt}=-\|\nabla f(x_t)\|^2 .
+$$
 
 # Convex Analysis
+
+
+
+### Gradient Flow Version
+
+Suppose that 
+
+# Strongly Convex Analysis
+
+A function $f\in C^1(\RR^d)$ is $\lambda$-strongly convex if 
+
+$$
+f(y)\geq f(x)+\langle f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2.
+$$
+
+
+# KL Analysis
+
+
 
 
 # Effect of Finite Learning Rate: a Phenomenological Model
