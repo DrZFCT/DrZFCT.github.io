@@ -24,8 +24,8 @@ $$
 $$
 Consequently, we can show that smooth functions grow at most quadratically:
 
-If $f$ is $L$-smooth, we have 
-$$
+> If $f$ is $L$-smooth, we have 
+> $$
 f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .
 $$
 
@@ -42,13 +42,13 @@ If $\eta_t<\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.
 If $\eta_t=\eta<\frac{2}{L}$, then we have 
 
 $$
-f(x_{t+1})  \leq  f(x_t) + \langle x_{t+1} - x_t, \nabla f(x_t) \rangle + \frac{L}{2} \|x_{t+1} - x_t\|^2 = \left( -\eta_t + \frac{L \eta_t^2}{2} \right) \|\nabla f(x_t)\|^2 .
+f(x_{t+1})  \leq  f(x_t) + \langle x_{t+1} - x_t, \nabla f(x_t) \rangle + \frac{L}{2} \|x_{t+1} - x_t\|^2 = f(x_t) +\left( -\eta_t + \frac{L \eta_t^2}{2} \right) \|\nabla f(x_t)\|^2 .
 $$
 
 Rearranging, we get 
 
 $$
-\|\nabla f(x_t)\|^2 \leq f(x_t)-f(x_{t+1})
+\eta (1-\frac{L}{2}\eta)\cdot\|\nabla f(x_t)\|^2 \leq  f(x_t)-f(x_{t+1}).
 $$
 
 
