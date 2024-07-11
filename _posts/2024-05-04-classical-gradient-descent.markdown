@@ -12,18 +12,23 @@ In this article, I recap the classical gradient descent analysis.
 
 # Smoothness Analysis
 A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-smooth if 
+
 $$
 \|\nabla f(y) - \nabla f(x)\| \leq L \|y - x\| 
 $$
+
 holds for any $x, y \in \mathbb{R}^d$.
 
 If $f \in C^2(\mathbb{R}^d)$, the above condition is equivalent to 
+
 $$
  \sup_{x} \| \nabla^2 f(x) \|_2 \leq L. 
 $$
+
 Consequently, we can show that smooth functions grow at most quadratically:
 
-> If $f$ is $L$-smooth, we have 
+If $f$ is $L$-smooth, we have 
+
 $$
 f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .
 $$
@@ -61,6 +66,8 @@ $$
 
 Notice that it is not a guarantee on the last iterate $\|\nabla f(x_T)\|$. We may get near a flat region at some point, but bounce out later.
 
+We can actually choose 
+
 ### Gradient Flow Version
 
 The gradient flow (GF) is 
@@ -69,7 +76,8 @@ $$
 \dot{x_t}=-\nabla f(x_t).
 $$
 
-> Let $f\in C^1(\RR^d)$. Then we have 
+Let $f\in C^1(\RR^d)$. Then we have 
+
 $$
 \inf_{s\in [0,T]} \|\nabla f(x_s)\| \leq \sqrt{\frac{f(x_0)-\inf_x f(x)}{T}}.
 $$
@@ -82,22 +90,86 @@ $$
 
 # Convex Analysis
 
+A function $f\in C^1(\RR^d)$ is convex if 
 
+$$
+f(y)\geq f(x)+\langle \nabla f(x),y-x\rangle .
+$$
+
+Suppose $f$ is $L$-smooth and convex, and $\eta=\frac{1}{L}$. Then for any $\bar{x}$,
+
+$$
+f(x_t)-f(\bar{x})\leq \frac{L}{2t} (\|x_0-\bar{x}\|^2-\|x_t-\bar{x}\|^2).
+$$
+
+The proof is quite magical. Observe the potential
+
+$$
+\begin{align*}
+    \|x_{t+1}-\bar{x}\|^2&=\|x_{t}-\bar{x}\|^2 -2\eta \langle\nabla f(x_t),x_t-\bar{x}\rangle +\eta^2\|\nabla f(x_t)\|^2\\
+    &\leq \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_t)) +\eta^2\|\nabla f(x_t)\|^2\\
+    &\leq \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_t)) +2\eta (f(x_t)-f(x_{t+1}))\\
+    &= \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_{t+1})),
+\end{align*}
+$$
+
+where the second step is by convexity and the third step is by the descent lemma.
+Notice that $f(x_t)$ is decreasing in $t$, so telescoping gives the desired result.
 
 ### Gradient Flow Version
 
-Suppose that 
+Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x' \in A} \|x - x'\|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold.
 
-# Strongly Convex Analysis
+Suppose that $f$ is convex, then we have 
+
+$$
+f(x_t)-\inf_x f(x) \leq \frac{d(x_0,S_f)}{2t}.
+$$
+
+The proof involves considering the following Lyapnov function
+
+$$
+J(t)=t(f(x_t)-f(\bar{x}))+\frac{1}{2}\|x_t-\bar{x}\|^2 ,
+$$
+
+and noticing that
+
+$$
+\frac{\mathrm d J(t)}{\mathrm d t} = f(x_t) - f(\bar{x}) - t \|\nabla f(x_t)\|^2 + \langle \bar{x} - x_t, \nabla f(x_t) \rangle \leq -t \|\nabla f(x_t)\|^2 \leq 0 .
+
+$$
+
+
+
+
+
+# KL Analysis
+
+$f \in C^1(\mathbb{R}^d)$ is said to satisfy the Kurtyak-Lojasiewicz (KL) inequality if there exists $\mu > 0$ such that
+
+$$
+\|\nabla f(x)\|^2 \geq \mu \left( f(x) - \inf_x f(x) \right)^\alpha \quad \forall x \in \mathbb{R}^d.
+$$
+
+In particular, when $\alpha = 1$, it is often referred to as the Polyak-Lojasiewicz (PL) inequality.
+
+
+### Special Case: Strongly Convexity
 
 A function $f\in C^1(\RR^d)$ is $\lambda$-strongly convex if 
 
 $$
-f(y)\geq f(x)+\langle f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2.
+f(y)\geq f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2.
 $$
 
+If f is strongly convex with constant $\lambda$, then f also satisfy the PL condition with constant $\lambda$. This can be easily verified by noting that 
 
-# KL Analysis
+$$
+ f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2 \geq -\frac{1}{2\lambda}\|\nabla f(x)\|^2 ,
+$$
+
+and then taking $y$ to be the minimum.
+
 
 
 
