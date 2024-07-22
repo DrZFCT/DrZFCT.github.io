@@ -92,6 +92,7 @@ window.MathJax = {
       bpi: "\\bm{\\pi}",
       bepsilon: "\\bm{\\epsilon}",
       bvarepsilon: "\\bm{\\varepsilon}",
+      btheta: "\\bm{\\theta}",
 
       cA: "\\mathcal{A}",
       cB: "\\mathcal{B}",

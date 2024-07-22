@@ -196,6 +196,17 @@ $$
     $$
     This means that $x_t$ stops at finite time.
 
+# Stochastic Gradient Descent
+
+Suppose that $f \in C^1(\mathbb{R})$ is $L$-smooth. 
+
+In this analysis of stochastic gradient descent, we also assume that the gradient noise $\xi_t$ and $x_t$
+are independent, and $\sigma_t := \mathbb{E}[\|\xi_t\|^2] \leq \sigma^2 < 1$.
+
+For stochastic gradient descent to converge, we must decay learning rate.
+
+
+
 
 
 # Effect of Finite Learning Rate: a Phenomenological Model

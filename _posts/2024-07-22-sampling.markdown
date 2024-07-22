@@ -1,0 +1,57 @@
+---
+layout: post
+title: Sampling
+author: Kaizhao Liu
+
+---
+
+In this article we investigate how to simulate probability concepts in computers.
+We will also discuss its statistical applications. 
+
+# When Analytic Expression of the Probability Distribution is Known
+
+
+# Posterior Sampling
+
+In Bayesian data analysis, we often need to sample from the posterior distribution. 
+In this case, we often know the analytic expression of the probability distribution only **up to constant**.
+
+
+# Diffusion Model 
+
+Nowadays, many real-world distributions are no longer modelled by traditional parameterized model such as.
+Instead, diffusion models are widely used. In this case, we can no longer obtain an analytical expression of the probability distribution.
+
+### Posterior Sampling via Bayesian Filtering
+
+We are going to solve the following linear inverse problem:
+
+$$
+\by = \bA\bx +\bn,\quad \bx\in\RR^D,\by\in\RR^d,\bA\in\RR^{d\times D},\bn\sim\cN(0,\sigma^2\bI).
+$$
+
+The goal is to recover $\bx$ from the incomplete measurement $\by$. Often $D>d$ so this problem is under-determined. 
+To narrow down the solution space, we usually requires additional information about $\bx$. A common assumption, which is statistical in nature,
+is the prior knowledge of the distribution over $\bx$, represented as $p(\bx)$. Given this, we can traverse the solution space of the linear inverse problem by sampling from the posterior distribution $p(\bx|\by)$ via Bayes' rule
+
+$$
+p(\bx|\by)\propto p(\bx)p(\by|\bx),\quad p(\by|\bx)\sim \cN(\by|\bA\bx,\sigma^2\bI).
+$$
+
+Assume we can only assess to $p(\bx)$ via diffusion model.
+
+
+We have the forward process 
+
+$$
+q(\bx_{1:N}|\bx_0)=\prod_{k=1}^N q(\bx_i|\bx_{k-1}),\quad q(\bx_k|\bx_{k-1})=\cN(a_k\bx_{k-1},b_k^2\bI )
+$$
+
+The backward process
+
+$$
+p_{\btheta}(x_{k-1}|x_k)=\cN ()
+$$
+
+We can construct 
+
