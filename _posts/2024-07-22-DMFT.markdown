@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sampling
+title: Dynamical Mean Field Theory
 author: Kaizhao Liu
 
 ---
