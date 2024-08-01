@@ -1,0 +1,11 @@
+---
+layout: post
+title: Sampling
+author: Kaizhao Liu
+
+---
+
+In this article we investigate dynamical mean field theory.
+
+# MSRDJ Formalism
+
