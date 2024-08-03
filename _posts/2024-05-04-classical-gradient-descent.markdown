@@ -327,8 +327,8 @@ Assume $\eta$ to be sufficiently small s.t. in each step $L(w_{t+1})\leq L(w_t)$
 
 $$
 \begin{align*}
-    L(w_{t+1})&\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2}{2}\inf_{\beta\in[0,1]}\nabla L(w_t)^\top \nabla^2 L(w_t-\beta\eta \nabla L(w_t))\nabla L(w_t)\\
-        &\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2\inf_{\beta\in[0,1]}L(w_t-\beta\eta \nabla L(w_t))\\
+    L(w_{t+1})&\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2}{2}\sup_{\beta\in[0,1]}\nabla L(w_t)^\top \nabla^2 L(w_t-\beta\eta \nabla L(w_t))\nabla L(w_t)\\
+        &\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2\sup_{\beta\in[0,1]}L(w_t-\beta\eta \nabla L(w_t))\\
         &\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2L(w_t).
 \end{align*}
 $$
