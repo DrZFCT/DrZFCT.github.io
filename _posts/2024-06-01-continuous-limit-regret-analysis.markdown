@@ -25,7 +25,7 @@ Regret is defined as the difference between the reward that could have been achi
 given the choices of the opponent, and what was actually achieved.
 
 Note that the “best action” is chosen with full knowledge of the
-opponent’s whole sequence of actions, whereas the action of the learner at time $t$ must be based solely on the past history $r_0,\cdots,r_{t-1}$.
+opponent's whole sequence of actions, whereas the action of the learner at time $t$ must be based solely on the past history $r_0,\cdots,r_{t-1}$.
 
 Also note that the opponent can be adversarial as the reward $r_t$ can be based on the learner's action $x_t$
 
