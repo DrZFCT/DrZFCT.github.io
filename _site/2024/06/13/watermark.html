@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Watermarks for LLM</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Watermarks for LLM</h1>
+              <p class="meta">Jun 13, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>Statistical watermark leverage the psuedorandomness during decoding.</p>
+
+<p>Naively, the psuedorandomness enables users to reproduce the entire sequence given the key, just like reproducing any numerical experiment. Thus comparison between the reproduced sequence and the sequence at hand can be made, enabling the determination of whether the sequence at hand is produced by a LLM. However, this intuitive method assumes that each next-token-distribution of LLM is known, which is unrealistic given the unaccessiblity of closed-source LLM.</p>
+
+<p>The good news is that this naive method can be further developed leveraging statistical ideas. The problem at hand is naturally a hypothesis testing problem. To get rid of the troublesome next-token-distribution, we can construct a test statistic that is <strong>pivotal</strong> with respect to these distributions, i.e. the distribution of the test statistic is the same regardless of these distributions.</p>
+
+<h1 id="reflection-on-popular-existing-decoding-methods">Reflection on Popular Existing Decoding Methods</h1>
+
+<ul>
+  <li><strong>greedy methods</strong>: simply outputs</li>
+  <li><strong>sampling-based methods</strong>: recursively samples from the next-word distribution</li>
+  <li><strong>planning-based methods</strong>: aims at maximizing the sequence likelihood</li>
+</ul>
+
+<p>In <a href="https://arxiv.org/abs/2402.05864">Permute-and-Flip: An optimally robust and watermarkable decoder for LLMs</a>, the authors propose a new <em>sampling-based</em> decoding method</p>
+
+<p>Similar to the idea of Gumbel watermark, we can inject psuedo-randomness during the sampling</p>
+
+<h1 id="sampling-methods-and-construction-of-pivotal-statistics">Sampling Methods and Construction of Pivotal Statistics</h1>
+
+<ul>
+  <li>
+    <p><strong>Gumbel-Max</strong></p>
+  </li>
+  <li>
+    <p><strong>Inverse Transform</strong></p>
+  </li>
+  <li>
+    <p><strong>Alias Method</strong></p>
+  </li>
+</ul>
+
+<p>Given a</p>
+
+<h1 id="statistical-theory">Statistical Theory</h1>
+
+<p>Further, we can compare the efficacy of different pivotal statistics by modifying the established framework of hypothesis testing in mathematical statistics, as in <a href="https://arxiv.org/abs/2404.01245">A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules</a>.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

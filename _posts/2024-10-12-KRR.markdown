@@ -27,12 +27,60 @@ $$
 k(x,x')=\sum_{j=1}^\infty \mu_j e_j(x)e_j(x'),
 $$
 
-where $\{\mu_j\}_{j=1}^\infty$ are the eigenvalues in a decreasing order,
-and $\{e_j\}_{j=1}^\infty$ are the corresponding orthonormal eigenfunctions in $L^2(\rho)$, i.e. $\cT e_j=\mu_je_j$.
+where $$\{\mu_j\}_{j=1}^\infty$$ are the eigenvalues in a decreasing order,
+and $$\{e_j\}_{j=1}^\infty$$ are the corresponding orthonormal eigenfunctions in $L^2(\rho)$, i.e. $\cT e_j=\mu_je_j$.
 
 
 # Interpolation Spaces 
 
 Let $\cH^s:=$
 
+For all $s\geq 0$, $\cH^s$ is a well-defined Hilbert space. It is an interpolation space with $s$ quantifying the smoothness relative to $\cH$.
 
+The larger $s$, the smaller $\cH^s$. Particularly, $\cH^1=\cH$ and $\cH^0=L^2(\rho)$. Therefore, $s>1$ means extra smoothness while $s<1$ corresponds to misspecified case.
+
+
+# Basic Properties of KRR
+
+In supervised learning for regression tasks, we work with $n$ i.i.d. training samples $$\{(x_i,y_i)\}_{i=1}^n$$ with $x_i\in\cX$
+and $$y_i=f^*(x_i)+\epsilon_i$$ for $i\in [n]$. Here $f^*:\cX\to\RR$ represents the target function and $\epsilon_i$ represents the label noise.
+
+The primary objective in regression is to recover $f^*$ as accurately as possible using these samples, aiming to minimize the generalization error:
+
+$$
+\|\hat{f}-f^*\|_\rho ^2 = \int |\hat{f}-f^*|^2\mathrm{d}\rho(x),
+$$
+
+where $\hat{f}$ denotes our model.
+
+
+Given a model class $\cH$, the best estimator $\hat{f}$ in the sense
+are actually the solution of the following equation
+
+$$
+
+$$
+
+
+
+The KRR estimators are defined by 
+
+$$
+\hat f_\lambda=\arg\min_{f\in\cH}\left[\frac{1}{n}\sum_{i=1}^n(f(x_i)-y_i)^2+\lambda \|f\|_\cH^2\right].
+$$
+
+A closed form can be provided by the representer theorem 
+
+$$
+\hat f_\lambda(x)=
+$$
+
+If we introduce the auxillary integral operators
+
+As a side remark, note that when $\lambda\to 0$, $\hat{f}_\lambda$ converges to the minimum norm solution:
+
+$$
+\hat f_0=\arg\min_{f\in\cH,f(x_i)=y_i, \forall i\in [n]}\|f\|_\cH.
+$$
+
+Define

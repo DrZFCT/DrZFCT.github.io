@@ -84,6 +84,14 @@ Let $V:\cX\to\RR$ be an (negative) energy function and $\pi\in\cP(\cX)$ be an ar
 
 \[\log \EE_\pi [e^V] = \sup_{p\in \cP(\cX)} (\EE_p[V]-\text{KL}(p||\pi)).\]
 
+<p>The proof of this variational principle is based on the following observation:</p>
+
+\[\begin{align}
+    \EE_p[V]-\text{KL}(p||\pi) &amp;= \int V(x)p(x)\mathrm dx - \int p(x)\log(\frac{p(x)}{\pi(x)})\mathrm dx \\
+    &amp;= -\int p(x)\log(\frac{p(x)}{\pi(x)e^{V(x)}})\mathrm dx \\
+    &amp;= -\text{KL}(p||\pi_V)+\log \EE_\pi [e^V] .
+\end{align}\]
+
             </article>
           
 

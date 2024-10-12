@@ -51,9 +51,152 @@
             <article class="post-content">
             <p>In this article, I recap the classical gradient descent analysis.</p>
 
-<h1 id="gradient-flow">Gradient Flow</h1>
+<h1 id="smoothness-analysis">Smoothness Analysis</h1>
+<p>A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-smooth if</p>
+
+\[\|\nabla f(y) - \nabla f(x)\| \leq L \|y - x\|\]
+
+<p>holds for any $x, y \in \mathbb{R}^d$.</p>
+
+<p>If $f \in C^2(\mathbb{R}^d)$, the above condition is equivalent to</p>
+
+\[\sup_{x} \| \nabla^2 f(x) \|_2 \leq L.\]
+
+<p>Consequently, we can show that smooth functions grow at most quadratically:</p>
+
+<p>If $f$ is $L$-smooth, we have</p>
+
+\[f(y) \leq f(x) + \langle y - x, \nabla f(x) \rangle + \frac{L}{2} \|y - x\|^2 .\]
+
+<h3 id="convergence-to-stationary-point">Convergence to Stationary Point</h3>
+
+<p>Consider the following gradient descent (GD) iterates as follows:</p>
+
+\[x_{t+1} = x_t - \eta_t \nabla f(x_t)\]
+
+<p>where $\eta_t$ is the learning rate (also called step size) of the $t$-th step.</p>
+
+<p>If $\eta_t&lt;\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.</p>
+
+<p>If $\eta_t=\eta&lt;\frac{2}{L}$, then we have</p>
+
+\[f(x_{t+1})  \leq  f(x_t) + \langle x_{t+1} - x_t, \nabla f(x_t) \rangle + \frac{L}{2} \|x_{t+1} - x_t\|^2 = f(x_t) +\left( -\eta_t + \frac{L \eta_t^2}{2} \right) \|\nabla f(x_t)\|^2 .\]
+
+<p>Rearranging, we get</p>
+
+\[\eta (1-\frac{L}{2}\eta)\cdot\|\nabla f(x_t)\|^2 \leq  f(x_t)-f(x_{t+1}).\]
+
+<p>From this we can immediately see</p>
+
+\[\min_{s&lt; T}\|\nabla f(x_t)\| \leq \sqrt{\frac{f(x_0)-\inf_x f(x)}{\eta (1-\frac{L}{2}\eta) T}}.\]
+
+<p>Notice that it is not a guarantee on the last iterate $|\nabla f(x_T)|$. We may get near a flat region at some point, but bounce out later.</p>
+
+<p>We can actually choose</p>
+
+<h3 id="gradient-flow-version">Gradient Flow Version</h3>
+
+<p>The gradient flow (GF) is</p>
+
+\[\dot{x_t}=-\nabla f(x_t).\]
+
+<p>Let $f\in C^1(\RR^d)$. Then we have</p>
+
+\[\inf_{s\in [0,T]} \|\nabla f(x_s)\| \leq \sqrt{\frac{f(x_0)-\inf_x f(x)}{T}}.\]
+
+<p>We can prove this by noting that</p>
+
+\[\frac{\mathrm d f(x_t)}{\mathrm dt}=-\|\nabla f(x_t)\|^2 .\]
 
 <h1 id="convex-analysis">Convex Analysis</h1>
+
+<p>A function $f\in C^1(\RR^d)$ is convex if</p>
+
+\[f(y)\geq f(x)+\langle \nabla f(x),y-x\rangle .\]
+
+<p>Suppose $f$ is $L$-smooth and convex, and $\eta=\frac{1}{L}$. Then for any $\bar{x}$,</p>
+
+\[f(x_t)-f(\bar{x})\leq \frac{L}{2t} (\|x_0-\bar{x}\|^2-\|x_t-\bar{x}\|^2).\]
+
+<p>The proof is quite magical. Observe the potential</p>
+
+\[\begin{align*}
+    \|x_{t+1}-\bar{x}\|^2&amp;=\|x_{t}-\bar{x}\|^2 -2\eta \langle\nabla f(x_t),x_t-\bar{x}\rangle +\eta^2\|\nabla f(x_t)\|^2\\
+    &amp;\leq \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_t)) +\eta^2\|\nabla f(x_t)\|^2\\
+    &amp;\leq \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_t)) +2\eta (f(x_t)-f(x_{t+1}))\\
+    &amp;= \|x_{t}-\bar{x}\|^2 +2\eta (f(\bar{x})-f(x_{t+1})),
+\end{align*}\]
+
+<p>where the second step is by convexity and the third step is by the descent lemma.
+Notice that $f(x_t)$ is decreasing in $t$, so telescoping gives the desired result.</p>
+
+<h3 id="gradient-flow-version-1">Gradient Flow Version</h3>
+
+<p>Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x’ \in A} |x - x’|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold.</p>
+
+<p>Suppose that $f$ is convex, then we have</p>
+
+\[f(x_t)-\inf_x f(x) \leq \frac{d(x_0,S_f)}{2t}.\]
+
+<p>The proof involves considering the following Lyapnov function</p>
+
+\[J(t)=t(f(x_t)-f(\bar{x}))+\frac{1}{2}\|x_t-\bar{x}\|^2 ,\]
+
+<p>and noticing that</p>
+
+\[\frac{\mathrm d J(t)}{\mathrm d t} = f(x_t) - f(\bar{x}) - t \|\nabla f(x_t)\|^2 + \langle \bar{x} - x_t, \nabla f(x_t) \rangle \leq -t \|\nabla f(x_t)\|^2 \leq 0 .\]
+
+<h1 id="kl-analysis">KL Analysis</h1>
+
+<p>$f \in C^1(\mathbb{R}^d)$ is said to satisfy the Kurtyak-Lojasiewicz (KL) inequality if there exists $\mu &gt; 0$ such that</p>
+
+\[\|\nabla f(x)\|^2 \geq \mu \left( f(x) - \inf_x f(x) \right)^\alpha \quad \forall x \in \mathbb{R}^d.\]
+
+<p>In particular, when $\alpha = 1$, it is often referred to as the Polyak-Lojasiewicz (PL) inequality.</p>
+
+\[\begin{align*}
+    f(x_{t+1})-f(x^*)&amp;\leq f(x_t)-f(x^*)-\frac{1}{2L}\|\nabla f(x_t)\|^2 \\
+    &amp;\leq f(x_t)-f(x^*)-\frac{\mu}{L}(f(x_t)-f(x^*))^\alpha 
+\end{align*}\]
+
+<p>When $\alpha=1$, this lead to exponential convergence as</p>
+
+<h3 id="special-case-strongly-convexity">Special Case: Strongly Convexity</h3>
+
+<p>A function $f\in C^1(\RR^d)$ is $\lambda$-strongly convex if</p>
+
+\[f(y)\geq f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2.\]
+
+<p>If f is strongly convex with constant $\lambda$, then f also satisfy the PL condition with constant $2\lambda$. This can be easily verified by noting that</p>
+
+\[f(x)+\langle \nabla f(x),y-x\rangle +\frac{\lambda}{2}\|y-x\|^2 \geq -\frac{1}{2\lambda}\|\nabla f(x)\|^2 ,\]
+
+<p>and then taking $y$ to be the minimum.</p>
+
+<p>Note that we can also yield the convergence of $x_t$.</p>
+
+<h3 id="gradient-flow-version-2">Gradient Flow Version</h3>
+
+<p>Suppose $\inf_x f(x)=0$.</p>
+
+\[\frac{\mathrm d f(x_t)}{\mathrm dt}=-\|\nabla f(x_t)\|^2\leq -\mu f(x_t)^\alpha .\]
+
+<ul>
+  <li>If $\alpha &gt; 1$, then $f(x_t) \sim t^{-1/(\alpha - 1)}$.</li>
+  <li>If $\alpha = 1$, then $f(x_t) \sim e^{-t}$.</li>
+  <li>If $\alpha &lt; 1$, then
+  \(f(x_t) \leq (f(x_0) - \lambda(1 - \alpha)t)^{1/(1 - \alpha)} \quad \forall t &lt; \frac{f(x_0)^{1 - \alpha}}{\lambda(1 - \alpha)}.\)
+  This means that $x_t$ stops at finite time.</li>
+</ul>
+
+<h1 id="stochastic-gradient-descent">Stochastic Gradient Descent</h1>
+
+<p>Suppose that $f \in C^1(\mathbb{R})$ is $L$-smooth.</p>
+
+<p>In this analysis of stochastic gradient descent, we also assume that the gradient noise $\xi_t$ and $x_t$
+are independent, and $\sigma_t := \mathbb{E}[|\xi_t|^2] \leq \sigma^2 &lt; 1$.</p>
+
+<p>For stochastic gradient descent to converge, we must decay learning rate.</p>
 
 <h1 id="effect-of-finite-learning-rate-a-phenomenological-model">Effect of Finite Learning Rate: a Phenomenological Model</h1>
 
@@ -153,8 +296,8 @@ Moreover, the gradient is well-controlled by the loss.</p>
 <p>Assume $\eta$ to be sufficiently small s.t. in each step $L(w_{t+1})\leq L(w_t)$, then</p>
 
 \[\begin{align*}
-    L(w_{t+1})&amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2}{2}\inf_{\beta\in[0,1]}\nabla L(w_t)^\top \nabla^2 L(w_t-\beta\eta \nabla L(w_t))\nabla L(w_t)\\
-        &amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2\inf_{\beta\in[0,1]}L(w_t-\beta\eta \nabla L(w_t))\\
+    L(w_{t+1})&amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2}{2}\sup_{\beta\in[0,1]}\nabla L(w_t)^\top \nabla^2 L(w_t-\beta\eta \nabla L(w_t))\nabla L(w_t)\\
+        &amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2\sup_{\beta\in[0,1]}L(w_t-\beta\eta \nabla L(w_t))\\
         &amp;\leq L(w_t)-\eta \|\nabla L(w_t)\|^2+\frac{\eta^2B}{2}\|\nabla L(w_t)\|^2L(w_t).
 \end{align*}\]
 

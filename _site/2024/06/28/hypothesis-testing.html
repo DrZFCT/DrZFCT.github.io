@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hypocoercivity</title>
+        <title>Hypothesis Testing</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,27 +44,29 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Hypocoercivity</h1>
-              <p class="meta">May 24, 2024 • Kaizhao Liu</p>
+              <h1>Hypothesis Testing</h1>
+              <p class="meta">Jun 28, 2024 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>Hypocoercivity is a mathematical concept used to describe the behavior of certain dynamical systems and partial differential equations (PDEs) that do not exhibit traditional coercivity properties but still exhibit convergence to equilibrium over time. 
-In the study of kinetic equations and systems where traditional coercive methods (like those used in parabolic PDEs) do not apply, we may resort to hypocoercivity.</p>
+            <p>What is the difference between Hypothesis Testing and Classification?</p>
 
-<p>The concept often involves a mix of dissipative and conservative components. For example, in kinetic equations, there may be a combination of relaxation mechanisms (which are dissipative) and transport mechanisms (which are conservative).</p>
+<h1 id="neymann-pearson-paradigm">Neymann-Pearson Paradigm</h1>
 
-<p>Proving hypocoercivity typically involves sophisticated techniques such as constructing Lyapunov functions, using spectral gap inequalities, or employing entropy methods. The goal is to find a functional setting in which the dissipative effects dominate over time, leading to eventual relaxation to equilibrium.</p>
+<h1 id="multiple-hypothesis-testing">Multiple Hypothesis Testing</h1>
 
-<h1 id="coercive">Coercive</h1>
+<h3 id="multiple-testing-problem">Multiple Testing Problem</h3>
 
-<p>In more formal terms, if $\cL$ is an operator describing the system, coercivity would mean that</p>
+<h3 id="fwer-control">FWER Control</h3>
 
-<h1 id="a-theorectical-framework-for-bounding-the-mixing-time-of-lindbladian-dynamics">A Theorectical Framework for Bounding the Mixing Time of Lindbladian Dynamics</h1>
+<p>The <strong>family-wise error rate (FWER)</strong> is the probability of falsely rejecting at least one true null hypothesis,</p>
 
-<h3 id="notation">Notation</h3>
+\[\PP (V\geq 1).\]
 
-<h3 id="intuition">Intuition</h3>
+<p>A procedure controls FWER at level $\alpha$ if $\PP(V\geq 1)\leq \alpha$, regardess of the number of true null hypothesis $n_0$.</p>
+
+<h3 id="fdr-control">FDR Control</h3>
+
 
             </article>
           

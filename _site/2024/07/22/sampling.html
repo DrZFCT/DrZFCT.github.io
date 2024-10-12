@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sampling</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Sampling</h1>
+              <p class="meta">Jul 22, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this article we investigate how to simulate probability concepts in computers.
+We will also discuss its statistical applications.</p>
+
+<h1 id="when-analytic-expression-of-the-probability-distribution-is-known">When Analytic Expression of the Probability Distribution is Known</h1>
+
+<h1 id="posterior-sampling">Posterior Sampling</h1>
+
+<p>In Bayesian data analysis, we often need to sample from the posterior distribution. 
+In this case, we often know the analytic expression of the probability distribution only <strong>up to constant</strong>.</p>
+
+<h1 id="diffusion-model">Diffusion Model</h1>
+
+<p>Nowadays, many real-world distributions are no longer modelled by traditional parameterized model such as.
+Instead, diffusion models are widely used. In this case, we can no longer obtain an analytical expression of the probability distribution.</p>
+
+<h3 id="posterior-sampling-via-bayesian-filtering">Posterior Sampling via Bayesian Filtering</h3>
+
+<p>We are going to solve the following linear inverse problem:</p>
+
+\[\by = \bA\bx +\bn,\quad \bx\in\RR^D,\by\in\RR^d,\bA\in\RR^{d\times D},\bn\sim\cN(0,\sigma^2\bI).\]
+
+<p>The goal is to recover $\bx$ from the incomplete measurement $\by$. Often $D&gt;d$ so this problem is under-determined. 
+To narrow down the solution space, we usually requires additional information about $\bx$. A common assumption, which is statistical in nature,
+is the prior knowledge of the distribution over $\bx$, represented as $p(\bx)$. Given this, we can traverse the solution space of the linear inverse problem by sampling from the posterior distribution $p(\bx|\by)$ via Bayes’ rule</p>
+
+\[p(\bx|\by)\propto p(\bx)p(\by|\bx),\quad p(\by|\bx)\sim \cN(\by|\bA\bx,\sigma^2\bI).\]
+
+<p>Assume we can only assess to $p(\bx)$ via diffusion model.</p>
+
+<p>We have the forward process</p>
+
+\[q(\bx_{1:N}|\bx_0)=\prod_{k=1}^N q(\bx_i|\bx_{k-1}),\quad q(\bx_k|\bx_{k-1})=\cN(a_k\bx_{k-1},b_k^2\bI )\]
+
+<p>The backward process</p>
+
+\[p_{\btheta}(x_{k-1}|x_k)=\cN ()\]
+
+<p>We can construct</p>
+
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

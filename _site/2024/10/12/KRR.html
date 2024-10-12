@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kernel Ridge Regression</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Kernel Ridge Regression</h1>
+              <p class="meta">Oct 12, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this article we investigate kernel ridge regression.</p>
+
+<p>A function $k:\cX\times\cX\to\RR$ is saird to be a kernel if it is symmetry and positive semidefinite.</p>
+
+<p>Consider a kernel $k:\cX\times\cX\to\RR$.</p>
+
+<h1 id="mercers-decomposition">Mercer’s Decomposition</h1>
+
+<p>Consider the operator $\cT:L^2(\rho)\to L^2(\rho)$ defined by</p>
+
+\[(\cT f)(x)=\int k(x,x')f(x')\mathrm{d}\rho (x').\]
+
+<p>Assume that</p>
+
+<p>Under this condition, we have the decomposition</p>
+
+\[k(x,x')=\sum_{j=1}^\infty \mu_j e_j(x)e_j(x'),\]
+
+<p>where \(\{\mu_j\}_{j=1}^\infty\) are the eigenvalues in a decreasing order,
+and \(\{e_j\}_{j=1}^\infty\) are the corresponding orthonormal eigenfunctions in $L^2(\rho)$, i.e. $\cT e_j=\mu_je_j$.</p>
+
+<h1 id="interpolation-spaces">Interpolation Spaces</h1>
+
+<p>Let $\cH^s:=$</p>
+
+<p>For all $s\geq 0$, $\cH^s$ is a well-defined Hilbert space. It is an interpolation space with $s$ quantifying the smoothness relative to $\cH$.</p>
+
+<p>The larger $s$, the smaller $\cH^s$. Particularly, $\cH^1=\cH$ and $\cH^0=L^2(\rho)$. Therefore, $s&gt;1$ means extra smoothness while $s&lt;1$ corresponds to misspecified case.</p>
+
+<h1 id="basic-properties-of-krr">Basic Properties of KRR</h1>
+
+<p>In supervised learning for regression tasks, we work with $n$ i.i.d. training samples \(\{(x_i,y_i)\}_{i=1}^n\) with $x_i\in\cX$
+and \(y_i=f^*(x_i)+\epsilon_i\) for $i\in [n]$. Here $f^*:\cX\to\RR$ represents the target function and $\epsilon_i$ represents the label noise.</p>
+
+<p>The primary objective in regression is to recover $f^*$ as accurately as possible using these samples, aiming to minimize the generalization error:</p>
+
+\[\|\hat{f}-f^*\|_\rho ^2 = \int |\hat{f}-f^*|^2\mathrm{d}\rho(x),\]
+
+<p>where $\hat{f}$ denotes our model.</p>
+
+<p>Given a model class $\cH$, the best estimator $\hat{f}$ in the sense
+are actually the solution of the following equation</p>
+
+\[\]
+
+<p>The KRR estimators are defined by</p>
+
+\[\hat f_\lambda=\arg\min_{f\in\cH}\left[\frac{1}{n}\sum_{i=1}^n(f(x_i)-y_i)^2+\lambda \|f\|_\cH^2\right].\]
+
+<p>A closed form can be provided by the representer theorem</p>
+
+\[\hat f_\lambda(x)=\]
+
+<p>If we introduce the auxillary integral operators</p>
+
+<p>As a side remark, note that when $\lambda\to 0$, $\hat{f}_\lambda$ converges to the minimum norm solution:</p>
+
+\[\hat f_0=\arg\min_{f\in\cH,f(x_i)=y_i, \forall i\in [n]}\|f\|_\cH.\]
+
+<p>Define</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
