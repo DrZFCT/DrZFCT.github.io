@@ -1,0 +1,38 @@
+---
+layout: post
+title: Kernel Ridge Regression
+author: Kaizhao Liu
+
+---
+
+In this article we investigate kernel ridge regression.
+
+A function $k:\cX\times\cX\to\RR$ is saird to be a kernel if it is symmetry and positive semidefinite.
+
+Consider a kernel $k:\cX\times\cX\to\RR$.
+
+# Mercer's Decomposition
+
+Consider the operator $\cT:L^2(\rho)\to L^2(\rho)$ defined by
+
+$$
+(\cT f)(x)=\int k(x,x')f(x')\mathrm{d}\rho (x').
+$$
+
+Assume that 
+
+Under this condition, we have the decomposition
+
+$$
+k(x,x')=\sum_{j=1}^\infty \mu_j e_j(x)e_j(x'),
+$$
+
+where $\{\mu_j\}_{j=1}^\infty$ are the eigenvalues in a decreasing order,
+and $\{e_j\}_{j=1}^\infty$ are the corresponding orthonormal eigenfunctions in $L^2(\rho)$, i.e. $\cT e_j=\mu_je_j$.
+
+
+# Interpolation Spaces 
+
+Let $\cH^s:=$
+
+

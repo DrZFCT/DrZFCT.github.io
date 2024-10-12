@@ -5,8 +5,10 @@ author: Kaizhao Liu
 
 ---
 
-lexing's paper
+In **online learning**, the data is provided in a sequential order, and the goal of the learner is to make online decisions to minimize overall *regrets*.
 
+
+- the learner is a function $A$ that returns the current prediction given the full history
 
 # Online Linear Optimization
 
