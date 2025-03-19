@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Le Cam Methods</title>
+        <title>Online Learning</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,33 +44,43 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Le Cam Methods</h1>
-              <p class="meta">May 11, 2024 • Kaizhao Liu</p>
+              <h1>Online Learning</h1>
+              <p class="meta">Oct 13, 2024 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>In this article, I breifly explain the idea of Le Cam methods.</p>
+            <p>In this article we investigate online learning.</p>
 
-<h1 id="two-point-argument">Two-Point Argument</h1>
+<h1 id="online-convex-optimization">Online COnvex Optimization</h1>
 
-<p>The goal is to lower bound the minimax risk</p>
+<p>A convex set $S$</p>
 
-\[R^*(\Theta)=\inf_{\hat\theta}\sup_{\theta\in\Theta}\EE_\theta \ell(\theta,\hat\theta).\]
+<p>for $t=1,2,\cdots$
+predict a vector $w_t\in S$
+receive a convex loss function $f_t:S\to\RR$
+suffer loss $f_t(w_t)$</p>
 
-<p>We first present a version of LeCam’s method as in <a href="http://www.stat.yale.edu/~yw562/teaching/it-stats.pdf">Lecture notes on: Information-theoretic methods for high-dimensional statistics</a>.
-Suppose the loss function $\ell:\Theta\times\Theta\to\RR_+$ satisfies the following $\alpha$-triangle inequality</p>
+<h3 id="follow-the-leader">Follow the Leader</h3>
 
-\[\ell(\theta_0,\theta_1)\leq \alpha(\ell(\theta_0,\theta)+\ell(\theta_1,\theta))\]
+\[w_t=\arg\min_{w\in S}\sum_{i=1}^{t-1}f_i(w)\]
 
-<p>for some $\alpha&gt;0$, then</p>
+<p>The following lemma is important for the analysis of</p>
 
-\[R^*(\Theta)\geq \sup_{\theta_0,\theta_1\in\Theta} \frac{\ell(\theta_0,\theta_1)}{4\alpha}(1-\text{TV}(\PP_{\theta_0},\PP_{\theta_1})).\]
+\[\sum_{t=1}^T f_t(w_{t+1})\leq \sum_{t=1}^T f_t(u).\]
 
-<h1 id="interpretation-from-estimation-to-testing">Interpretation: From Estimation to Testing</h1>
+<p>Theorem: Running FTL on an Online Quadratic Optimization problem with $S=\RR^d$</p>
 
-<p><a href="">High-dimensional statistics: A non-asymptotic viewpoint</a></p>
+<h3 id="follow-the-regularized-leader">Follow the Regularized Leader</h3>
 
-<h1 id="sharpened-bound-for-quadratic-loss">Sharpened Bound for Quadratic loss</h1>
+<p>Example (Failure of FTL)</p>
+
+\[w_t=\arg\min_{w\in S}\sum_{i=1}^{t-1}f_i(w)+R(w)\]
+
+<p>Observe that running FTRL on $f_1,\cdots,f_T$ is equivalent to running FTL on $R,f_1,\cdots,f_T$.</p>
+
+<p>Theorem: Running FTRL on an Online Linear Optimization problem with $S=\RR^d$ and regularizer</p>
+
+<h3 id="online-gradient-descent">Online Gradient Descent</h3>
 
 
             </article>

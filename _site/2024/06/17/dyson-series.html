@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dyson Series</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Dyson Series</h1>
+              <p class="meta">Jun 17, 2024 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>Some quantum mechanical calculation.</p>
+
+<h1 id="baker-hausdorff-lemma">Baker-Hausdorff Lemma</h1>
+
+<p>Given two Hermitian operators $G$, $A$ on a Hilbert space $\cH$ and a real parameter $t$, then we have</p>
+
+\[\exp{(itG)}A\exp{(-itG)}=A+it[G,A]+\frac{(it)^2}{2!}[G,[G,A]]+\cdots+\frac{(it)^n}{n!}[G,[G,[G,\cdots,[G,A]\cdots]]]+\cdots .\]
+
+<p>A very elegant interpretation is by means of semigroup. Define</p>
+
+\[Y(t)=\exp{(itG)}A\exp{(-itG)}.\]
+
+<p>Then $Y(t)$ is the solution to the following ODE:</p>
+
+\[\frac{\mathrm d Y(t)}{\mathrm d t}=i[G,Y(t)]=i\text{ad}_G(Y(t))\]
+
+<p>with initial condition</p>
+
+\[Y(0)=A.\]
+
+<p>So by means of semigroup,</p>
+
+\[Y(t)=\exp{(it \text{ad}_G)}A=\sum_{i=0}^\infty \frac{(it)^n}{n!}\text{ad}^n_G(A).\]
+
+<p>You can also prove this by Taylor expanding both $\exp{(itG)}$ and $\exp{(-itG)}$, and noting that</p>
+
+\[\sum_{k=0}^n (-1)^k C_n^k G^{n-k}AG^k = \text{ad}_G^n (A).\]
+
+<p>Another less elegant way is to recursively differentiate $Y(t)$ and comparing the coefficients with Taylor’s formula at $t=0$.</p>
+
+<h1 id="dyson-series">Dyson Series</h1>
+
+<h1 id="wicks-theorem">Wick’s Theorem</h1>
+
+<p>In probability theory, Isserlis’ theorem is a formula that allows one to compute higher-order moments of the multivariate normal distribution in terms of its covariance matrix.
+This theorem is introduced to particle physics by Wick, so it is known as Wick’s theorem.</p>
+
+<p>If $(X_1, \dots, X_n)$ is a zero-mean multivariate normal random vector, then</p>
+
+\[\operatorname{E} [X_1 X_2 \cdots X_n] = \sum_{p \in P_{n}^{2}} \prod_{\{i,j\} \in p} \operatorname{E} [X_i X_j] = \sum_{p \in P_{n}^{2}} \prod_{\{i,j\} \in p} \operatorname{Cov} (X_i, X_j),\]
+
+<p>where the sum is over all the pairings of ${1, \ldots, n}$, i.e., all distinct ways of partitioning ${1, \ldots, n}$ into pairs ${i,j}$, and the product is over the pairs contained in $p$.</p>
+
+<p>We can prove this by Gaussian integration by parts. If $(X_1,\cdots,X_n)$ is a zero-mean multivariate normal random vector, then</p>
+
+\[\EE (X_1f(X_1,\cdots,X_n))=\sum_{i=1}^n \text{Cov}(X_1,X_i)\EE (\partial_{X_i}f(X_1,\cdots,X_n)) .\]
+
+<p>Applying this to $f(x_1,\cdots,x_n)=x_2\cdots x_n$.</p>
+
+<p>More generally, if $(Z_1, \dots, Z_n)$ is a zero-mean complex-valued multivariate normal random vector, then the formula still holds. This is because the formula is linear on both sides, so we get the complex case from real case for free.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

@@ -119,6 +119,26 @@ $$
 $$
 
 
+# Advantage of Quantum Algorithm: Deutsch-Jozsa Problem
+
+Deutsch-Jozsa algorithm is one of the first examples of a quantum algorithm that is exponentially faster than any possible deterministic classical algorithm.
+The problem is stated as follows:
+
+We are given a black box quantum computer known as an oracle that implements some function:
+
+$$
+f:\{0,1\}^n\to\{0,1\}.
+$$
+
+Moreover, we know that the function is either constant (0 on all inputs or 1 on all inputs) or balanced (1 for exactly half of the input domain and 0 for the other half).
+The task then is to determine if $f$ is constant or balanced by using the oracle. A specific quantum algorithm can be find in [Wikipedia](https://en.wikipedia.org/wiki/Deutsch-Jozsa_algorithm).
+
+# No Cloning Theorem
+
+
+# Reversible, Uncomputation
+
+
 # Questions 
 
 Understand Choi's matrix paper and Quantum Process Tomography. Lindblad's paper also.

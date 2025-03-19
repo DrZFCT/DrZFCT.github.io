@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Le Cam Methods</title>
+        <title>Randomized Numerical Algebra</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,34 +44,22 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Le Cam Methods</h1>
-              <p class="meta">May 11, 2024 • Kaizhao Liu</p>
+              <h1>Randomized Numerical Algebra</h1>
+              <p class="meta">Feb 22, 2025 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>In this article, I breifly explain the idea of Le Cam methods.</p>
+            <p>In this article we investigate randomized numerical algebra.</p>
 
-<h1 id="two-point-argument">Two-Point Argument</h1>
+<h1 id="1">1</h1>
 
-<p>The goal is to lower bound the minimax risk</p>
+<p>Nice lectures
+<a href="https://arxiv.org/abs/2402.17873">Randomized matrix computations: Themes and variations</a></p>
 
-\[R^*(\Theta)=\inf_{\hat\theta}\sup_{\theta\in\Theta}\EE_\theta \ell(\theta,\hat\theta).\]
+<h1 id="sketching">Sketching</h1>
 
-<p>We first present a version of LeCam’s method as in <a href="http://www.stat.yale.edu/~yw562/teaching/it-stats.pdf">Lecture notes on: Information-theoretic methods for high-dimensional statistics</a>.
-Suppose the loss function $\ell:\Theta\times\Theta\to\RR_+$ satisfies the following $\alpha$-triangle inequality</p>
-
-\[\ell(\theta_0,\theta_1)\leq \alpha(\ell(\theta_0,\theta)+\ell(\theta_1,\theta))\]
-
-<p>for some $\alpha&gt;0$, then</p>
-
-\[R^*(\Theta)\geq \sup_{\theta_0,\theta_1\in\Theta} \frac{\ell(\theta_0,\theta_1)}{4\alpha}(1-\text{TV}(\PP_{\theta_0},\PP_{\theta_1})).\]
-
-<h1 id="interpretation-from-estimation-to-testing">Interpretation: From Estimation to Testing</h1>
-
-<p><a href="">High-dimensional statistics: A non-asymptotic viewpoint</a></p>
-
-<h1 id="sharpened-bound-for-quadratic-loss">Sharpened Bound for Quadratic loss</h1>
-
+<p>Nice blogs
+<a href="https://www.ethanepperly.com/index.php/2025/02/12/note-to-self-how-accurate-is-sketch-and-solve/">How accurate is sketch and solve</a></p>
 
             </article>
           

@@ -39,6 +39,38 @@
 <ul>
   
     <li>
+      <h2><a href="/2025/03/02/anytime-acceleration-gd.html">Anytime Acceleration of Gradient Descent</a></h2>
+      <p>This is my note on the paper <a href="arxiv.org/abs/2411.17668">Anytime Acceleration of Gradient Descent</a>.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2025/02/23/what-I-read.html">What I've been reading</a></h2>
+      <p>The following is a list of various things that I have read (to some extent) since starting graduate school. 
+I haven’t necessarily read all (or even most) of any particular item on the list; this is just meant to record past and present interests of mine. 
+Many items are repeated across sections.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2025/02/22/randomized-numerical-algebra.html">Randomized Numerical Algebra</a></h2>
+      <p>In this article we investigate randomized numerical algebra.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2025/01/04/universal-approximation-theorems.html">Universal Approximation Theorems</a></h2>
+      <p>In this article we investigate universal approximation theorems.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2024/10/13/online-learning.html">Online Learning</a></h2>
+      <p>In this article we investigate online learning.</p>
+
+    </li>
+  
+    <li>
       <h2><a href="/2024/10/12/transfer-learning.html">Transfer Learning</a></h2>
       <p>In this article we investigate transfer learning.</p>
 
@@ -120,6 +152,12 @@ We will also discuss its statistical applications.</p>
     <li>
       <h2><a href="/2024/06/26/markov-geometry.html">Geometry of Markov Chains</a></h2>
       <p>Mixing.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2024/06/17/dyson-series.html">Dyson Series</a></h2>
+      <p>Some quantum mechanical calculation.</p>
 
     </li>
   
@@ -268,6 +306,262 @@ Then we mainly focus on the mathematical structures behind it.</p>
       <h2><a href="/2024/03/11/Communication-Complexity.html">Communication Complexity</a></h2>
       <p>Communication complexity was first introduced by Andrew Yao in 1973,
 while studying the problem of computation distributed among several machines.</p>
+
+    </li>
+  
+    <li>
+      <h2><a href="/2024/03/07/diffusion-models.html">Diffusion Models</a></h2>
+      <p>Let us first recall how to reverse a classical diffusion process.</p>
+
+<p>Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^m\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE</p>
+
+\[\mathrm{d}Y_s=f(Y_s,s)\mathrm{d}s+\sigma(Y_s,s)\mathrm{d}B_s\]
+
+<p>where $B_s$ is a standard $m$-dimensional Brownian motion. Assume that $Y$ has density $p_Y$, which satisfies the Fokker-Planck equation given by</p>
+
+\[\partial_t p_Y=\text{div}(\text{div}(Dp_Y)-fp_Y),\]
+
+<p>where $D:=\frac{1}{2}\sigma\sigma^T$.</p>
+
+<p>Now consider the reverse time stochastic process \((\overleftarrow{Y}_s)_{s\in [0,T]}\) satisfying</p>
+
+\[p_{\overleftarrow{Y}}(\cdot,t)=\overleftarrow{p}_Y(\cdot,t):=p_Y(\cdot,T-t)\]
+
+<p>for every $t\in [0,T]$. We ask for a SDE description of this process.</p>
+
+<p>Using the Fokker-Planck equation of $Y_s$, we have</p>
+
+\[\partial_t \overleftarrow{p}_Y=\text{div}(-\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)+\overleftarrow{f}\overleftarrow{p}_Y).\]
+
+<p>The negative divergence prohibits us from directly viewing the above equation as a Fokker-Planck equation. However, we can write</p>
+
+\[\text{div}(\overleftarrow{D}\overleftarrow{p}_Y)=\text{div}(\overleftarrow{D})\overleftarrow{p}_Y+\overleftarrow{D}\nabla \overleftarrow{p}_Y= (\text{div}(\overleftarrow{D})+\overleftarrow{D}\nabla\log \overleftarrow{p}_Y)\overleftarrow{p}_Y.\]
+
+<p>In this way, once we know $\nabla\log \overleftarrow{p}_Y$, we can cpnvert the negative divergence term to the drift term.</p>
+
+<p>As a special case, if we choose to maintain the original diffusion term, then we obtain the following SDE:</p>
+
+\[\mathrm{d}\overleftarrow{Y}_s=\overleftarrow{\mu}(\overleftarrow{Y}_s,s)\mathrm{d}s+\overleftarrow{\sigma}(\overleftarrow{Y}_s,s)\mathrm{d}B_s,\quad \overleftarrow{Y}_0\sim Y_T\]
+
+<p>where</p>
+
+\[\mu:=2\text{div}(D)+2D\nabla\log p_Y-f.\]
+
+<h1 id="reversing-lindblad-equation">Reversing Lindblad Equation</h1>
+
+<p>The quantum version of Fokker-Planck equation, also named (Markovian) Lindblad equation, is the following:</p>
+
+\[\dot{\rho}(t)=-i[H,\rho(t)]+\sum_i \cD[L_i](\rho(t)), \quad t\in[0,T]\]
+
+<p>where</p>
+
+\[\cD[L](\rho):=L\rho L^\dagger -\frac{1}{2}\{L^\dagger L,\rho\}.\]
+
+<p>Here $[A,B]=AB-BA$ is the commutator and ${A,B}=AB+BA$ is the anticommutator. Note that the Hamiltonian $H$ is Hermitian. Here we assume that $H$ and $L_i$’s are not time dependent.</p>
+
+<p>To reverse a Lindblad operator $L$, exactly similar to what we have done in standard diffusion model, what we need to do is solve this equation for $L_b$ and $H_b$, where $H_b$ is Hermitian:</p>
+
+\[-\cD[L](\rho)=\cD[L_b](\rho)-i[H_b,\rho].\]
+
+<p>One way to solve for $L_b$ and $H_b$ goes like this. First notice that $\rho$ is Hermitian. Thus it has an eigenvalue decomposition under a suitable set of basis, which I denote by $\rho=\sum_i\lambda_i\ket{i}\bra{i}$ following physicists convention.</p>
+
+<p>Expanding $[H_b,\rho]$ under this basis gives 
+\(\bra{i}[H_b,\rho] \ket{j}= (\lambda_j-\lambda_i)\bra{i} H_b \ket{j}.\)
+Plugging this expansion into the equation we want to solve, we find that the condition that $H_b$ is Hermitian imposes that \(\cD[L_b](\rho)+\cD[L](\rho)\) should be Hermitian. Moreover, the diagonal elements of 
+\(\cD[L_b](\rho)+\cD[L](\rho)\)
+should be zero for $H_b$ to be solvable.</p>
+
+<p>Now recall that 
+\(\cD[L](\rho):=L\rho L^\dagger -\frac{1}{2} L^\dagger L\rho -\frac{1}{2} \rho L^\dagger L.\)
+This is already Hermitian, but the diagonal elements are not all zero.</p>
+
+<p>Now the magic part begins. Consider \(L_b=\rho^{\frac{1}{2}}L^\dagger \rho^{-\frac{1}{2}}.\)
+Then</p>
+
+\[\cD[L_b](\rho):= -\frac{1}{2}\rho^{-\frac{1}{2}} L\rho L^\dagger\rho^{\frac{1}{2}}-\frac{1}{2}\rho^{\frac{1}{2}} L\rho L^\dagger\rho^{-\frac{1}{2}}+\rho^{\frac{1}{2}} L^\dagger L\rho^{\frac{1}{2}}.\]
+
+<p>Summing and noticing that for Hermitian $A$, operator of the form</p>
+
+\[A -\frac{1}{2}\rho^{-\frac{1}{2}}A\rho^{\frac{1}{2}}-\frac{1}{2}\rho^{\frac{1}{2}}A\rho^{-\frac{1}{2}}\]
+
+<p>is Hermitian with zero diagonal elements.</p>
+
+<p>In summary, the reverse Lindblad’s equation can be expressed by</p>
+
+\[\begin{align}
+    &amp;\dot{\overleftarrow{\rho}}= -i[H_b,\overleftarrow{\rho}]+\sum_i \cD[L_{b,i}](\overleftarrow{\rho}),\quad t\in[0,T]\\
+    &amp;H_b(t) = -H + \sum_i H_c(\rho(T-t),L_i), \\
+    &amp; L_{b,i}(t) = \rho(T-t)^{\frac{1}{2}}L_i^\dagger{\rho(T-t)}^{-\frac{1}{2}},
+\end{align}\]
+
+<p>where</p>
+
+\[\begin{align}
+    &amp;H_c(\rho,L)=-\frac{i}{2}\sum_{i,j}\frac{\sqrt{\lambda_i}-\sqrt{\lambda_j}}{\sqrt{\lambda_i}+\sqrt{\lambda_j}}\bra{i} M(\rho,L) \ket{j}\ket{i}\bra{j},\\ 
+    &amp;M(\rho,L)=L^\dagger L +\rho^{-\frac{1}{2}}L\rho L^\dagger \rho^{\frac{1}{2}}
+\end{align}\]
+
+<h1 id="complex-fokker-planck-equation">Complex Fokker-Planck Equation</h1>
+
+<p>Let $f:\CC^d\times [0,T]\to \CC^d$ and $\sigma:\CC^m\times [0,T]\to \CC^d$, let the $\CC^d$-valued stochastic process $Z=(Z_s)_{s\in [0,T]}$ be the solution to the SDE</p>
+
+\[\mathrm{d}Z_s=f(Z_s,s)\mathrm{d}s+\sigma(Z_s,s)\mathrm{d}B_s\]
+
+<p>where $B_s$ is a standard $m$-dimensional Brownian motion. Assume that $Z$ has density $p_Z$, which satisfies the Fokker-Planck equation given by</p>
+
+\[\partial_t p_Z=\text{Re}\left\{ \sum_{i,j}\left(\frac{\partial^2 p_Z(\sigma\sigma^\top)_{ij}}{\partial z_i \partial z_j}+\frac{\partial^2 p_Z(\sigma\sigma^\dagger)_{ij}}{\partial z_i \partial \bar{z_j}}\right) - 2\sum_{i=1}^n \frac{\partial f_i p_Z}{\partial z_i} \right\}.\]
+
+<h1 id="stochastic-unraveling">Stochastic Unraveling</h1>
+
+<p>Unraveling means a stochastic wave-equation that recovers the evolution of density matrices $ρ(t)$ in expectation. More specifically, it looks for a stochastic process $X_t(\omega)$ on the Hilbert space $\CC^d$, such that the expectation $ρ(t):=\EE X_t(\omega)X_t^\dagger (\omega)$ solves the Lindblad equation.</p>
+
+<p>Formally, a density matrix is an expectation of pure states $\ket{\phi}\bra{\phi}$. We seek a SDE that describes the evolution of each $\ket{\phi}$:</p>
+
+\[\ket{\mathrm d \phi}=\ket{v}\mathrm d t+\sum_j \ket{u_j}\mathrm d \xi_j\]
+
+<p>where $\xi_j$ are independent complex Brownian motions.</p>
+
+<p>Using Ito calculus,</p>
+
+\[\mathrm d \ket{\phi}\bra{\phi}=  \ket{\mathrm d\phi}\bra{\phi} + \ket{\phi}\bra{\mathrm d\phi} + \ket{\mathrm d\phi}\bra{\mathrm d\phi}.\]
+
+<p>Noting that</p>
+
+\[\mathrm d \xi_j^\dagger \mathrm d \xi_k = 2\delta_{jk}\mathrm d t ,\]
+
+<p>we obtain</p>
+
+\[\mathrm d \ket{\phi}\bra{\phi}= \left(\ket{v}\bra{\phi}+\ket{\phi}\bra{v}+2\sum_j \ket{u_j}\bra{u_j} \right)\mathrm d t .\]
+
+<p>Matching this with the Lindblad equation, we require</p>
+
+\[\ket{v}\bra{\phi}+\ket{\phi}\bra{v}+2\sum_j \ket{u_j}\bra{u_j} = \cL (\ket{\phi}\bra{\phi}) .\]
+
+<h1 id="qubit-channel">Qubit Channel</h1>
+
+<p>For an arbitary density matrix $\rho$, we have the formula</p>
+
+\[\frac{I}{2}=\frac{1}{4}(\rho + X\rho X^\dagger+ Y\rho Y^\dagger +Z\rho Z^\dagger)\]
+
+<p>where</p>
+
+\[X = \begin{pmatrix}
+0 &amp; 1\\
+1 &amp; 0
+\end{pmatrix}\quad
+Y=\begin{pmatrix}
+0  &amp; -i\\
+i  &amp; 0
+\end{pmatrix}\quad
+Z = \begin{pmatrix}
+1  &amp; 0\\
+0  &amp; -1
+\end{pmatrix}\]
+
+<p>The lindblad equation for quantum qubit channel can be written as</p>
+
+\[\dot{\rho}(t)=-\gamma (\rho(t) - \frac{I}{2}),\quad t\in [0,T]\]
+
+<p>or in the Lindblad’s form as</p>
+
+\[\dot{\rho}(t)=\frac{\gamma}{4}\left(\cD[X](\rho(t))+\cD[Y](\rho(t))+\cD[Z](\rho(t))\right)\]
+
+<p>At $t=0$, $\rho(0)$ has an eigenvalue decomposition $\rho(0)=U\Lambda(0) U^\dagger$, where $U$ is unitary and $\Lambda(0)$ is diagonal. As the qubit channel admits the unitary freedom, we can focus on the case where $U=I$, and the result can be easily generalized to arbitary $U$. Say</p>
+
+\[\Lambda(0)=\begin{pmatrix}
+\lambda_1(0)  &amp; \\
+  &amp; \lambda_2(0)
+\end{pmatrix}\]
+
+<p>where $\lambda_i(0)\geq 0$ for $i\in [2]$ and $\lambda_1(0)+\lambda_2(0)=1$.</p>
+
+<p>At time $t$, solving the Lindblad equation yields</p>
+
+\[\Lambda(t)=\begin{pmatrix}
+\lambda_1(t)  &amp; \\
+  &amp; \lambda_2(t)
+\end{pmatrix}=\begin{pmatrix}
+\frac{1}{2}+e^{-\gamma t}(\lambda_1(0)-\frac{1}{2})  &amp; \\
+  &amp; \frac{1}{2}+e^{-\gamma t}(\lambda_2(0)-\frac{1}{2})
+\end{pmatrix} .\]
+
+<p>The reversed Hamiltonian can be expressed by</p>
+
+\[H_b = 0\]
+
+<p>and the reversed Lindblad operators can be expressed by</p>
+
+\[X_b(t) = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+ 0 &amp; \sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
+ \sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} &amp; 0
+\end{pmatrix},\quad 
+Y_b(t) = \sqrt{\frac{\gamma}{4}}\begin{pmatrix}
+ 0 &amp; i\sqrt{\frac{\lambda_1(T-t)}{\lambda_2(T-t)}}\\
+ -i\sqrt{\frac{\lambda_2(T-t)}{\lambda_1(T-t)}} &amp; 0
+\end{pmatrix},\quad 
+Z_b = \sqrt{\frac{\gamma}{4}}Z.\]
+
+<p>For general $U$, the reversed Lindblad operators can be obtained by applying the transformation $X \mapsto U^\dagger X U$. Note that the operator $Z$ can actually be dropped.</p>
+
+<h1 id="d-dimensional-channel">$d$-dimensional channel</h1>
+
+<p>For $d$-dimensional density matrix, notice that $I = \tr(\rho)I$ can be expressed as an operator sum.</p>
+
+<h1 id="questions">Questions</h1>
+
+<p>For quantum state preparation, we already know the $\Lambda(0)$ we want and we want to prepare this from the state $I/2$, we do not need to learn anything, just apply the reversed Lindblad operators.</p>
+
+<p>Maybe I have some misunderstanding here for we have discussed to “learn” something via quantum process tomography just like diffusion models.</p>
+
+<p>How to physically implement a given (time-dependent) Lindblad operator  ? To prepare a pure state, the reversed Lindblad operators seems to blow up.</p>
+
+<p>For $d$-dimensional channel, it seems thaat $d^2$ Lindblad operators are necessary, which suffers from the curse of dimensionality.</p>
+
+<h1 id="lindblad-equation-as-ctmc">Lindblad Equation as CTMC</h1>
+
+<p>Let $L_{mn}=\sqrt{\gamma_{mn}}\ket{n}\bra{m}$ with $\gamma_{mn}\geq 0$.</p>
+
+<p>Then we have</p>
+
+\[\bra{i}\sum_{mn}\cD[L_{mn}](\rho)\ket{j}=\delta_{ij}\sum_m \rho_{mm}\gamma_{mi}-\frac{1}{2}\rho_{ij}\sum_m(\gamma_{im}+\gamma_{jm}).\]
+
+<p>Let $H\propto I$, then the Lindblad equation is equal to</p>
+
+\[\dot{\rho}_{ii}=\sum_{m}\rho_{mm}\gamma_{mi}-\rho_{ii}\sum_m\gamma_{im},\]
+
+<p>for diagonal terms and</p>
+
+\[\dot{\rho}_{ij}=-\frac{1}{2}\rho_{ij}\sum_m(\gamma_{im}+\gamma_{jm})\]
+
+<p>for $i\neq j$.</p>
+
+<p>Notice that we obtain the master equation for diagonal terms.</p>
+
+<h1 id="reverse">Reverse</h1>
+
+<p>Let us investigate what we obtain if we set $\rho$ to be diagonal so that the evolution is purely classical.
+For simplicity, we shorten $\rho_{ii}$ by $\rho_i$ in this section. The eigenvalues $\lambda_i$ are exactly $\rho_i$.</p>
+
+<p>The reverse Hamiltonian is</p>
+
+\[\sum_{mn}H_c(\rho,L_{mn})=-\frac{i}{2}\sum_{i,j}\frac{\sqrt{\rho_i}-\sqrt{\rho_j}}{\sqrt{\rho_i}+\sqrt{\rho_j}}\left(\sum_{mn}\bra{i} M(\rho,L_{mn}) \ket{j}\right)\ket{i}\bra{j},\]
+
+<p>where</p>
+
+\[\sum_{mn}\bra{i}M(\rho,L_{mn})\ket{j}=\delta_{ij}\gamma_{in}+\delta_{ij}\sum_{m}\rho_{m}\gamma_{mi}\]
+
+<p>is proportional to $\delta_{ij}$, hence the reverse Hamiltonian is equal to zero.
+The reverse Lindbladian is</p>
+
+\[L_{b,mn}(t) = \sqrt{\gamma_{mn}\frac{\rho_m(T-t)}{\rho_n(T-t)}} \ket{m}\bra{n}.\]
+
+<p>Thus the reverse equation is</p>
+
+\[\dot{\overleftarrow{\rho}}_{i}=\sum_{m}\overleftarrow{\rho}_m\overleftarrow{\gamma}_{mi}-\overleftarrow{\rho}_i\sum_m\overleftarrow{\gamma}_{im},\]
+
+<p>where</p>
+
+\[\overleftarrow{\gamma}_{mi}=\gamma_{im}\frac{\rho_i(T-t)}{\rho_m(T-t)}.\]
 
     </li>
   

@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Le Cam Methods</title>
+        <title>Universal Approximation Theorems</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,34 +44,18 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Le Cam Methods</h1>
-              <p class="meta">May 11, 2024 • Kaizhao Liu</p>
+              <h1>Universal Approximation Theorems</h1>
+              <p class="meta">Jan 4, 2025 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>In this article, I breifly explain the idea of Le Cam methods.</p>
+            <p>In this article we investigate universal approximation theorems.</p>
 
-<h1 id="two-point-argument">Two-Point Argument</h1>
+<h1 id="stone-weierstrass-theorem">Stone-Weierstrass Theorem</h1>
 
-<p>The goal is to lower bound the minimax risk</p>
+<p>The Stone’s version of universal approximation theorems consider an algebra of functions.</p>
 
-\[R^*(\Theta)=\inf_{\hat\theta}\sup_{\theta\in\Theta}\EE_\theta \ell(\theta,\hat\theta).\]
-
-<p>We first present a version of LeCam’s method as in <a href="http://www.stat.yale.edu/~yw562/teaching/it-stats.pdf">Lecture notes on: Information-theoretic methods for high-dimensional statistics</a>.
-Suppose the loss function $\ell:\Theta\times\Theta\to\RR_+$ satisfies the following $\alpha$-triangle inequality</p>
-
-\[\ell(\theta_0,\theta_1)\leq \alpha(\ell(\theta_0,\theta)+\ell(\theta_1,\theta))\]
-
-<p>for some $\alpha&gt;0$, then</p>
-
-\[R^*(\Theta)\geq \sup_{\theta_0,\theta_1\in\Theta} \frac{\ell(\theta_0,\theta_1)}{4\alpha}(1-\text{TV}(\PP_{\theta_0},\PP_{\theta_1})).\]
-
-<h1 id="interpretation-from-estimation-to-testing">Interpretation: From Estimation to Testing</h1>
-
-<p><a href="">High-dimensional statistics: A non-asymptotic viewpoint</a></p>
-
-<h1 id="sharpened-bound-for-quadratic-loss">Sharpened Bound for Quadratic loss</h1>
-
+<p>Suppose $X$ is a compact Hausdorff space and $A$ is a subalgebra of $C(X, \RR)$ which contains a non-zero constant function. Then $A$ is dense in $C(X, \RR)$ if and only if it separates points.</p>
 
             </article>
           
