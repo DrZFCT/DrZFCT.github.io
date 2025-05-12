@@ -17,11 +17,21 @@ Information Theory: From Coding to Learning (Yury Polyanskiy, Yihong Wu)
 
 Statistical Optimal Transport (Sinho Chewi, Jonathan Niles-Weed, Philippe Rigollet)
 
-Stochastic Calculus ()
+Computational Optimal Transport
 
-sampling, diffusion model
+Algorithmic Aspects of Machine Learning (Ankur Moitra)
+
+Log-Concave Sampling (Sinho Chewi) 
+
+sampling, diffusion model, Stochastic Calculus ()
 
 Randomized Numerical Algebra
 
 SoS
+
+
+# Side Interests
+
+On Food and Cooking: The Science And Lore Of The Kitchen (Harold McGee)
+
 

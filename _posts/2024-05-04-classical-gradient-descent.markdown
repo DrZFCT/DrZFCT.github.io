@@ -11,7 +11,8 @@ In this article, I recap the classical gradient descent analysis.
 
 
 # Smoothness Analysis
-A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-smooth if 
+
+A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-**smooth** if 
 
 $$
 \|\nabla f(y) - \nabla f(x)\| \leq L \|y - x\| 
@@ -36,6 +37,9 @@ $$
 
 ### Convergence to Stationary Point
 
+For general non-convex problems, $x_t$ may only converge to a stationary point where $\nabla f(x)=0$. Therefore, it is natural to use $\\|\nabla f(x_t)\\|$ to measure the convergence rate. 
+
+
 Consider the following gradient descent (GD) iterates as follows:
 
 $$
@@ -44,7 +48,10 @@ $$
 
 where $\eta_t$ is the learning rate (also called step size) of the $t$-th step.
 
-If $\eta_t<\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.
+
+If $\eta_t<\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$. 
+
+One can see that the choice of learning rate depends on the smoothness. A too-large learning rate may cause an increase in objective value. (Instability!)
 
 If $\eta_t=\eta<\frac{2}{L}$, then by the **descent lemma** we have 
 
@@ -118,7 +125,7 @@ Notice that $f(x_t)$ is decreasing in $t$, so telescoping gives the desired resu
 
 ### Gradient Flow Version
 
-Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x' \in A} \|x - x'\|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold.
+Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x' \in A} \|x - x'\|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold. In some cases, $S_f$ can also be empty (the minimzers located at the infinity).
 
 Suppose that $f$ is convex, then we have 
 
@@ -195,6 +202,10 @@ $$
     f(x_t) \leq (f(x_0) - \lambda(1 - \alpha)t)^{1/(1 - \alpha)} \quad \forall t < \frac{f(x_0)^{1 - \alpha}}{\lambda(1 - \alpha)}.
     $$
     This means that $x_t$ stops at finite time.
+
+# Strongly Convex Analysis: Convergence of $x_t$
+
+
 
 # Stochastic Gradient Descent
 

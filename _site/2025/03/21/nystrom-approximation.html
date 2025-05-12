@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Geometry of Markov Chains</title>
+        <title>Nystrom</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,22 +44,52 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Geometry of Markov Chains</h1>
-              <p class="meta">Jun 26, 2024 • Kaizhao Liu</p>
+              <h1>Nystrom</h1>
+              <p class="meta">Mar 21, 2025 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>This is my note for the book <a href="https://link.springer.com/book/10.1007/978-3-319-00227-9">Analysis and Geometry of Markov Diffusion Operators</a>.
-This note mean to demonstrate the basic ideas and calculations, simplifying the technical details to as few lines as possible while maintaining rigor.</p>
+            <p>Algebra view: matrix, column space
+Geometric view: operators, image</p>
 
-<p>Mixing.</p>
+<p>From least square</p>
 
-<h1 id="poincare-inequality">Poincare Inequality</h1>
+<h1 id="penrose-i">Penrose-I</h1>
 
-<p>Some nice blogs
-<a href="https://stevensoojin.kim/blog/poincare-inequalities/">Poincaré Inequalities</a></p>
+<h1 id="projection">Projection</h1>
 
-<h1 id="log-sobolev-inequality">Log-Sobolev Inequality</h1>
+<p>Consider an operator $A:\RR^n\to\RR^m$.</p>
+
+<p>The question is: what is the orthogonal projection onto subspace $\operatorname{im}(A)$, i.e. what is $P_A$?</p>
+
+<p>For any vector $u\in\RR^m$,</p>
+
+\[P_A u =A v\]
+
+<p>for some $v\in\RR^n$ by the definition of $\operatorname{im}(A)$.
+By orthogonality, for any vector $w\in\RR^n$,</p>
+
+\[\left\langle Aw, u-P_A u \right\rangle =0 .\]
+
+<p>This is equivalent to</p>
+
+\[\left\langle w, A^* u-A^*A v \right\rangle =0\]
+
+<p>for any $w\in\RR^n$, so that</p>
+
+\[A^* u-A^*A v=0.\]
+
+<p>If $A^<em>A$ is invertible, we have $v=(A^</em>A)^{-1}A^<em>u$, and thus $P_Au=A(A^</em>A)^{-1}A^*u$.</p>
+
+<p>If $A^*A$ is not invertible, we can consider any inverse, for example the Penrose inverse and obtain the representation</p>
+
+\[P_A=A(A^*A)^\dagger A^*.\]
+
+\[A^*P_Au=A^*u\]
+
+<p>In the world of matrices, $A\in M$ is a $m\times n$ matrix, $A^*$ is a $n\times m$ matrix.</p>
+
+<h1 id="nystrom">Nystrom</h1>
 
 
             </article>

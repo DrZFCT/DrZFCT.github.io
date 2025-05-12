@@ -5,7 +5,7 @@ author: Kaizhao Liu
 
 ---
 
-In this article, we first recall the basic postulates of quantum computing.
+In this note, we first recall the basic postulates of quantum computing.
 Then we mainly focus on the mathematical structures behind it.
 
 # Postulates of Quantum Mechanics
@@ -137,6 +137,35 @@ The task then is to determine if $f$ is constant or balanced by using the oracle
 
 
 # Reversible, Uncomputation
+
+
+
+# State Preparing Oracle
+
+### Grover-Rudolph
+
+Prepare $\ket{\psi}=\sum_{i=0}^{2^n-1}\sqrt{p_i}\ket{i}$, where $p_i$ is ``integrable''
+
+### Known function
+
+Prepare $\ket{\psi}=\frac{1}{\sqrt{\sum |f(i)|^2}}\sum_{i=0}^{2^n-1}f(i)\ket{i}$, where $f$ is a known function
+
+oracle 
+
+$$
+O_f:\ket{i}\ket{0}\mapsto \ket{i}\ket{f(i)}
+$$
+
+
+# Representing Matrices
+
+block-encoding
+
+# Matrix Vector Product
+
+
+# LCU
+
 
 
 # Questions 

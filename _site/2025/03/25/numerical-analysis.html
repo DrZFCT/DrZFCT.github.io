@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Numerical Analysis</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Numerical Analysis</h1>
+              <p class="meta">Mar 25, 2025 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this note, I sketch the most fundamental ideas and algorithms developed in the traditional field of numerical analysis. If permitted, I also sketch the mathematical analysis of such algorithms. The material means to establish an understanding of this field as easy as possible, thus all implementation and technical details are omitted.</p>
+
+<h3 id="chebyshev-polynomials">Chebyshev Polynomials</h3>
+
+<p>Minimum $L^\infty$ norm property</p>
+
+<h1 id="root-finding">Root-Finding</h1>
+
+<h1 id="interpolation">Interpolation</h1>
+
+<h3 id="polynomial-interpolation">Polynomial Interpolation</h3>
+
+<p>Given $k$ pairs $(x_1,y_1),\ldots,(x_k,y_k)$, we can use them to define the <strong>Lagrange interpolation</strong> basis $\phi_1,\ldots,\phi_k$ by writing</p>
+
+\[\phi_i(x):=\frac{\prod_{j\neq i}(x-x_j)}{\prod_{j\neq i}(x_i-x_j)}.\]
+
+<p>The <strong>Newton</strong> basis,</p>
+
+\[\psi_i(x)=\prod_{j=1}^{i-1}(x-x_j)\]
+
+<h3 id="piecewise-interpolation">Piecewise Interpolation</h3>
+
+<h1 id="integration">Integration</h1>
+
+<h3 id="newton-cotes-quadrature">Newton-Cotes Quadrature</h3>
+
+<h3 id="gauss-quadrature">Gauss Quadrature</h3>
+
+<p>(adaptive quadrature?)</p>
+
+<h1 id="differentiation">Differentiation</h1>
+
+<h3 id="finite-difference">Finite Difference</h3>
+
+<p>We have a function $f$ that we can query the function value. For example, when $f$ takes on a complex form or when a user provides $f$ as a subroutine without analytical information about its structure.</p>
+
+<h3 id="choosing-the-step-size">Choosing the Step Size</h3>
+
+<p>Numerical differentiation has a curious property. It appears that any formula above can be arbitarily accurate by choosing a sufficiently small $h$. However, implementations of arithmetic operations usually are inexact.</p>
+
+<h3 id="automatic-differentiation">Automatic Differentiation</h3>
+
+<blockquote>
+  <p>Leverage the chain rule.</p>
+</blockquote>
+
+<h1 id="fast-fourier-transform">Fast Fourier Transform</h1>
+
+<p>The blog
+<a href="https://www.ethanepperly.com/index.php/2021/05/10/big-ideas-in-applied-math-the-fast-fourier-transform/">Big Ideas in Applied Math: The Fast Fourier Transform</a>
+by Ethan N. Epperly is a great introduction.</p>
+
+<h1 id="ode">ODE</h1>
+
+<h1 id="pde">PDE</h1>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Numerical Algebra</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Numerical Algebra</h1>
+              <p class="meta">Mar 25, 2025 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this note, I sketch the most fundamental ideas and algorithms developed in the traditional field of numerical algebra. If permitted, I also sketch the mathematical analysis of such algorithms. The material means to establish an understanding of this field as easy as possible, thus all implementation and technical details are omitted.</p>
+
+<h1 id="solving-linear-systems">Solving Linear Systems</h1>
+
+<p>According to linear algebra, for a linear system to have a unique solution, we can consider square matrix.
+$A\in\RR^n$, $x,b\in\RR^n$, solve for $x%</p>
+
+\[Ax=b\]
+
+<p>Observation:</p>
+
+<blockquote>
+  <p>If $A$ is upper or lower diagonal, we can plug-in, the computational complexity is $n^2$.</p>
+</blockquote>
+
+<h3 id="lu-factorization">LU Factorization</h3>
+
+<p>Sometimes we wish to solve a sequence of problems $Ax_1=b_1$, $Ax_2=b_2$, $\ldots$, where in each system the matrix $A$ is the same.</p>
+
+<h1 id="eigenvectors">Eigenvectors</h1>
+
+<h3 id="computing-a-single-eigenvalue">Computing a Single Eigenvalue</h3>
+
+<p>Roots of polynomial</p>
+
+<h5 id="power-iteration">Power Iteration</h5>
+
+<p>Assume $A\in\RR^{n\times n}$ is symmetric.</p>
+
+<p>Convergence rate: $\frac{\lambda_2}{\lambda_1}$</p>
+
+<h5 id="shifting-inverse-power-iteration">Shifting, Inverse Power Iteration</h5>
+
+<p>Introduce a parameter $\sigma$, consider the eigenvalues of $A-\sigma I_{n}$</p>
+
+<h3 id="finding-multiple-eigenvalues">Finding Multiple Eigenvalues</h3>
+
+<h5 id="deflation">Deflation</h5>
+
+<h5 id="qr-iteration">QR Iteration</h5>
+
+<p>Deflation has the drawback that each eigenvector must be computed separately, which can be slow and can accumulate error if individual eignevalues are not accurate,</p>
+
+<blockquote>
+  <p>Repeatedly factorize $A=QR$ and replace $A$ with $RQ$.</p>
+</blockquote>
+
+<h5 id="krylov-subspace-methods">Krylov Subspace Methods</h5>
+
+<p>For a vector $b\in\RR^n$, we can examine the <em>Krylov matrix</em></p>
+
+\[K_k=(b,Ab,A^2b,\cdots,A^{k-1}b).\]
+
+<h1 id="singular-value-decomposition">Singular Value Decomposition</h1>
+
+<p>By definition, an algorithm is</p>
+
+<blockquote>
+  <p>The columns of $V$ are the eigenvectors of $A^\top A$, so they can be computed. Then rewriting $A=U\Sigma V^\top$ as $AV=U\Sigma$, the columns of $U$ corresponding to nonzero singular values in $\Sigma$ are normalized columns of $AV$. The remianing columns satisfy $AA^\top u_i=0$ and can be computed using the LU factorization.</p>
+</blockquote>
+
+<p>Computing the SVD is far more expensive than most of the linear solution techniques.</p>
+
+<h1 id="iterative-linear-solvers">Iterative Linear Solvers</h1>
+
+<p>Why bother deriving another class of linear solvers?</p>
+
+<ul>
+  <li>Most of direct solvers require us to represent $A$ as a full $n\times n$ matrix.</li>
+  <li>Algorithms such as LU, QR, and Cholesky factorization all take around $O(n^3)$ time.</li>
+</ul>
+
+<p>Assume $A$ is symmetric and positive definite.</p>
+
+<h3 id="gradient-descent">Gradient Descent</h3>
+
+<h3 id="conjugate-gradient">Conjugate Gradient</h3>
+
+<p>Observation:</p>
+
+<blockquote>
+  <p>Suppose ${w_1,\cdots,w_n}$ are orthogonal in $\RR^n$. Then $f(y)=|y-y^*|^2$ is minimized in at most $n$ steps by line searching in direction $w_1$, then direction $w_2$, and so on.</p>
+</blockquote>
+
+<p>Two vectors $v,w$ are $A$-conjugate if $v^\top A w=0$. Thus, suppose ${v_1,\cdots,v_n}$ are $A$-conjugate. Then \(f(x)=\frac{1}{2}(x-x^*)^\top A(x-x^*)=\frac{1}{2}x^\top Ax-b^\top x+c\) is minimzed in at most $n$ steps by line search in direction $v_1$, then direction $v_2$, and so on.</p>
+
+<p>Now we need to find $n$ $A$-conjugate search directions.</p>
+
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>

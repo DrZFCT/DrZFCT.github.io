@@ -7,6 +7,8 @@ author: Kaizhao Liu
 
 Let us first recall how to reverse a classical diffusion process.
 
+# Reverse of Classical Diffusion Process
+
 Let $f:\RR^d\times [0,T]\to \RR^d$ and $\sigma:\RR^m\times [0,T]\to \RR^d$, let the $\RR^d$-valued stochastic process $Y=(Y_s)_{s\in [0,T]}$ be the solution to the SDE 
 
 $$
@@ -340,3 +342,6 @@ where
 $$
 \overleftarrow{\gamma}_{mi}=\gamma_{im}\frac{\rho_i(T-t)}{\rho_m(T-t)}.
 $$
+
+
+

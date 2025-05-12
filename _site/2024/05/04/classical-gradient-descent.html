@@ -52,7 +52,8 @@
             <p>In this article, I recap the classical gradient descent analysis.</p>
 
 <h1 id="smoothness-analysis">Smoothness Analysis</h1>
-<p>A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-smooth if</p>
+
+<p>A function $f \in C^1(\mathbb{R}^d)$ is said to be $L$-<strong>smooth</strong> if</p>
 
 \[\|\nabla f(y) - \nabla f(x)\| \leq L \|y - x\|\]
 
@@ -70,6 +71,8 @@
 
 <h3 id="convergence-to-stationary-point">Convergence to Stationary Point</h3>
 
+<p>For general non-convex problems, $x_t$ may only converge to a stationary point where $\nabla f(x)=0$. Therefore, it is natural to use $\|\nabla f(x_t)\|$ to measure the convergence rate.</p>
+
 <p>Consider the following gradient descent (GD) iterates as follows:</p>
 
 \[x_{t+1} = x_t - \eta_t \nabla f(x_t)\]
@@ -77,6 +80,8 @@
 <p>where $\eta_t$ is the learning rate (also called step size) of the $t$-th step.</p>
 
 <p>If $\eta_t&lt;\frac{2}{L}$, then $f(x_{t+1})\leq f(x_t)$.</p>
+
+<p>One can see that the choice of learning rate depends on the smoothness. A too-large learning rate may cause an increase in objective value. (Instability!)</p>
 
 <p>If $\eta_t=\eta&lt;\frac{2}{L}$, then by the <strong>descent lemma</strong> we have</p>
 
@@ -132,7 +137,7 @@ Notice that $f(x_t)$ is decreasing in $t$, so telescoping gives the desired resu
 
 <h3 id="gradient-flow-version-1">Gradient Flow Version</h3>
 
-<p>Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x’ \in A} |x - x’|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold.</p>
+<p>Let $S_f = \arg\min_x f(x)$ and $d(x; A) = \inf_{x’ \in A} |x - x’|$ for $x \in \mathbb{R}^d$ and $A \subset \mathbb{R}^d$. Note that when $f(\cdot)$ is not strongly convex, $S_f$ may contain many points and is even a manifold. In some cases, $S_f$ can also be empty (the minimzers located at the infinity).</p>
 
 <p>Suppose that $f$ is convex, then we have</p>
 
@@ -188,6 +193,8 @@ Notice that $f(x_t)$ is decreasing in $t$, so telescoping gives the desired resu
   \(f(x_t) \leq (f(x_0) - \lambda(1 - \alpha)t)^{1/(1 - \alpha)} \quad \forall t &lt; \frac{f(x_0)^{1 - \alpha}}{\lambda(1 - \alpha)}.\)
   This means that $x_t$ stops at finite time.</li>
 </ul>
+
+<h1 id="strongly-convex-analysis-convergence-of-x_t">Strongly Convex Analysis: Convergence of $x_t$</h1>
 
 <h1 id="stochastic-gradient-descent">Stochastic Gradient Descent</h1>
 

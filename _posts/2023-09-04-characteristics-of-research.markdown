@@ -60,3 +60,7 @@ There is a wealth of valuable guidance available online, but the central concept
 > "I won't use the term 'answer' because it implies the presence of an absolute truth."
 
 
+### Useful readings:
+
+[Career Advice by Terence Tao](https://terrytao.wordpress.com/career-advice/)
+
