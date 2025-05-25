@@ -30,8 +30,3 @@ Randomized Numerical Algebra
 SoS
 
 
-# Side Interests
-
-On Food and Cooking: The Science And Lore Of The Kitchen (Harold McGee)
-
-
