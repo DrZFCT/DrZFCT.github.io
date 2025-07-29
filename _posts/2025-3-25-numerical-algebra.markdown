@@ -113,13 +113,3 @@ Two vectors $v,w$ are $A$-conjugate if $v^\top A w=0$. Thus, suppose $\{v_1,\cdo
 
 Now we need to find $n$ $A$-conjugate search directions.
 
-
-# Tensor Decomposition
-
-$$
-T=\sum_{i=1}^r u^{(i)}\otimes v^{(i)}\otimes w^{(i)}
-$$
-
-Guarantees for Jennrich's Algorithm can be easily founded by the perburbation bounds [Chap 3.4]().
-
-Where can we apply the tensor decomposition?
