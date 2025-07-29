@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Estimation of Wasserstein Distances
+title: Sparse Linear Models
 author: Kaizhao Liu
 
 ---
