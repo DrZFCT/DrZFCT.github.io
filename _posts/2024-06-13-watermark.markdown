@@ -35,6 +35,25 @@ Similar to the idea of Gumbel watermark, we can inject psuedo-randomness during 
 
 Given a 
 
+
+# Debiasing Green-Red List (?)
+
+[Debiasing Watermarks for Large Language Models via Maximal Coupling](https://arxiv.org/abs/2411.11203)
+
+
 # Statistical Theory
 
 Further, we can compare the efficacy of different pivotal statistics by modifying the established framework of hypothesis testing in mathematical statistics, as in [A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules](https://arxiv.org/abs/2404.01245). 
+
+
+
+# Detection of 
+
+[Robust Detection of Watermarks for Large Language Models Under Human Edits](https://arxiv.org/abs/2411.13868)
+
+Empirical work
+[On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection](https://arxiv.org/abs/2510.03944)
+
+# Estimation of Watermark Proportions in Hybrid AI-Human Texts
+
+[Optimal Estimation of Watermark Proportions in Hybrid AI-Human Texts](https://arxiv.org/abs/2506.22343)
