@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tensor Decomposition</title>
+        <title>Estimation of Wasserstein Distances</title>
         <meta name="viewport" content="width=device-width">
 
         
@@ -44,34 +44,31 @@
         <div class="post">
 
             <header class="post-header">
-              <h1>Tensor Decomposition</h1>
-              <p class="meta">Jul 17, 2025 • Kaizhao Liu</p>
+              <h1>Estimation of Wasserstein Distances</h1>
+              <p class="meta">Jul 18, 2025 • Kaizhao Liu</p>
             </header>
           
             <article class="post-content">
-            <p>This is a note on <a href="https://people.csail.mit.edu/moitra/docs/bookexv2.pdf">tensor decomposition</a>.</p>
+            <p>This is a note on the <a href="https://arxiv.org/abs/2407.18163">estimation of Wasserstein distances</a>.</p>
 
-<h1 id="motivation-the-rotation-problem">Motivation: The Rotation Problem</h1>
+<h1 id="the-wasserstein-law-of-large-numbers">The Wasserstein Law of Large Numbers</h1>
 
-<h1 id="tensor-decomposition">Tensor Decomposition</h1>
+<p>Suppose that $X_1,\dots,X_n\overset{i.i.d}{\sim}\mu$, where $\mu$ is a probability measure on a compact subset of $\RR^d$, which we can assume to be the unit cube $[0,1]^d$ for convenience.
+The law of large numbers implies that the empirical measure 
+\(\mu_n=\frac{1}{n}\sum_{i=1}^n\delta_{X_i},\)
+converges</p>
 
-\[T=\sum_{i=1}^r u^{(i)}\otimes v^{(i)}\otimes w^{(i)}\]
+<blockquote>
+  <p>If the support of $\mu$ lies in $[0,1]^d$, then \(\EE W_1(\mu_n,\mu)\lessim \sqrt{d}\)</p>
+</blockquote>
 
-<h1 id="jennrichs-algorithm">Jennrich’s Algorithm</h1>
+<h1 id="the-dyadic-partioning-argument">The Dyadic Partioning Argument</h1>
 
-<p>Guarantees for Jennrich’s Algorithm can be easily founded by the perburbation bounds <a href="">Chap 3.4</a>.</p>
+<h3 id="rethinking-dudleys-entropy-integral">Rethinking Dudley’s entropy integral</h3>
 
-<h1 id="applications">Applications</h1>
+<h1 id="a-finer-analysis-for-d2">A Finer Analysis for $d=2$</h1>
 
-<p>Where can we apply the tensor decomposition?</p>
-
-<h3 id="phylogenetic-trees-and-hmms">Phylogenetic Trees and HMMs</h3>
-
-<p><a href="arxiv.org/abs/cs/0502076"></a></p>
-
-<h3 id="community-detection">Community Detection</h3>
-
-<h3 id="independent-component-analysis">Independent Component Analysis</h3>
+<h1 id="optimality">Optimality</h1>
 
             </article>
           
