@@ -6,8 +6,8 @@ title: Kaizhao Liu (刘锴昭)
 <h3></h3>
 <h2>Published Papers</h2>
 <ul>
-  {% for publication in site.publications %}
-    {% if publication.published == 1 %}
+  {% assign sorted_publications = site.publications | where: "published", 1 | sort: "year" | reverse %}
+  {% for publication in sorted_publications %}
     <li>
       <p>
         <a href="{{publication.link}}">{{publication.title}}</a><br /> 
@@ -24,8 +24,8 @@ title: Kaizhao Liu (刘锴昭)
 <h3></h3>
 <h2>Unpublished Manuscripts</h2>
 <ul>
-  {% for publication in site.publications %}
-    {% if publication.published == 0 %}
+  {% assign sorted_publications = site.publications | where: "published", 0 | sort: "year" | reverse %}
+  {% for publication in sorted_publications %}
     <li>
       <p>
         <a href="{{publication.link}}">{{publication.title}}</a><br /> 
