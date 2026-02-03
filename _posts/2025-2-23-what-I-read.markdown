@@ -13,20 +13,44 @@ Many items are repeated across sections.
 
 # Spring 2025
 
-Information Theory: From Coding to Learning (Yury Polyanskiy, Yihong Wu)
-
-Statistical Optimal Transport (Sinho Chewi, Jonathan Niles-Weed, Philippe Rigollet)
-
-Computational Optimal Transport
+A first course in causal inference (Peng Ding)
 
 Algorithmic Aspects of Machine Learning (Ankur Moitra)
 
+Information Theory: From Coding to Learning (Yury Polyanskiy, Yihong Wu)
+
+Linear model and extensions (Peng Ding)
+
+Statistical Optimal Transport (Sinho Chewi, Jonathan Niles-Weed, Philippe Rigollet)
+
+
+# Fall 2025
+
+A first course in causal inference (Peng Ding)
+
+Information Theory: From Coding to Learning (Yury Polyanskiy, Yihong Wu)
+
+Log-Concave Sampling (Sinho Chewi)
+
+Statistical Optimal Transport (Sinho Chewi, Jonathan Niles-Weed, Philippe Rigollet)
+
+
+
+# Spring 2026
+
 Log-Concave Sampling (Sinho Chewi) 
+
+
+# ...
+
+Computational Optimal Transport
 
 sampling, diffusion model, Stochastic Calculus ()
 
 Randomized Numerical Algebra
 
 SoS
+
+Acceleration Methods
 
 

@@ -3,36 +3,39 @@ layout: default
 title: Kaizhao Liu (刘锴昭)
 ---
 
-<h3></h3>
-<h2>Published Papers</h2>
-<ul>
-  {% assign sorted_publications = site.publications | where: "published", 1 | sort: "year" | reverse %}
-  {% for publication in sorted_publications %}
-    <li>
-      <p>
-        <a href="{{publication.link}}">{{publication.title}}</a><br /> 
-        {{publication.author}} <br /> 
-        {{publication.journal}}, {{publication.year}} <br />
-        {{publication.content| markdownify}}
-      </p>
-    </li>
-  {% endfor %}
 
-</ul>
 
 <h3></h3>
-<h2>Unpublished Manuscripts</h2>
-<ul>
-  {% assign sorted_publications = site.publications | where: "published", 0 | sort: "year" | reverse %}
-  {% for publication in sorted_publications %}
-    <li>
-      <p>
-        <a href="{{publication.link}}">{{publication.title}}</a><br /> 
-        {{publication.author}} <br /> 
-        {{publication.journal}}, {{publication.year}} <br />
-        {{publication.content| markdownify}}
-      </p>
-    </li>
-  {% endfor %}
-</ul>
+<h2>Publications by Topics</h2>
+
+{% assign topics = site.publications | map: "topic" | uniq | compact | sort %}
+
+{% for topic in topics %}
+  <h3>{{ topic }}</h3>
+  <ul>
+    {% assign topic_publications = site.publications | where: "topic", topic | sort: "year" | reverse %}
+    {% for publication in topic_publications %}
+      <li>
+        <p>
+          <a href="{{publication.link}}">{{publication.title}}</a><br /> 
+          {{publication.author}} <br /> 
+          {% if publication.journal %}
+            {{publication.journal}}, {{publication.year}} 
+          {% else %}
+            {{publication.year}}
+          {% endif %}
+          <br />
+          {{publication.content| markdownify}}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
 <h3></h3>
+
+
+<h3></h3>
+<h2>Publications by Year</h2>
+<p>They can be found in my <a href="https://scholar.google.com/citations?user=-wrtiCkAAAAJ">Google Scholar</a> page.</p>
+

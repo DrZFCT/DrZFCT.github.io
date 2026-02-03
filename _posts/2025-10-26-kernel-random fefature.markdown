@@ -1,6 +1,6 @@
 ---
 layout: post
-title: From High-Dimensional Features to Random Approximations: The Evolution of Scalable Kernel Methods
+title: "From High-Dimensional Features to Random Approximations: The Evolution of Scalable Kernel Methods"
 author: Kaizhao Liu
 
 ---
