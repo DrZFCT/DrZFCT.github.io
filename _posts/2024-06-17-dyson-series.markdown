@@ -2,7 +2,7 @@
 layout: post
 title: Dyson Series
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
 Some quantum mechanical calculation.
@@ -60,7 +60,7 @@ Another less elegant way is to recursively differentiate $Y(t)$ and comparing th
 
 # Wick's Theorem
 
-In probability theory, Isserlis' theorem is a formula that allows one to compute higher-order moments of the multivariate normal distribution in terms of its covariance matrix.
+In probability theory, [Isserlis' theorem](https://en.wikipedia.org/wiki/Isserlis%27s_theorem) is a formula that allows one to compute higher-order moments of the multivariate normal distribution in terms of its covariance matrix.
 This theorem is introduced to particle physics by Wick, so it is known as Wick's theorem.
 
 If $(X_1, \dots, X_n)$ is a zero-mean multivariate normal random vector, then

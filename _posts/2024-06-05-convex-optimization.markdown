@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Convex Optimization
+title: Linear and Convex Programming
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
-Consider the general constrained optimization problem (P) shown below, where we have not assumed anything regarding
-the functions $f$, $h$, $l$ (like convexity). 
+Consider the general constrained optimization problem (P) shown below, where we have not assumed anything regarding the functions $f$, $h$, $l$ (like linearity or convexity). 
 
 $$
 \begin{array}{ll}

@@ -2,7 +2,7 @@
 layout: post
 title: Classical Gradient Descent Analysis
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
 In this article, I recap the classical gradient descent analysis.
@@ -404,3 +404,7 @@ $$
         &\geq \frac{1}{a_t}+\epsilon .
 \end{align*}
 $$
+
+### Bibliographic Notes
+
+This analysis is initialized in 2017 by the paper [The Implicit Bias of Gradient Descent on Separable Data](https://www.jmlr.org/papers/v19/18-188.html). Recently, people examine the case of larger stepsizes.

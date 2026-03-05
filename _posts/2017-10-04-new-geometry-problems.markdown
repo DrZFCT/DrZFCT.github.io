@@ -2,6 +2,7 @@
 layout: post
 title: New Geometry Problems
 author: 刘锴昭，任勇钢，陈凌峰
+published_status: 1
 ---
 
 This article records some problems in plane geometry that I, my friend Yonggang Ren, and my middle school teacher Lingfeng Chen have discovered.

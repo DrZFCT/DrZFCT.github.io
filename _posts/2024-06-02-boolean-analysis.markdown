@@ -2,7 +2,7 @@
 layout: post
 title: Boolean Analysis
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
 Denote 
@@ -24,6 +24,8 @@ $$
 $$
 
 Then the $2^n$ parity functions $\chi_S$ forms an orthonormal basis for the vector space $V$ of functions $\\{-1,1\\}\to\RR^n$.
+
+To understand why these functions serve as a *Fourier* basis, note that the symmetry
 
 Thus every function $f:\\{-1,1\\}^n\to\mathbb R$ can be uniquely expressed as a multilinear polynomial,
 

@@ -2,6 +2,7 @@
 layout: post
 title: An IMO Problem Revisited
 author: 刘锴昭，林天齐，万宏，李启印
+published_status: 1
 ---
 
 This article records some solutions of a problem in plane geometry that I discovered.

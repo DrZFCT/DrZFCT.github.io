@@ -2,7 +2,7 @@
 layout: post
 title: Point Estimation
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
 In this article, I breifly review the theory of point estimation.

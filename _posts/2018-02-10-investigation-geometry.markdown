@@ -2,6 +2,7 @@
 layout: post
 title: Investigation in Plane Geometry
 author: 刘锴昭
+published_status: 1
 ---
 
 This article records some of my proofs in plane geometry.

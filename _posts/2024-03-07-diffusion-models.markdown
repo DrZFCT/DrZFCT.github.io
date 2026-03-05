@@ -2,7 +2,7 @@
 layout: post
 title: Diffusion Models
 author: Kaizhao Liu
-
+published_status: 1
 ---
 
 Let us first recall how to reverse a classical diffusion process.
@@ -125,6 +125,8 @@ $$
 \end{align}
 
 $$
+
+This result is first obtained in the paper [Reversing Lindblad Dynamics via Continuous Petz Recovery Map](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.020403).
 
 # Complex Fokker-Planck Equation
 

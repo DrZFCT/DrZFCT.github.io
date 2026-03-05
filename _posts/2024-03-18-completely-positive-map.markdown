@@ -2,6 +2,7 @@
 layout: post
 title: "Completely Positive Map"
 author: Kaizhao Liu
+published_status: 1
 ---
 
 In this article, I describe $C^*$-algebra, complete positive map, and its relationship to quantum mechanics.
@@ -41,6 +42,8 @@ $$
 
 # A positive map which is not complete positive 
 
+This example is given in Section 3 of the paper [Positive Functions on C*-Algebras](https://doi.org/10.2307/2032342).
+
 Let the $C^*$-algebra in consideration be $M_n(\CC)$. The $E_{ij}$'s are a basis for this vector space.
 Define a linear function on $M_n(\CC)$ by 
 
@@ -67,6 +70,7 @@ But $\mu\otimes I_n (E)$ is not positive as
 $$
 \sum_{i,j,k,l}E_{ik,jl}\delta_{ik}\delta_{jl}=\sum_{i,j,k,l}(i-l)(j-k)\delta_{ik}\delta_{jl}=-\sum_{i,j}(i-j)^2<0.
 $$
+
 
 
 # Tricks with Maximal Entanglement

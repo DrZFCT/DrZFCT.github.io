@@ -6,7 +6,8 @@ title: Kaizhao Liu (刘锴昭)
 <h1>Latest Posts</h1>
 
 <ul>
-  {% for post in site.posts %}
+  {% assign published_posts = site.posts | where: "published_status", 1 %}
+  {% for post in published_posts %}
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       {{ post.excerpt }}
