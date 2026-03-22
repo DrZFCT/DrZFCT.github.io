@@ -49,10 +49,10 @@
             </header>
           
             <article class="post-content">
-            <p>Consider the general constrained optimization problem (P) shown below, where we have not assumed anything regarding the functions $f$, $h$, $l$ (like linearity or convexity).</p>
+            <p>Consider the general constrained optimization problem $\eqref{P}$ shown below, where we have not assumed anything regarding the functions $f$, $h$, $l$ (like linearity or convexity).</p>
 
-\[\begin{array}{ll}
-&amp;\text{(P)}\\  \min\limits_{x} &amp;f(x) \\
+\[\begin{array}{ll}\tag{P}\label{P}
+\min\limits_{x} &amp;f(x) \\
  \text{subject to} 
 &amp; h_i(x) \leq 0, \quad i = 1, \ldots, m \\
 &amp; l_j(x) = 0, \quad j = 1, \ldots, r
@@ -85,10 +85,10 @@ $f(x)$ for any dual feasible $u,v$.</p>
 
 <h1 id="dual-problem">Dual Problem</h1>
 
-<p>We define $G$ as the dual of $P$ by maximizing $g(u,v)$ over all dual feasible $u, v$.</p>
+<p>We define $\eqref{G}$ as the dual of $\eqref{P}$ by maximizing $g(u,v)$ over all dual feasible $u, v$.</p>
 
-\[\begin{array}{ll}
-&amp;\text{(G)} \\ \max\limits_{u,v} &amp;g(u,v) \\
+\[\begin{array}{ll}\tag{G}\label{G}
+\max\limits_{u,v} &amp;g(u,v) \\
  \text{subject to} 
 &amp; u \geq 0
 \end{array}\]
@@ -128,7 +128,7 @@ as $g(u, v)$ can be expressed as the negative of pointwise maximum of convex fun
 
 <h1 id="kkt-conditions">KKT Conditions</h1>
 
-<p>We first state the KKT conditions associated with problem $P$, they are:</p>
+<p>We first state the KKT conditions associated with problem $\eqref{P}$, they are:</p>
 
 <ul>
   <li><strong>Stationarity Condition</strong>: for the given dual variable pair $u, v$, the point $x$ minimizes the lagrangian $L(x, u, v)$</li>

@@ -5,11 +5,11 @@ author: Kaizhao Liu
 published_status: 1
 ---
 
-Consider the general constrained optimization problem (P) shown below, where we have not assumed anything regarding the functions $f$, $h$, $l$ (like linearity or convexity). 
+Consider the general constrained optimization problem $\eqref{P}$ shown below, where we have not assumed anything regarding the functions $f$, $h$, $l$ (like linearity or convexity). 
 
 $$
-\begin{array}{ll}
-&\text{(P)}\\  \min\limits_{x} &f(x) \\
+\begin{array}{ll}\tag{P}\label{P}
+\min\limits_{x} &f(x) \\
  \text{subject to} 
 & h_i(x) \leq 0, \quad i = 1, \ldots, m \\
 & l_j(x) = 0, \quad j = 1, \ldots, r
@@ -54,11 +54,11 @@ is called the Lagrange dual function, and it provides a lower bound on the optim
 # Dual Problem
 
 
-We define $G$ as the dual of $P$ by maximizing $g(u,v)$ over all dual feasible $u, v$.
+We define $\eqref{G}$ as the dual of $\eqref{P}$ by maximizing $g(u,v)$ over all dual feasible $u, v$.
 
 $$
-\begin{array}{ll}
-&\text{(G)} \\ \max\limits_{u,v} &g(u,v) \\
+\begin{array}{ll}\tag{G}\label{G}
+\max\limits_{u,v} &g(u,v) \\
  \text{subject to} 
 & u \geq 0
 \end{array}
@@ -99,7 +99,7 @@ This implies that a zero duality gap indicates an optimal value for both the pri
 # KKT Conditions
 
 
-We first state the KKT conditions associated with problem $P$, they are:
+We first state the KKT conditions associated with problem $\eqref{P}$, they are:
 
 - **Stationarity Condition**: for the given dual variable pair $u, v$, the point $x$ minimizes the lagrangian $L(x, u, v)$
 
