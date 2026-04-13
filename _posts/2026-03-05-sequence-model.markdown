@@ -9,7 +9,7 @@ We illustrate basic inequality, noise complexity (e.g. Radamacher complexity, Ga
 
 # Sequence Model
 
-In the sequence model, we observe data $y_i$ for $i=1,\dots,n$ from the following model
+In the sequence model, we observe data $y_i$ for $i=1,\dots,d$ from the following model
 
 $$
 \begin{pmatrix} 
@@ -20,7 +20,7 @@ y_n
 \begin{pmatrix} 
 \theta_1^* \\ 
 \vdots \\ 
-\theta_n^* \end{pmatrix} + \sigma 
+\theta_n^* \end{pmatrix} + \frac{\sigma}{\sqrt{n}} 
 \begin{pmatrix} 
 w_1 \\ 
 \vdots \\ 
@@ -28,7 +28,8 @@ w_n
 \end{pmatrix}
 $$
 
-where the noise satisfies $\EE w_i=0$ and $\var(w_i)=1$.
+where the noise satisfies $\EE w_i=0$ and $\var(w_i)=1$. 
+Note that the noise level has been rescaled by $1/\sqrt{n}$, reflecting the fact that we took the average of $n$ independent measurements.
 Our goal is to estimate the groundtruth parameter $\theta^*$; here, we assume to belong to some set $\Theta\subset\RR^n$ that we know.
 
 We can consider the constrained least-squares estimator
