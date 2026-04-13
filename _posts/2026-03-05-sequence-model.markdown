@@ -56,6 +56,7 @@ $$
 Moreover, if $\Theta$ is convex, then the $2$ factor can be reduced to $1$.
 
 The proof is simply by expanding the inequality $$\|y-\hat\theta\|^2_2 \leq \|y-\theta^*\|^2_2$$.
+For the convex case, we use the first-order gradient condition for optimality instead.
 
 
 # Noise Complexity
