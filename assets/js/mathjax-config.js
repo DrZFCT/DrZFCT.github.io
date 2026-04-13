@@ -3,7 +3,8 @@ window.MathJax = {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
       macros: {
-        AA: "\\mathbb{A}",
+      //shortcuts
+      AA: "\\mathbb{A}",
       BB: "\\mathbb{B}",
       CC: "\\mathbb{C}",
       DD: "\\mathbb{D}",
@@ -180,14 +181,31 @@ window.MathJax = {
 
       one: "\\mathbf{1}",
 
-      tr: "\\mathrm{tr}",
-      rank: "\\mathrm{rank}",
       diag: "\\mathrm{diag}",
       dom: "\\mathrm{dom}",
 
       abs: "\\left\\vert#1\\right\\vert",
       norm: "\\left\\Vert#1\\right\\Vert_{#2}",
       inn: "\\left\\langle#1\\right\\rangle",
+      
+      // Operators
+      Aut: "\\operatorname{Aut}",
+      Hom: "\\operatorname{Hom}",
+      rk: "\\operatorname{rank}",
+      supp: "\\operatorname{supp}",
+      tr: "\\operatorname{tr}",
+      rad: "\\operatorname{rad}",
+      diam: "\\operatorname{diam}",
+      KL: "\\operatorname{KL}",
+      Ent: "\\operatorname{Ent}",
+      var: "\\operatorname{Var}",
+      cov: "\\operatorname{Cov}",
+      grad: "\\operatorname{grad}",
+
+      // Operators with limits (subscripts underneath)
+      argmin: "\\operatorname*{arg min}",
+      argmax: "\\operatorname*{arg max}",
+      esssup: "\\operatorname*{ess sup}",
 
       cls: "\\text{Class}",
       }

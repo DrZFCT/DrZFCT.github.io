@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Stein Paradox</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Stein Paradox</h1>
+              <p class="meta">Mar 6, 2026 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>We illustrate Stein paradox.</p>
+
+<h1 id="an-simple-normal-example">An Simple Normal Example</h1>
+
+<p>$X \sim \cN(\mu,\sigma^2 I_d)$
+where $X\in \RR^d$ and $\mu\in\RR^d$.</p>
+
+<p>say we observe one sample</p>
+
+<p>admissibility</p>
+
+<p>In terms of MSE,
+The naive estimator is not admissible if $d\geq 3$.</p>
+
+\[\hat\mu_{JS}(x)=x-\frac{d-2}{\|x\|^2}x\]
+
+<p>Denote $g(x)=\frac{n-2}{|x|^2}x$,</p>
+
+\[\begin{align*}
+    \operatorname{MSE}(\hat\mu_{JS})&amp;=\EE\|X+g(X)-\mu\|^2\\
+    &amp;=n+\EE \|g(X)\|^2 + 2\EE [(X-\mu)g(X)] \\
+    &amp;=n+(n-2)^2\EE \left[\frac{1}{\|X\|^2}\right] - 2(n-2)\EE \left[\nabla\cdot\left(\frac{X}{\|X\|^2}\right)\right]\\
+    &amp;=n-(n-2)^2\EE \left[\frac{1}{\|X\|^2}\right]
+\end{align*}\]
+
+<p>where</p>
+
+<p>The JS estimator is actually not admissible.</p>
+
+<p>If we have $n\geq 1$ observations, we can simply form the estimator</p>
+
+\[\]
+
+<h1 id="references">References</h1>
+
+<p><a href="https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator">Wikipedia: James-Stein Estimator</a></p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
