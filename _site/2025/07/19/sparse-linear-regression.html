@@ -64,7 +64,7 @@ Our goal is to find the sparsest solution to the linear system.</p>
     \min_{\theta \in \mathbb{R}^d} \|\theta\|_0 \quad \text{such that} \quad \bX\theta = y.
 \end{equation}\]
 
-<p>However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,n$, which is computationally infeasible if the groundtruth sparisty is large.</p>
+<p>However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,d$, which is computationally infeasible if the groundtruth sparisty is large.</p>
 
 <p>A natural idea is to 
 Algorithm: Basis Pursuit linear program</p>
@@ -72,8 +72,6 @@ Algorithm: Basis Pursuit linear program</p>
 \[\begin{equation}\tag{BS}\label{BS}
     \min_{\theta \in \mathbb{R}^d} \|\theta\|_1 \quad \text{such that} \quad \bX\theta = y.
 \end{equation}\]
-
-<p>Can we acheive the fast rate with a computationally efficient procedure?</p>
 
 <p>Define</p>
 
@@ -96,6 +94,18 @@ Say $\bX\in\RR^{n\times d}$ has i.i.d. entries $\bX_{ij}\sim\cN(0,1)$. Then if $
 
 <p>Let us now turn to the noisy setting, in which we observe the vector–matrix pair $(y, \bX) \in \mathbb{R}^n \times \mathbb{R}^{n \times d}$ linked by the observation model $y = \bX\theta^* + w$. The new ingredient here is the noise vector $w \in \mathbb{R}^n$.</p>
 
+<p>In this case, we also have a <em>hard sparse</em> estimator</p>
+
+\[\hat\theta_{\text{HS}}=\argmin_{\|\theta\|_0\leq k}\|y-\bX\theta\|_2^2\]
+
+<p><em>Can we acheive the fast rate with a computationally efficient procedure?</em></p>
+
+<p>One can also consider relaxed</p>
+
+\[\hat{\theta}=\argmin_{\|\theta\|_1\leq R}\|y-\bX\theta\|_2^2\]
+
+<p>with \(R=\|\theta^*\|_1\).</p>
+
 <p>In particular, for a constant $\alpha \geq 1$, let us define the set</p>
 
 \[\mathbb{C}_{\alpha}(S) := \{\Delta \in \mathbb{R}^d \mid \|\Delta_{S^c}\|_1 \leq \alpha \|\Delta_S\|_1\}.\]
@@ -110,6 +120,7 @@ Say $\bX\in\RR^{n\times d}$ has i.i.d. entries $\bX_{ij}\sim\cN(0,1)$. Then if $
     x&amp;=\\
     &amp;=
 \end{align*}\]
+
 
             </article>
           

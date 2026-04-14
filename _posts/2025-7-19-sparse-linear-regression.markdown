@@ -24,7 +24,7 @@ $$
 \end{equation}
 $$
 
-However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,n$, which is computationally infeasible if the groundtruth sparisty is large.
+However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,d$, which is computationally infeasible if the groundtruth sparisty is large.
 
 A natural idea is to 
 Algorithm: Basis Pursuit linear program
@@ -35,8 +35,6 @@ $$
 \end{equation}
 $$
 
-
-Can we acheive the fast rate with a computationally efficient procedure?
 
 
 Define
@@ -59,6 +57,24 @@ Say $\bX\in\RR^{n\times d}$ has i.i.d. entries $\bX_{ij}\sim\cN(0,1)$. Then if $
 
 Let us now turn to the noisy setting, in which we observe the vector–matrix pair $(y, \bX) \in \mathbb{R}^n \times \mathbb{R}^{n \times d}$ linked by the observation model $y = \bX\theta^* + w$. The new ingredient here is the noise vector $w \in \mathbb{R}^n$.
 
+In this case, we also have a *hard sparse* estimator
+
+$$
+\hat\theta_{\text{HS}}=\argmin_{\|\theta\|_0\leq k}\|y-\bX\theta\|_2^2
+$$
+
+
+*Can we acheive the fast rate with a computationally efficient procedure?*
+
+One can also consider relaxed
+
+$$
+\hat{\theta}=\argmin_{\|\theta\|_1\leq R}\|y-\bX\theta\|_2^2
+$$
+
+with $$R=\|\theta^*\|_1$$.
+
+
 In particular, for a constant $\alpha \geq 1$, let us define the set  
 
 $$ \mathbb{C}_{\alpha}(S) := \{\Delta \in \mathbb{R}^d \mid \|\Delta_{S^c}\|_1 \leq \alpha \|\Delta_S\|_1\}.$$
@@ -80,3 +96,5 @@ $$
     &=
 \end{align*}
 $$
+
+

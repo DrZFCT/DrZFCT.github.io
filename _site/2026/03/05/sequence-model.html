@@ -53,7 +53,7 @@
 
 <h1 id="sequence-model">Sequence Model</h1>
 
-<p>In the sequence model, we observe data $y_i$ for $i=1,\dots,n$ from the following model</p>
+<p>In the sequence model, we observe data $y_i$ for $i=1,\dots,d$ from the following model</p>
 
 \[\begin{pmatrix} 
 y_1 \\ 
@@ -63,14 +63,15 @@ y_n
 \begin{pmatrix} 
 \theta_1^* \\ 
 \vdots \\ 
-\theta_n^* \end{pmatrix} + \sigma 
+\theta_n^* \end{pmatrix} + \frac{\sigma}{\sqrt{n}} 
 \begin{pmatrix} 
 w_1 \\ 
 \vdots \\ 
 w_n 
 \end{pmatrix}\]
 
-<p>where the noise satisfies $\EE w_i=0$ and $\var(w_i)=1$.
+<p>where the noise satisfies $\EE w_i=0$ and $\var(w_i)=1$. 
+Note that the noise level has been rescaled by $1/\sqrt{n}$, reflecting the fact that we took the average of $n$ independent measurements.
 Our goal is to estimate the groundtruth parameter $\theta^*$; here, we assume to belong to some set $\Theta\subset\RR^n$ that we know.</p>
 
 <p>We can consider the constrained least-squares estimator</p>
@@ -92,7 +93,8 @@ Thus, traditional statistical analysis techniques fail on this problem.</p>
 
 <p>Moreover, if $\Theta$ is convex, then the $2$ factor can be reduced to $1$.</p>
 
-<p>The proof is simply by expanding the inequality \(\|y-\hat\theta\|^2_2 \leq \|y-\theta^*\|^2_2\).</p>
+<p>The proof is simply by expanding the inequality \(\|y-\hat\theta\|^2_2 \leq \|y-\theta^*\|^2_2\).
+For the convex case, we use the first-order gradient condition for optimality instead.</p>
 
 <h1 id="noise-complexity">Noise Complexity</h1>
 
