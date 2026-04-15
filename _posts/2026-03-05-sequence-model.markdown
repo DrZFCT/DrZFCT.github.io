@@ -44,6 +44,24 @@ This is also not a maximum likelihood estimator if $w_i$ are not Gaussian.
 Thus, traditional statistical analysis techniques fail on this problem.
 
 Also note that this setup also includes the class of *fixed design regression problems*.
+In this model, our goal is to estimate the regression function $f^*(x)=\EE[Y|X=x]$.
+We are given $(x_i,y_i)$ pairs that are drawn with $y_i\sim \PP_{Y|X=x_i}$, and in the analysis, we condition on the values $$\{x_i\}_{i=1}^n$$ of the covariates. We can write this as 
+
+$$
+y_i=f^*(x_i)+\sigma w_i
+$$
+
+for some noise variables 
+$$
+\EE[w_i|x_i]=0
+$$.
+This is a special case of our sequence model if we make the identification $$\theta^*=(f^*(x_1),\dots,f^*(x_n))$$. The set $\Theta$ is then determined by a class of possible functions $\cF$ such that 
+
+$$
+\Theta=\{(f(x_1),\dots,f(x_n))|f\in\cF\}.
+$$
+
+
 
 # Basic Inequality
 
@@ -118,9 +136,23 @@ $$
 
 Note that the Gaussian/Rademacher complexity of $\ell_1$ balls has an exponential improvement over $\ell_2$ balls.
 
-### (Low-rank) Matrices
+### Matrix Denoising
 
+We write 
 
+$$
+\bY=\bM+\frac{\sigma}{\sqrt{n}}\bW
+$$
+
+where $\bY,\bM,\bW\in\RR^{d_1\times d_2}$. 
+
+Suppose $$\|\bM\|_F\leq R$$, then it is just the sequence model of $\ell_2$ balls, with dimension $d_1d_2$.
+
+To leverage the matrix structure, we additionally assume $\rk(\bM)\leq k$.
+
+$$
+\EE \|\hat\bM-\bM^*\|_F^2\lesssim R\sigma \sqrt{\frac{k(d_1+d_2)}{n}}.
+$$
 
 # Localization
 
@@ -157,4 +189,8 @@ $$
 
 Comparing with $\eqref{eq:finiteclassslowrate}$, we see that our bound no longer depends on $R$ as it was removed by the rescaling argument, and our dependence is now $(\log N)/n$ instead of $\sqrt{(\log N)/n}$.
 
-### Low-Rank Matrices
+### Low-Rank Matrix Denoising
+
+$$
+\EE \|\hat\bM-\bM^*\|_F^2\lesssim \sigma^2 \frac{k(d_1+d_2)}{n}.
+$$

@@ -27,7 +27,7 @@ $$
 However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,d$, which is computationally infeasible if the groundtruth sparisty is large.
 
 A natural idea is to 
-Algorithm: Basis Pursuit linear program
+Algorithm: *Basis Pursuit linear program*
 
 $$
 \begin{equation}\tag{BS}\label{BS}
@@ -66,7 +66,7 @@ $$
 
 *Can we acheive the fast rate with a computationally efficient procedure?*
 
-One can also consider relaxed
+One can consider the constrained Lasso estimator
 
 $$
 \hat{\theta}=\argmin_{\|\theta\|_1\leq R}\|y-\bX\theta\|_2^2
@@ -79,22 +79,34 @@ In particular, for a constant $\alpha \geq 1$, let us define the set
 
 $$ \mathbb{C}_{\alpha}(S) := \{\Delta \in \mathbb{R}^d \mid \|\Delta_{S^c}\|_1 \leq \alpha \|\Delta_S\|_1\}.$$
 
-The matrix  $\bX$ satisfies the **restricted eigenvalue** (RE) condition over $S$ with parameters $(\kappa, \alpha)$ if  
+The matrix  $\bX$ satisfies the **restricted eigenvalue** (RE) condition over $S$ with parameters $(\gamma, \alpha)$ if  
 
-$$\frac{1}{n} \|\bX\Delta\|_2^2 \geq \kappa \|\Delta\|_2^2 \quad \text{for all} \quad \Delta \in \CC_{\alpha}(S).$$
+$$\frac{1}{n} \|\bX\Delta\|_2^2 \geq \gamma \|\Delta\|_2^2 \quad \text{for all} \quad \Delta \in \CC_{\alpha}(S).$$
 
+We show that there are many matrices $\bX\in\RR^{n\times d}$ that satisfy RE/RN conditions.
 
+Finally, we show that if $\bX$ satisfies RE, then the constrained Lasso estimator can achieve the fast rate.
+
+Theorem: If $\bX$ satisfies RE($\gamma$), then 
 
 $$
-\frac{\|\bX \hat{\Delta}\|_2^2}{n}\leq \frac{1}{n}\left\langle w,\bX\hat{\Delta}\right \rangle 
+\frac{\EE \|X(\hat\theta-\theta^*)\|_2^2}{n}\leq \frac{\sigma^2}{\gamma}\frac{k\log d}{n}
 $$
 
+The proof goes as follows. As $$R=\|\theta^*\|_1$$, $\theta^*$ is feasible and basic inequality applies. 
+Denote $$\hat\Delta=\hat\theta-\theta^*$$, we have
 
 $$
 \begin{align*}
-    x&=\\
-    &=
+    \frac{\|\bX \hat{\Delta}\|_2^2}{n} &\leq \frac{1}{n}\left\langle w,\bX\hat{\Delta}\right\rangle \\
+    &= \frac{1}{n}\left\langle \hat{\Delta},\bX^\top w\right\rangle \\
+    &\leq \|\hat{\Delta}\|_1\left\|\frac{\bX^\top w}{n}\right\|_\infty
 \end{align*}
 $$
 
+as $$\|\hat\theta\|_1\leq \|\theta^*\|_1$$, the error belongs to the cone $\CC_1(S)$, whence
+
+$$
+\|\hat\Delta\|_1= \|\hat\Delta_S\|_1 + \|\hat\Delta_{S^c}\|_1\leq 2 \|\hat\Delta_S\|_1  \leq 2\sqrt{k}\|\hat\Delta\|_2
+$$
 

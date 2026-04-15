@@ -67,7 +67,7 @@ Our goal is to find the sparsest solution to the linear system.</p>
 <p>However, this is a combinartorics optimization problem. In general, we need to check all subsets of cardinality $k=1,\dots,d$, which is computationally infeasible if the groundtruth sparisty is large.</p>
 
 <p>A natural idea is to 
-Algorithm: Basis Pursuit linear program</p>
+Algorithm: <em>Basis Pursuit linear program</em></p>
 
 \[\begin{equation}\tag{BS}\label{BS}
     \min_{\theta \in \mathbb{R}^d} \|\theta\|_1 \quad \text{such that} \quad \bX\theta = y.
@@ -100,7 +100,7 @@ Say $\bX\in\RR^{n\times d}$ has i.i.d. entries $\bX_{ij}\sim\cN(0,1)$. Then if $
 
 <p><em>Can we acheive the fast rate with a computationally efficient procedure?</em></p>
 
-<p>One can also consider relaxed</p>
+<p>One can consider the constrained Lasso estimator</p>
 
 \[\hat{\theta}=\argmin_{\|\theta\|_1\leq R}\|y-\bX\theta\|_2^2\]
 
@@ -110,16 +110,30 @@ Say $\bX\in\RR^{n\times d}$ has i.i.d. entries $\bX_{ij}\sim\cN(0,1)$. Then if $
 
 \[\mathbb{C}_{\alpha}(S) := \{\Delta \in \mathbb{R}^d \mid \|\Delta_{S^c}\|_1 \leq \alpha \|\Delta_S\|_1\}.\]
 
-<p>The matrix  $\bX$ satisfies the <strong>restricted eigenvalue</strong> (RE) condition over $S$ with parameters $(\kappa, \alpha)$ if</p>
+<p>The matrix  $\bX$ satisfies the <strong>restricted eigenvalue</strong> (RE) condition over $S$ with parameters $(\gamma, \alpha)$ if</p>
 
-\[\frac{1}{n} \|\bX\Delta\|_2^2 \geq \kappa \|\Delta\|_2^2 \quad \text{for all} \quad \Delta \in \CC_{\alpha}(S).\]
+\[\frac{1}{n} \|\bX\Delta\|_2^2 \geq \gamma \|\Delta\|_2^2 \quad \text{for all} \quad \Delta \in \CC_{\alpha}(S).\]
 
-\[\frac{\|\bX \hat{\Delta}\|_2^2}{n}\leq \frac{1}{n}\left\langle w,\bX\hat{\Delta}\right \rangle\]
+<p>We show that there are many matrices $\bX\in\RR^{n\times d}$ that satisfy RE/RN conditions.</p>
+
+<p>Finally, we show that if $\bX$ satisfies RE, then the constrained Lasso estimator can achieve the fast rate.</p>
+
+<p>Theorem: If $\bX$ satisfies RE($\gamma$), then</p>
+
+\[\frac{\EE \|X(\hat\theta-\theta^*)\|_2^2}{n}\leq \frac{\sigma^2}{\gamma}\frac{k\log d}{n}\]
+
+<p>The proof goes as follows. As \(R=\|\theta^*\|_1\), $\theta^*$ is feasible and basic inequality applies. 
+Denote \(\hat\Delta=\hat\theta-\theta^*\), we have</p>
 
 \[\begin{align*}
-    x&amp;=\\
-    &amp;=
+    \frac{\|\bX \hat{\Delta}\|_2^2}{n} &amp;\leq \frac{1}{n}\left\langle w,\bX\hat{\Delta}\right\rangle \\
+    &amp;= \frac{1}{n}\left\langle \hat{\Delta},\bX^\top w\right\rangle \\
+    &amp;\leq \|\hat{\Delta}\|_1\left\|\frac{\bX^\top w}{n}\right\|_\infty
 \end{align*}\]
+
+<p>as \(\|\hat\theta\|_1\leq \|\theta^*\|_1\), the error belongs to the cone $\CC_1(S)$, whence</p>
+
+\[\|\hat\Delta\|_1= \|\hat\Delta_S\|_1 + \|\hat\Delta_{S^c}\|_1\leq 2 \|\hat\Delta_S\|_1  \leq 2\sqrt{k}\|\hat\Delta\|_2\]
 
 
             </article>
