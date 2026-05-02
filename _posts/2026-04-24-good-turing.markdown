@@ -18,3 +18,6 @@ practical: interpretbility, postive, monotone...
 
 g-modeling: first learn the plug-in
 f-modeling
+
+
+[Besting Good--Turing: Optimality of Non-Parametric Maximum Likelihood for Distribution Estimation](https://arxiv.org/abs/2509.07355)
