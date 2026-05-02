@@ -1,7 +1,7 @@
 ---
 published: 1
 title: "Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium"
-author: (α-β) Kaizhao Liu, Qi Long, Zhekun Shi, Weijie J. Su, Jiancong Xiao
+author: with Qi Long, Zhekun Shi, Weijie J. Su, and Jiancong Xiao
 journal: Annals of Statistics
 year: 2026
 link: https://arxiv.org/abs/2503.10990
