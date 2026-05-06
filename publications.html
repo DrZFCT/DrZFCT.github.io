@@ -11,7 +11,9 @@ title: Kaizhao Liu (刘锴昭)
 {% assign topics = site.publications | map: "topic" | uniq | compact | sort %}
 
 {% for topic in topics %}
-  <h3>{{ topic }}</h3>
+  {% comment %} This splits the string by the hyphen and takes the last part {% endcomment %}
+  {% assign display_name = topic | split: '-' | last %}
+  <h3>{{ display_name }}</h3>
   <ul>
     {% assign topic_publications = site.publications | where: "topic", topic | sort: "year" | reverse %}
     {% for publication in topic_publications %}
@@ -20,7 +22,7 @@ title: Kaizhao Liu (刘锴昭)
           <a href="{{publication.link}}">{{publication.title}}</a><br /> 
           {{publication.author}} <br /> 
           {% if publication.journal %}
-            {{publication.journal}}, {{publication.year}} 
+            <em>{{publication.journal}}</em>, {{publication.year}} 
           {% else %}
             {{publication.year}}
           {% endif %}
@@ -32,7 +34,6 @@ title: Kaizhao Liu (刘锴昭)
   </ul>
 {% endfor %}
 
-<h3></h3>
 
 
 <h3></h3>
