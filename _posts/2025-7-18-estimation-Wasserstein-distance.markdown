@@ -2,7 +2,7 @@
 layout: post
 title: Estimation of Wasserstein Distances
 author: Kaizhao Liu
-
+published_status: 0
 ---
 
 This is a note on the [estimation of Wasserstein distances](https://arxiv.org/abs/2407.18163).
