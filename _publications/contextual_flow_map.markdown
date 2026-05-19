@@ -5,6 +5,6 @@ author:  with Shi Chen, Zhengjiang Lin, and Philippe Rigollet
 journal: arXiv preprint
 year: 2026
 link: http://arxiv.org/abs/2605.16747
-topic: "5 - Transformers"
+topic: "05 - Transformers"
 ---
 
