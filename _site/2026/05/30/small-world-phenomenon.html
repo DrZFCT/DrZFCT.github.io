@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Small-World Phenomenon</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Small-World Phenomenon</h1>
+              <p class="meta">May 30, 2026 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>This is a note on the <a href="https://arxiv.org/abs/2407.18163">estimation of Wasserstein distances</a>.</p>
+
+<h1 id="gaint-component">Gaint Component</h1>
+
+<h1 id="distance-and-breadth-first-search">Distance and Breadth-First Search</h1>
+
+<p>In additional to providing an algorithm of determining distances, it can also serve as a useful conceptual framework to organize the structure of a graph, arranging the nodes based on their distances from a fixed starting point.</p>
+
+<h1 id="small-world-phenomenon">Small-World Phenomenon</h1>
+
+<h3 id="empirical-evidence">Empirical Evidence</h3>
+
+<h3 id="reason">Reason</h3>
+
+<p>Communication efficiency</p>
+
+<h1 id="problem-set-erdős-rényi-graph">Problem Set: Erdős-Rényi Graph</h1>
+
+<h2 id="problem-1-percolation-and-the-mean-field-phase-transition-in-gnp">Problem 1: Percolation and the Mean-Field Phase Transition in $G(n,p)$</h2>
+
+<p>The Erdős-Rényi random graph $G(n,p)$ serves as the canonical mean-field model for network connectivity. Consider the sparse regime where $p = \frac{c}{n}$ for a macroscopic parameter $c &gt; 0$, and let the system size approach the thermodynamic limit ($n \to \infty$). We are interested in the percolation transition where a macroscopic “giant component” emerges.</p>
+
+<p><strong>Part (a): The Local Limit.</strong>
+Prove that in the thermodynamic limit, the degree distribution of any randomly selected vertex converges to a Poisson distribution with mean $c$.</p>
+
+<p><strong>Part (b): The Self-Consistency Equation.</strong>
+Let $\rho$ be the fraction of vertices belonging to the largest connected component. Derive the mean-field self-consistency equation for the order parameter:
+\(1 - \rho = e^{-c\rho}\)</p>
+
+<details>
+<summary><b>Hint</b></summary>
+Model the exploration of a vertex's local neighborhood as a Galton-Watson branching process. 
+</details>
+
+<p><strong>Part (c): Criticality and Scaling</strong>
+Using the self-consistency equation derived in Part (b):</p>
+<ol>
+  <li>Show that a continuous phase transition occurs at a critical threshold $c_c = 1$.</li>
+  <li>In the immediate supercritical regime ($c = 1 + \epsilon$ for $0 &lt; \epsilon \ll 1$), perform a Taylor expansion to determine the critical exponent $\beta$ for the order parameter, where $\rho \propto (c - 1)^\beta$.</li>
+</ol>
+
+<hr />
+
+<h2 id="problem-2-the-small-world-paradox-and-clustering">Problem 2: The Small-World Paradox and Clustering</h2>
+
+<p>A defining feature of empirical social networks is the “small-world phenomenon,” which requires both a short average path length (scaling as $O(\ln n)$) and a high local clustering coefficient.</p>
+
+<p>Let the clustering coefficient $C$ of a network be defined as the probability that two randomly chosen neighbors of a vertex $v$ are also connected to each other.</p>
+
+<p><strong>Part (a): The Failure of Erdős-Rényi</strong>
+Consider the sparse Erdős-Rényi graph $G(n,p)$ with $p = \frac{c}{n}$ for a constant $c &gt; 0$.</p>
+<ol>
+  <li>What is the exact expected clustering coefficient $C$ of this graph?</li>
+  <li>What happens to $C$ as $n \to \infty$? Briefly explain why this proves $G(n,p)$ is a poor model for social networks, even though its average path length scales as $O(\ln n)$.</li>
+</ol>
+
+<p><strong>Part (b): The Regular Ring Lattice</strong>
+Consider a deterministic ring lattice of $n$ vertices. The vertices are arranged in a circle, and each vertex is connected to its $k$ nearest neighbors (i.e., $k/2$ neighbors on the left, and $k/2$ on the right). Assume $n \gg k \ge 4$.
+Calculate the clustering coefficient $C$ of this ring lattice. Show that as $n \to \infty$ (while keeping $k$ fixed), $C$ remains strictly bounded away from $0$.</p>
+
+<p><strong>Part (c): Bridging the Gap</strong>
+The ring lattice from Part (b) has high clustering, but its average path length scales linearly as $O(n/k)$, which violates the small-world requirement. Propose a mathematically explicit procedure to modify the ring lattice from Part (b) such that the average path length drops to $O(\ln n)$ while the clustering coefficient $C$ remains $O(1)$. Justify your proposed mechanism qualitatively.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
