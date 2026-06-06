@@ -2,7 +2,7 @@
 layout: post
 title: Strength of Weak Ties
 author: Kaizhao Liu
-published_status: 0
+published_status: 1
 ---
 
 The seminal paper of [Mark Granovetter (1973)](https://doi.org/10.1086/225469).
