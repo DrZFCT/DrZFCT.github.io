@@ -5,7 +5,56 @@ author: Kaizhao Liu
 published_status: 0
 ---
 
-The seminal paper of [Mark Granovetter (1973)]()
+The seminal paper of [Mark Granovetter (1973)](https://doi.org/10.1086/225469).
+
+# Triadic Closure
+
+
+**clustering coefficient**: The clustering coefficient of a node A is defined as the probability that two randomly selected friends of A are friends with each other.
+
+### Principle of Triadic Closure
+
+principle **triadic closure**
+
+reason for triadic closure
+
+# Strength of Weak Ties
+
+### Information Flow in Social Networks
+
+**bridge** 
+
+Gaint components and small-world properties tell us that bridges are presumably extremely rare in real social networks.
+
+
+**local bridge**
+
+its **span** 
+
+an edge is a local bridge precisely when it does not form a side of any triangle in the graph.
+
+
+neighborhood overlap
+
+### 
+
+
+
+
+# Social Capital
+
+Our discussion thus far suggests a general view of social networks in terms of tightly-knit groups and the weak ties that link them.
+The analysis has focused primarily on the roles that different kinds of *edges* of a network play in this structure.
+
+There is a lot further insight to be gained by asking about the roles that different *nodes* play in this structure as well.
+In social networks, access to edges that span different groups is not equally distributed across all nodes: 
+some nodes are positioned at the interface between multiple groups, with access to boundary-spanning edfes, while others are positioned in the middle of a single group.
+
+### Embeddedness
+
+
+
+# A Graph Partitioning Algorithm
 
 
 # Problem Set
