@@ -5,7 +5,8 @@ author: Kaizhao Liu
 published_status: 1
 ---
 
-This is a note for GEEE's barker seminar.
+We can abstract a social network as a graph consist of nodes and edges.
+We describe some fundamental characteristic of such graphs.
 
 # Gaint Component
 
