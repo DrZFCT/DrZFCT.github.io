@@ -121,7 +121,7 @@ Let $L_n$ be the random variable denoting the number of local bridges in $G(n,p)
 **Part (a): Exact Expectation and The Peak.**
 
 1. Prove that the expected number of local bridges is given by:
-   $$\mathbb{E}[L_n] = \binom{n}{2} p (1 - p^2)^{n-2}$$
+   $$\mathbb{E}[L_n] = \binom{n}{2} p (1 - p^2)^{n-2}.$$
 2. The expected number of local bridges does not grow monotonically. Find the critical probability $p_{\text{max}}(n)$ that maximizes $\mathbb{E}[L_n]$.
 3. Determine the exact asymptotic order of this maximum expected value.
 
@@ -146,21 +146,21 @@ Define the **average embeddedness** of the graph, $$\bar{\mathcal{E}}_n$$ as the
 
 Let $N_E$ be the number of edges and $N_\Delta$ be the number of triangles in $G(n,p)$. Express $$\bar{\mathcal{E}}_n$$ strictly in terms of $N_E$ and $N_\Delta$.
 
-**Part B: The Subcritical Regime (The Flatline).**
+**Part (b): The Subcritical Regime (The Flatline).**
 
 Assume $p \ll 1/n$. 
 1. Prove that the expected number of triangles vanishes, and conclude that the graph is asymptotically almost surely (a.a.s.) triangle-free.
 2. What does this imply for the average embeddedness $\bar{\mathcal{E}}_n$? Briefly explain the topological structure of the graph in the sub-regimes where $p \ll 1/n^2$ versus $1/n^2 \ll p \ll 1/n$.
 
-**Part C: The Sparse Regime (The Poisson Collapse).**
+**Part (c): The Sparse Regime (The Poisson Collapse).**
 
 Assume $p = c/n$ for some constant $c > 0$. 
 In this regime, it is a known fact that $N_\Delta \xrightarrow{d} \text{Poisson}(c^3/6)$. 
 Using this fact, prove that the average embeddedness vanishes in probability:
-$$\bar{\mathcal{E}}_n \xrightarrow{\mathbb{P}} 0$$
+$$\bar{\mathcal{E}}_n \xrightarrow{\mathbb{P}} 0.$$
 
-**Part D: The Dense Regime (Concentration).**
+**Part (d): The Dense Regime (Concentration).**
 
 Assume that $p = \omega(1/n)$ (i.e., $np \to \infty$). 
 In this regime, the number of triangles grows fast enough that concentration takes over. Prove that the average embeddedness converges in probability to its natural asymptotic expectation:
-$$\frac{\bar{\mathcal{E}}_n}{(n-2)p^2} \xrightarrow{\mathbb{P}} 1$$
+$$\frac{\bar{\mathcal{E}}_n}{(n-2)p^2} \xrightarrow{\mathbb{P}} 1.$$
