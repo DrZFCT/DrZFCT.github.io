@@ -1,0 +1,17 @@
+---
+layout: post
+title: Non-i.i.d. Assumptions
+author: Kaizhao Liu
+published_status: 0
+---
+
+Other than i.i.d. data, what dependent model does statistics study?
+
+# m-dependent
+
+Let $m\geq 0$ be an integer.
+A sequence $(X_i)_i$ of random variables is **$m$-dependent** if the two families $\{X_i\}_{i\leq k}$ and $\{X_i\}_{i>k+m}$ of random variables are independent of each other for every $k$.
+In particular, $0$-dependent is the same as independent.
+
+
+# 

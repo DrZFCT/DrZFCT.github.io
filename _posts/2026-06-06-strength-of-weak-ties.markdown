@@ -111,3 +111,56 @@ Calculate the clustering coefficient $C$ of this ring lattice. Show that as $n \
 
 **Part (c): Bridging the Gap**
 The ring lattice from Part (b) has high clustering, but its average path length scales linearly as $O(n/k)$, which violates the small-world requirement. Propose a mathematically explicit procedure to modify the ring lattice from Part (b) such that the average path length drops to $O(\ln n)$ while the clustering coefficient $C$ remains $O(1)$. Justify your proposed mechanism qualitatively.
+
+---
+
+## Problem 2: Local Bridges
+
+Let $L_n$ be the random variable denoting the number of local bridges in $G(n,p)$.
+
+**Part (a): Exact Expectation and The Peak.**
+
+1. Prove that the expected number of local bridges is given by:
+   $$\mathbb{E}[L_n] = \binom{n}{2} p (1 - p^2)^{n-2}$$
+2. The expected number of local bridges does not grow monotonically. Find the critical probability $p_{\text{max}}(n)$ that maximizes $\mathbb{E}[L_n]$.
+3. Determine the exact asymptotic order of this maximum expected value.
+
+**Part (b): The Lower Threshold (Birth).**
+
+Find the threshold function $p_{\text{birth}}(n)$ for the appearance of local bridges. Prove that if $p(n) \ll p_{\text{birth}}(n)$, then $\mathbb{P}(L_n > 0) \to 0$ as $n \to \infty$.
+
+**Part (c): The Upper Threshold (Death) and The Survival Window.**
+
+As the graph becomes increasingly dense, triangles begin to consume all edges. Find the threshold function $p_{\text{death}}(n)$ for the disappearance of local bridges. Prove that:
+1. If $p(n) \gg p_{\text{death}}(n)$, then $\mathbb{P}(L_n > 0) \to 0$ as $n \to \infty$.
+2. If $p_{\text{birth}}(n) \ll p(n) \ll p_{\text{death}}(n)$, then local bridges survive: $\mathbb{P}(L_n = 0) \to 0$ as $n \to \infty$. 
+
+---
+
+
+## Problem 3: Embeddedness
+
+Define the **average embeddedness** of the graph, $$\bar{\mathcal{E}}_n$$ as the mean embeddedness across all existing edges.
+
+**Part (a): Relationship to Subgraph Counts.**
+
+Let $N_E$ be the number of edges and $N_\Delta$ be the number of triangles in $G(n,p)$. Express $$\bar{\mathcal{E}}_n$$ strictly in terms of $N_E$ and $N_\Delta$.
+
+**Part B: The Subcritical Regime (The Flatline).**
+
+Assume $p \ll 1/n$. 
+1. Prove that the expected number of triangles vanishes, and conclude that the graph is asymptotically almost surely (a.a.s.) triangle-free.
+2. What does this imply for the average embeddedness $\bar{\mathcal{E}}_n$? Briefly explain the topological structure of the graph in the sub-regimes where $p \ll 1/n^2$ versus $1/n^2 \ll p \ll 1/n$.
+
+**Part C: The Sparse Regime (The Poisson Collapse).**
+
+Assume $p = c/n$ for some constant $c > 0$. 
+In this regime, it is a known fact that $N_\Delta \xrightarrow{d} \text{Poisson}(c^3/6)$. 
+Using this fact, prove that the average embeddedness vanishes in probability:
+$$\bar{\mathcal{E}}_n \xrightarrow{\mathbb{P}} 0$$
+
+**Part D: The Dense Regime (Concentration).**
+
+Assume that $p = \omega(1/n)$ (i.e., $np \to \infty$). 
+In this regime, the number of triangles grows fast enough that concentration takes over. Prove that the average embeddedness converges in probability to its natural asymptotic expectation:
+$$\frac{\bar{\mathcal{E}}_n}{(n-2)p^2} \xrightarrow{\mathbb{P}} 1$$
