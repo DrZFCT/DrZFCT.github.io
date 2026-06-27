@@ -2,7 +2,7 @@
 layout: post
 title: Networks in Their Surrounding Contexts
 author: Kaizhao Liu
-published_status: 0
+published_status: 1
 ---
 
 How characteristics outside the nodes.
