@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wasserstein Gradient Flows: Applications</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Wasserstein Gradient Flows: Applications</h1>
+              <p class="meta">Aug 12, 2026 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <p>In this post, we summarize several important applications of the theory of Wasserstein gradient flows in statistics and machine learning.</p>
+
+<h1 id="variational-inference">Variational Inference</h1>
+
+\[q_*=\arg\min_{q\in\cQ} \KL(q\|\pi)\]
+
+<p>For this problem, our previous theory proves that minimizing the Kullback-Leibler (KL) divergence to a log-concave distribution over the Wasserstein space is a strongly convex problem.</p>
+
+<p>$\pi\propto \exp(-V)$</p>
+
+\[\tag{1}
+\partial_t\mu_t={\rm div}(\mu_t\nabla\log \frac{\mu_t}{\pi})\]
+
+<h1 id="sampling">Sampling</h1>
+
+<p>Our theory proves that the Fokker-Planck equation (which governs the marginal law of the stochastic Langevin diffusion) is exactly the Wasserstein gradient flow of the KL divergence.</p>
+
+<p>By proving that sampling is mathematically identical to optimization, practitioners can borrow state-of-the-art algorithms from deep learning and convex optimization (like Proximal Gradient, Mirror Descent, and Nesterov Acceleration) to remove asymptotic bias and drastically speed up the convergence of their MCMC samplers.</p>
+
+\[\tag{2}
+\partial_t\mu_t=\Delta \mu_t+{\rm div}(\mu_t\nabla V).\]
+
+<h1 id="non-parametric-maximum-likelihood">Non-parametric Maximum Likelihood</h1>
+
+<p>The NPMLE problem can be mathematically reformulated as minimizing an entropic optimal transport cost, which can be approached via gradient flows.</p>
+
+<h1 id="mean-field-neural-networks">Mean-Field Neural Networks</h1>
+
+<p>Standard gradient descent for two-layer neural networks operates in a highly non-convex parameter space, making it notoriously difficult to mathematically prove why or how neural networks actually converge to good solutions during training.</p>
+
+<p>By lifting the optimization problem from the finite parameters of the network to a probability distribution over the parameters (the “mean-field” regime), the loss landscape becomes much better behaved.</p>
+
+<h1 id="transformers">Transformers</h1>
+
+<p>Unnormalized self-attention on a sphere is exactly a WGF that minimizes interaction energy.</p>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
