@@ -1,7 +1,7 @@
 ---
 published: 0
 title: "Improved Gradient Descent Lower Bounds Beyond Nesterov"
-author:  with Yuhan Ye
+author:  Yuhan Ye, Kaizhao Liu
 journal: arXiv preprint
 year: 2026
 link: https://arxiv.org/abs/2609.02855

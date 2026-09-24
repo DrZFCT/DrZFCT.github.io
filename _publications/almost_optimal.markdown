@@ -1,6 +1,6 @@
 ---
 published: 0
-title: "Silver Rate Is (Almost) Optimal for Gradient Descent Acceleration"
+title: "Silver Rate Is (Almost) Optimal for Gradient Descent"
 author:  with Yuhan Ye
 journal: arXiv preprint
 year: 2026
