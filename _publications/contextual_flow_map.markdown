@@ -2,9 +2,12 @@
 published: 1
 title: "Propagation of Chaos in Contextual Flow Maps"
 author:  with Shi Chen, Zhengjiang Lin, and Philippe Rigollet
-journal: NeurIPS
 year: 2026
-link: http://arxiv.org/abs/2605.16747
-topic: "05 - Transformers"
+venues:
+  - type: conference
+    name: NeurIPS
+    year: 2026
+arxiv_url: https://arxiv.org/abs/2605.16747
+topics:
+  - Transformers
 ---
-

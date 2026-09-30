@@ -218,6 +218,334 @@ li p, dd p {
     margin-bottom: 0.3em;
 }
 
+/* Publication list and filters. */
+.publication-controls {
+    margin: 1.4em 0 1.8em;
+    padding: 0.9em 1em;
+    border: 1px solid #dddddd;
+    background: #fafafa;
+}
+
+.publication-controls label,
+.publication-filter-label {
+    display: block;
+    margin-bottom: 0.35em;
+    font-weight: bold;
+    color: #333333;
+}
+
+#publication-search {
+    box-sizing: border-box;
+    width: min(100%, 36em);
+    padding: 0.45em 0.55em;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px;
+    background: white;
+    color: #222222;
+    font: inherit;
+}
+
+#publication-search:focus {
+    border-color: #527bbd;
+    outline: 2px solid rgba(82, 123, 189, 0.2);
+    outline-offset: 1px;
+}
+
+.publication-filter-row {
+    margin-top: 0.9em;
+}
+
+.publication-topic-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+}
+
+.publication-topic-filters button {
+    padding: 0.25em 0.55em;
+    border: 1px solid #b7c6dc;
+    border-radius: 3px;
+    background: white;
+    color: #224b8d;
+    font: inherit;
+    cursor: pointer;
+}
+
+.publication-topic-filters button:hover,
+.publication-topic-filters button:focus-visible {
+    border-color: #527bbd;
+    background: #f0f5fb;
+}
+
+.publication-topic-filters button[aria-pressed="true"] {
+    border-color: #527bbd;
+    background: #527bbd;
+    color: white;
+}
+
+.publication-filter-status {
+    margin: 0.8em 0 0;
+    color: #666666;
+    font-size: 90%;
+}
+
+.publication-year {
+    margin-top: 1.5em;
+}
+
+.publication-year-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.publication-item {
+    margin: 0;
+    padding: 0.35em 0 1.15em;
+    line-height: 1.35;
+}
+
+.publication-title {
+    font-family: Georgia, "Songti SC", "Noto Serif CJK SC", "STSong", serif;
+    font-weight: 700;
+}
+
+.publication-title:lang(zh) {
+    font-family: "Songti SC", "Noto Serif CJK SC", "STSong", serif;
+    font-weight: 900;
+}
+
+/* Blog search and result list. */
+.blog-search-controls {
+    margin: 1.2em 0 1.8em;
+    padding: 0.9em 1em;
+    border: 1px solid #dddddd;
+    background: #fafafa;
+}
+
+.blog-search-controls label,
+.blog-filter-label {
+    display: block;
+    margin-bottom: 0.35em;
+    font-weight: bold;
+    color: #333333;
+}
+
+#blog-search {
+    box-sizing: border-box;
+    width: min(100%, 36em);
+    padding: 0.45em 0.55em;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px;
+    background: white;
+    color: #222222;
+    font: inherit;
+}
+
+#blog-search:focus {
+    border-color: #527bbd;
+    outline: 2px solid rgba(82, 123, 189, 0.2);
+    outline-offset: 1px;
+}
+
+.blog-filter-row {
+    margin-top: 0.9em;
+}
+
+.blog-tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+}
+
+.blog-tag-filters button {
+    padding: 0.25em 0.55em;
+    border: 1px solid #b7c6dc;
+    border-radius: 3px;
+    background: white;
+    color: #224b8d;
+    font: inherit;
+    cursor: pointer;
+}
+
+.blog-tag-filters button:hover,
+.blog-tag-filters button:focus-visible {
+    border-color: #527bbd;
+    background: #f0f5fb;
+}
+
+.blog-tag-filters button[aria-pressed="true"] {
+    border-color: #527bbd;
+    background: #527bbd;
+    color: white;
+}
+
+.blog-filter-status {
+    margin: 0.8em 0 0;
+    color: #666666;
+    font-size: 90%;
+}
+
+.blog-post-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.blog-post-item {
+    padding: 0.9em 0 1.2em;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.blog-post-item:last-child {
+    border-bottom: none;
+}
+
+.blog-post-title {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    line-height: 1.25;
+}
+
+.blog-post-date {
+    margin: 0.25em 0 0.45em;
+    color: #777777;
+    font-size: 85%;
+}
+
+.blog-post-excerpt p:last-child {
+    margin-bottom: 0;
+}
+
+.blog-post-title mark,
+.blog-post-excerpt mark {
+    padding: 0 0.08em;
+    background: #fff0a8;
+    color: inherit;
+}
+
+.blog-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    margin-top: 0.4em;
+}
+
+.blog-post-tag {
+    padding: 0.08em 0.4em;
+    border-radius: 3px;
+    background: #f1f1f1;
+    color: #666666;
+    font-size: 80%;
+}
+
+.blog-search-empty {
+    margin-top: 1.5em;
+    color: #666666;
+    font-style: italic;
+}
+
+@media (max-width: 640px) {
+    body.blog-page-body table#tlayout,
+    body.blog-page-body table#tlayout > tbody,
+    body.blog-page-body table#tlayout > tbody > tr {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+
+    body.blog-page-body #layout-menu,
+    body.blog-page-body #layout-content {
+        display: block;
+        box-sizing: border-box;
+        width: 100vw;
+        max-width: 100vw;
+    }
+
+    body.blog-page-body #layout-menu {
+        white-space: normal;
+    }
+
+    body.blog-page-body #layout-menu .menu-item {
+        display: inline-block;
+        margin-right: 0.8em;
+        padding-left: 0;
+        text-indent: 0;
+    }
+
+    body.blog-page-body #layout-menu a {
+        margin-left: 0;
+    }
+
+    .blog-search-controls {
+        box-sizing: border-box;
+        width: calc(100vw - 2em);
+        max-width: calc(100vw - 2em);
+        padding: 0.75em;
+    }
+
+    .blog-post-list {
+        box-sizing: border-box;
+        width: calc(100vw - 2em);
+        max-width: calc(100vw - 2em);
+    }
+
+    .blog-post-title,
+    .blog-post-item {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    #blog-search {
+        width: 100%;
+    }
+}
+
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55em;
+    min-height: 1.35em;
+}
+
+.publication-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    margin-top: 0.35em;
+}
+
+.publication-topic {
+    padding: 0.08em 0.4em;
+    border-radius: 3px;
+    background: #f1f1f1;
+    color: #666666;
+    font-size: 80%;
+}
+
+.publication-empty {
+    margin-top: 1.5em;
+    color: #666666;
+    font-style: italic;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 640px) {
+    .publication-controls {
+        padding: 0.75em;
+    }
+
+    #publication-search {
+        width: 100%;
+    }
+}
+
 
 ol ol {
     list-style-type: lower-alpha;

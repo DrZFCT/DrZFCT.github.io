@@ -3,40 +3,87 @@ layout: default
 title: Kaizhao Liu (刘锴昭)
 ---
 
+<h2>Publications</h2>
+<p>
+  Publications can also be found on my
+  <a href="https://scholar.google.com/citations?user=-wrtiCkAAAAJ">Google Scholar</a> page.
+</p>
 
+<div class="publication-controls" data-publication-controls hidden>
+  <label for="publication-search">Search publications</label>
+  <input
+    id="publication-search"
+    type="search"
+    placeholder="Title, author, venue, year, or topic"
+    autocomplete="off"
+  />
 
-<h3></h3>
-<h2>Publications by Topics</h2>
+  <div class="publication-filter-row">
+    <span class="publication-filter-label">Topics</span>
+    <div class="publication-topic-filters" data-topic-filters aria-label="Filter publications by topic">
+      <button type="button" data-topic="all" aria-pressed="true">All topics</button>
+    </div>
+  </div>
 
-{% assign topics = site.publications | map: "topic" | uniq | compact | sort %}
+  <p class="publication-filter-status" data-filter-status aria-live="polite"></p>
+</div>
 
-{% for topic in topics %}
-  {% comment %} This splits the string by the hyphen and takes the last part {% endcomment %}
-  {% assign display_name = topic | split: '-' | last %}
-  <h3>{{ display_name }}</h3>
-  <ul>
-    {% assign topic_publications = site.publications | where: "topic", topic | sort: "year" | reverse %}
-    {% for publication in topic_publications %}
-      <li>
-        <p>
-          <a href="{{publication.link}}">{{publication.title}}</a><br /> 
-          {{publication.author}} <br /> 
-          {% if publication.journal %}
-            <em>{{publication.journal}}</em>, {{publication.year}} 
-          {% else %}
-            {{publication.year}}
-          {% endif %}
-          <br />
-          {{publication.content| markdownify}}
-        </p>
-      </li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+{% assign sorted_publications = site.publications | sort: "year" | reverse %}
+{% assign publications_by_year = sorted_publications | group_by: "year" %}
 
+<div class="publications" data-publication-list>
+  {% for year_group in publications_by_year %}
+    <section class="publication-year" data-publication-year>
+      <h3>{{ year_group.name }}</h3>
+      <ul class="publication-year-list">
+        {% assign year_publications = year_group.items | sort: "title" %}
+        {% for publication in year_publications %}
+          <li class="publication-item" data-publication data-year="{{ publication.year }}">
+            <div class="publication-title"{% if publication.language %} lang="{{ publication.language }}"{% endif %}>{{ publication.title }}</div>
+            <div class="publication-authors">{{ publication.author }}</div>
 
+            <div class="publication-venue">
+              {% if publication.venues and publication.venues.size > 0 %}
+                {% for venue in publication.venues %}
+                  <em>{{ venue.name }}</em>{% if venue.year %}, {{ venue.year }}{% endif %}{% unless forloop.last %}; {% endunless %}
+                {% endfor %}
+              {% elsif publication.status %}
+                <em>{{ publication.status }}</em>{% if publication.year %}, {{ publication.year }}{% endif %}
+              {% else %}
+                {{ publication.year }}
+              {% endif %}
+            </div>
 
-<h3></h3>
-<h2>Publications by Year</h2>
-<p>They can be found in my <a href="https://scholar.google.com/citations?user=-wrtiCkAAAAJ">Google Scholar</a> page.</p>
+            {% capture resource_links %}
+              {% if publication.venues %}
+                {% for venue in publication.venues %}
+                  {% if venue.url %}<a href="{{ venue.url }}">[{{ venue.type }}]</a>{% endif %}
+                {% endfor %}
+              {% endif %}
+              {% if publication.arxiv_url %}<a href="{{ publication.arxiv_url }}">[arXiv]</a>{% endif %}
+              {% if publication.slides_url %}<a href="{{ publication.slides_url }}">[slides]</a>{% endif %}
+              {% if publication.code_url %}<a href="{{ publication.code_url }}">[code]</a>{% endif %}
+              {% if publication.project_url %}<a href="{{ publication.project_url }}">[project]</a>{% endif %}
+            {% endcapture %}
+            {% assign resource_links = resource_links | strip %}
+            {% if resource_links != "" %}
+              <div class="publication-links">{{ resource_links }}</div>
+            {% endif %}
 
+            {% if publication.topics and publication.topics.size > 0 %}
+              <div class="publication-topics" aria-label="Topics">
+                {% for topic in publication.topics %}
+                  <span class="publication-topic" data-topic="{{ topic | slugify }}">{{ topic }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+
+  <p class="publication-empty" data-publication-empty hidden>No publications match these filters.</p>
+</div>
+
+<script src="{{ '/assets/js/publications.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

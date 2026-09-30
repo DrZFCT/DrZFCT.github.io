@@ -3,6 +3,11 @@ layout: post
 title: "Wasserstein Gradient Flows: Applications"
 author: Kaizhao Liu
 published_status: 1
+tags:
+  - Wasserstein Gradient Flows
+  - Optimal Transport
+  - Sampling
+  - Machine Learning
 ---
 
 In this post, we summarize several important applications of the theory of Wasserstein gradient flows in statistics and machine learning.

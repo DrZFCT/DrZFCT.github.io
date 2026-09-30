@@ -2,10 +2,18 @@
 published: 1
 title: "Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium"
 author: with Qi Long, Zhekun Shi, Weijie J. Su, and Jiancong Xiao
-journal: "Annals of Statistics"
 year: 2026
-link: http://dx.doi.org/10.1214/26-AOS2643
-topic: "10 - Alignment"
+venues:
+  - type: journal
+    name: Annals of Statistics
+    year: 2026
+    url: https://doi.org/10.1214/26-AOS2643
+arxiv_url: https://arxiv.org/abs/2503.10990
+slides_url: /assets/pdfs/nlhf_slides.pdf
+topics:
+  - LLM Alignment
+  - Social Choice Theory
+  - Game Theory
 ---
 
 <!--

@@ -3,9 +3,10 @@
   <link rel="stylesheet" href="assets/css/jemdoc.css" type="text/css" />
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
   </head>
-  <body>
+  <body{% if page.body_class %} class="{{ page.body_class | escape }}"{% endif %}>
     <table summary="Table for page layout." id="tlayout">
       <tr valign="top">
         <td id="layout-menu">

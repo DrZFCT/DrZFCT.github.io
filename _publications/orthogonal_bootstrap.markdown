@@ -2,10 +2,15 @@
 published: 1
 title: "Orthogonal Bootstrap: Efficient Simulation of Input Uncertainty"
 author: with Jose Blanchet, Lexing Ying, and Yiping Lu
-journal: ICML
 year: 2024
-link: https://proceedings.mlr.press/v235/liu24c.html
-topic: "30 - Uncertainty Quantification"
+venues:
+  - type: conference
+    name: ICML
+    year: 2024
+    url: https://proceedings.mlr.press/v235/liu24c.html
+arxiv_url: https://arxiv.org/abs/2404.19145
+topics:
+  - Uncertainty Quantification
 ---
 
 <!--

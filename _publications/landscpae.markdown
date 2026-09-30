@@ -2,10 +2,15 @@
 published: 1
 title: The Local Landscape of Phase Retrieval Under Limited Samples
 author: with Zihao Wang and Lei Wu
-journal: IEEE Transactions on Information Theory
 year: 2024
-link: https://arxiv.org/abs/2311.15221
-topic: "20 - Optimization"
+venues:
+  - type: journal
+    name: IEEE Transactions on Information Theory
+    year: 2024
+    url: https://ieeexplore.ieee.org/document/10718309
+arxiv_url: https://arxiv.org/abs/2311.15221
+topics:
+  - Nonconvex Optimization
 ---
 
 <!--

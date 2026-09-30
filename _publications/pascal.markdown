@@ -1,11 +1,16 @@
 ---
 published: 1
-title: 帕斯卡定理的推广
+title: "帕斯卡定理的推广"
+language: zh-CN
 author: with Lingfeng Chen and Yonggang Ren
-journal: 中等数学
 year: 2018
-link: https://d.wanfangdata.com.cn/periodical/zdsx201802004
-topic: "99 - Plane Geometry"
+venues:
+  - type: journal
+    name: 中等数学
+    year: 2018
+    url: https://d.wanfangdata.com.cn/periodical/zdsx201802004
+topics:
+  - Plane Geometry
 ---
 
 <!--

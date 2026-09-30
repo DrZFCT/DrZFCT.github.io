@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <script src="/assets/js/mathjax-config.js" defer></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script> 
+
+     
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Convex Order</title>
+        <meta name="viewport" content="width=device-width">
+
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
+    </head>
+
+    <body>
+        <header class="site-header">
+
+            <div class="wrap">
+                
+              <div style="float:left; margin-top:10px; margin-right:10px;">
+                
+              </div>
+
+              <div class="site-nav"><nav>
+                  <div class="menu-item">
+                    <a href="/blog.html" >Blog
+                    </a>
+                  </div>
+
+              </nav></div>
+          
+              
+            </div>
+          
+          </header>
+
+    <div class="page-content">
+      <div class="wrap">
+        <div class="post">
+
+            <header class="post-header">
+              <h1>Convex Order</h1>
+              <p class="meta">Jul 12, 2026 • Kaizhao Liu</p>
+            </header>
+          
+            <article class="post-content">
+            <h1 id="stochastic-dominance">Stochastic Dominance</h1>
+
+<h3 id="zeroth-order">Zeroth-order</h3>
+
+<p>For two random variables</p>
+
+<h3 id="first-order-stochastic-dominance">First-Order Stochastic Dominance</h3>
+
+<p>For two distributions $\mu$ and $\nu$ in $\cP_1(\RR)$, we define $\mu \preceq_{1} \nu$ 
+if for every <em>non-decreasing</em> function $\varphi:\RR\to\RR$,</p>
+
+\[\int \varphi\d\mu \geq \int\varphi\d\nu.\]
+
+<p>An equivalent definition is</p>
+
+\[F_\mu(t)\leq F_\nu(t)\quad\forall t\in\RR.\]
+
+<p>Another equivalent characterization is that there exists three random varaibles $X\sim\nu,Y\sim\mu,\epsilon\geq 0$ such that $Y=X+\epsilon$.</p>
+
+<h3 id="second-order-stochastic-dominance">Second-Order Stochastic Dominance</h3>
+
+<p>For two distributions $\mu$ and $\nu$ in $\cP_1(\RR)$, we define $\mu \preceq_{1} \nu$ 
+if for every <em>non-decreasing and concave</em> function $\varphi:\RR\to\RR$,</p>
+
+\[\int \varphi\d\mu \geq \int\varphi\d\nu.\]
+
+<p>An equivalent definition is</p>
+
+\[\int_{-\infty}^t F_\mu(x)\d x\leq \int_{-\infty}^t F_\nu(x)\d x \quad\forall t\in\RR.\]
+
+<p>To see this, using Fubini theorem and integration by parts</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Another equivalent characterization is that there exists four random varaibles $X\sim\nu,Y\sim\mu,\epsilon\geq 0,\delta$ such that $X=Y-\epsilon+\delta$ and $\EE[\delta</td>
+      <td>Y-\epsilon]=0$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="third-and-higher-order">Third and Higher Order</h3>
+
+<p>N-th Order Stochastic Dominance: Obsession with the Extreme Left Tail</p>
+
+<p>As you move all the way up to $N$-th order, you are just repeatedly integrating the CDF from $-\infty$.
+Every time you take an integral starting from $-\infty$, you are building a new accumulator that overwhelmingly punishes probability mass located at the far-left edge of the distribution.
+As $n \to \infty$, the criteria become entirely obsessed with the absolute worst possible outcome. 
+An infinitely high-order stochastic dominance preference converges to a Maximin strategy—meaning the decision-maker entirely ignores the mean, variance, and skew, and only looks at which distribution has the least-bad absolute minimum value.</p>
+
+<p>Higher order stochastic dominance are more ``inclusive’’, in the sense that higher-order stochastic dominance can successfully rank a larger set of probability distributions.</p>
+
+<h1 id="convex-order-and-strassens-theorem">Convex Order and Strassen’s Theorem</h1>
+
+<p>For two distributions $\mu$ and $\nu$, we define $\mu \preceq_{\mathrm{cx}} \nu$ 
+if for every convex function $\varphi:\RR\to\RR$,</p>
+
+\[\int \varphi\d\mu \geq \int\varphi\d\nu.\]
+
+<p>Because all convex functions are ``curved upward’’, $\mu \preceq_{\mathrm{cx}} \nu$ intuitively means $\mu$ is more spread out than $\nu$.</p>
+
+<h3 id="strassens-theorem">Strassen’s Theorem</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Note that if $\EE[Y</td>
+      <td>X]=X$, then $\PP_Y \preceq_{\mathrm{cx}} \PP_X$ because</td>
+    </tr>
+  </tbody>
+</table>
+
+\[\EE\varphi(X)=\EE\varphi(\EE[Y|X])\leq \EE\varphi(Y).\]
+
+<p><strong>Strassen’s theorem</strong> asserts the converse: if $\mu \preceq_{\mathrm{cx}} \nu$,
+then there exists a coupling $\gamma$ such that $\EE[Y|X]=X$, where $Y\sim\mu$ and $X\sim\nu$.</p>
+
+<h1 id="blackwell-order">Blackwell Order</h1>
+
+            </article>
+          
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="wrap">
+
+      
+          <div class="footer-col-2 column">
+            
+          </div>
+      
+      
+        </div>
+      
+      </footer>
+
+    </body>
+</html>
