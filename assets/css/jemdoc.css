@@ -447,23 +447,23 @@ li p, dd p {
 }
 
 @media (max-width: 640px) {
-    body.blog-page-body table#tlayout,
-    body.blog-page-body table#tlayout > tbody,
-    body.blog-page-body table#tlayout > tbody > tr {
+    table#tlayout,
+    table#tlayout > tbody,
+    table#tlayout > tbody > tr {
         box-sizing: border-box;
         display: block;
         width: 100%;
     }
 
-    body.blog-page-body #layout-menu,
-    body.blog-page-body #layout-content {
+    #layout-menu,
+    #layout-content {
         display: block;
         box-sizing: border-box;
-        width: 100vw;
-        max-width: 100vw;
+        width: 100%;
+        max-width: 100%;
     }
 
-    body.blog-page-body #layout-menu {
+    #layout-menu {
         display: block;
         overflow: hidden;
         padding: 0;
@@ -471,7 +471,7 @@ li p, dd p {
         white-space: normal;
     }
 
-    body.blog-page-body #layout-menu .layout-menu-inner {
+    #layout-menu .layout-menu-inner {
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -481,14 +481,14 @@ li p, dd p {
         background: #f6f6f6;
     }
 
-    body.blog-page-body #layout-menu .menu-category {
+    #layout-menu .menu-category {
         flex: none;
         margin: 0;
         padding: 0.1em 0 0.25em;
         line-height: 1.3;
     }
 
-    body.blog-page-body #layout-menu nav {
+    #layout-menu nav {
         display: flex;
         align-items: center;
         flex: none;
@@ -502,19 +502,54 @@ li p, dd p {
         white-space: nowrap;
     }
 
-    body.blog-page-body #layout-menu .menu-item {
+    #layout-menu .menu-item {
         display: block;
         margin: 0;
         padding-left: 0;
         text-indent: 0;
     }
 
-    body.blog-page-body #layout-menu a {
+    #layout-menu a {
         display: block;
         margin-left: 0;
         padding: 0;
         line-height: 1.4;
         background: transparent;
+    }
+
+    #layout-content {
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    #layout-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #layout-content pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    #layout-content table.imgtable,
+    #layout-content table.imgtable > tbody,
+    #layout-content table.imgtable > tbody > tr,
+    #layout-content table.imgtable > tbody > tr > td {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+
+    #layout-content table.imgtable > tbody > tr > td {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #layout-content table.imgtable img {
+        display: block;
+        width: min(45vw, 160px);
+        margin: 0 auto 0.75em;
     }
 
     .blog-search-controls {

@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
-  <link rel="stylesheet" href="assets/css/jemdoc.css" type="text/css" />
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/jemdoc.css' | relative_url }}" type="text/css" />
   </head>
   <body{% if page.body_class %} class="{{ page.body_class | escape }}"{% endif %}>
     <table summary="Table for page layout." id="tlayout">
