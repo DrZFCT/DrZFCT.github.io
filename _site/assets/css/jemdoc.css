@@ -464,18 +464,31 @@ li p, dd p {
     }
 
     body.blog-page-body #layout-menu {
+        padding: 0.5em 0.75em;
+        background: #f6f6f6;
         white-space: normal;
     }
 
+    body.blog-page-body #layout-menu nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 0.8em;
+        width: 100%;
+        background: #f6f6f6;
+    }
+
     body.blog-page-body #layout-menu .menu-item {
-        display: inline-block;
-        margin-right: 0.8em;
+        display: block;
+        margin: 0;
         padding-left: 0;
+        background: #f6f6f6;
         text-indent: 0;
     }
 
     body.blog-page-body #layout-menu a {
+        display: block;
         margin-left: 0;
+        background: #f6f6f6;
     }
 
     .blog-search-controls {

@@ -8,7 +8,7 @@ venues:
     name: IEEE Transactions on Information Theory
     year: 2024
     url: https://ieeexplore.ieee.org/document/10718309
-arxiv_url: https://arxiv.org/abs/2311.15221
+preprint_url: https://arxiv.org/abs/2311.15221
 topics:
   - Nonconvex Optimization
 ---

@@ -8,7 +8,7 @@ venues:
     name: Annals of Statistics
     year: 2026
     url: https://doi.org/10.1214/26-AOS2643
-arxiv_url: https://arxiv.org/abs/2503.10990
+preprint_url: https://arxiv.org/abs/2503.10990
 slides_url: /assets/pdfs/nlhf_slides.pdf
 topics:
   - LLM Alignment

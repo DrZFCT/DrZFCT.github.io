@@ -7,7 +7,7 @@ venues:
   - type: conference
     name: NeurIPS
     year: 2026
-arxiv_url: https://arxiv.org/abs/2605.16747
+preprint_url: https://arxiv.org/abs/2605.16747
 topics:
   - Transformers
 ---

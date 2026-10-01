@@ -8,7 +8,7 @@ venues:
     name: Quantum
     year: 2025
     url: https://quantum-journal.org/papers/q-2025-10-28-1896/
-arxiv_url: https://arxiv.org/abs/2408.04009
+preprint_url: https://arxiv.org/abs/2408.04009
 topics:
   - Open Quantum Systems
 ---

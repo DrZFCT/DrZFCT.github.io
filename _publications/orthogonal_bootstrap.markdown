@@ -8,7 +8,7 @@ venues:
     name: ICML
     year: 2024
     url: https://proceedings.mlr.press/v235/liu24c.html
-arxiv_url: https://arxiv.org/abs/2404.19145
+preprint_url: https://arxiv.org/abs/2404.19145
 topics:
   - Uncertainty Quantification
 ---
