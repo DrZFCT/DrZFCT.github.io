@@ -471,24 +471,23 @@ li p, dd p {
 
     body.blog-page-body #layout-menu nav {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0 0.8em;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1em;
         width: 100%;
-        background: #f6f6f6;
+        white-space: nowrap;
     }
 
     body.blog-page-body #layout-menu .menu-item {
         display: block;
         margin: 0;
         padding-left: 0;
-        background: #f6f6f6;
         text-indent: 0;
     }
 
     body.blog-page-body #layout-menu a {
         display: block;
         margin-left: 0;
-        background: #f6f6f6;
     }
 
     .blog-search-controls {
