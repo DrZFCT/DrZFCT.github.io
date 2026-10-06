@@ -4,7 +4,7 @@ title: "On the Cardinality of the Smith Set Under Impartial Culture with Many Al
 author: with Zachary Berchenko
 year: 2026
 status: Preprint
-preprint_url: https://ssrn.com/abstract=7549998
+preprint_url: http://arxiv.org/abs/2610.03814
 
 topics:
   - Social Choice Theory
