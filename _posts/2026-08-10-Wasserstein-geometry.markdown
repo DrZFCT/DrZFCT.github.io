@@ -3,6 +3,11 @@ layout: post
 title: Wasserstein Geometry
 author: Kaizhao Liu
 published_status: 1
+tags: 
+  - Optimal Transport
+  - Wasserstein Geometry
+  - Bures-Wasserstein Geometry
+  - Fisher-Rao Geometry
 ---
 
 We provide an introduction to Wasserstein geometry.
@@ -48,7 +53,7 @@ Example:
 Let $\mu\in\cP_{2,\rm ac}$. Define the tangent space to $\cP_{2,\rm ac}(\RR^d)$ at $\mu$ to be 
 
 $$
-T_\mu \cP_{2,\rm ac}(\RR^d):=\overline{\{\nabla\psi|\psi:\RR^d\to\RR \text{ compactly supported, smooth}\}}^{L^2(\mu)}.
+T_\mu \cP_{2,\rm ac}(\RR^d):=\overline{\{\nabla\psi|\psi\in C_c^\infty(\RR^d)\}}^{L^2(\mu)}.
 $$
 
 We endow $T_\mu \cP_{2,\rm ac}(\RR^d)$ with the $L^2(\mu)$ inner product.

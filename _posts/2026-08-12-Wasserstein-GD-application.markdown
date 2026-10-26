@@ -4,8 +4,8 @@ title: "Wasserstein Gradient Flows: Applications"
 author: Kaizhao Liu
 published_status: 1
 tags:
-  - Wasserstein Gradient Flows
   - Optimal Transport
+  - Wasserstein Geometry
   - Sampling
   - Machine Learning
 ---
