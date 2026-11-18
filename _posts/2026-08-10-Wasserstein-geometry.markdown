@@ -192,7 +192,7 @@ $$
 \delta\cG(\nu):\mu\in {\rm BW}(\RR^d)\mapsto \int \delta\cF(G_\nu)\mathrm{d}\mu
 $$
 
-The Wasserstein gradient of $\cG(\nu)$ at  is the Riemannian gradient of $\delta\cG(\nu)$ evaluated at $(m,\Sigma)$, in other words, the Bures-Wasserstein gradient of $\delta\cG(\nu)$ at $\mu=\cN(m,\Sigma)$. 
+The Wasserstein gradient of $\cG(\nu)$ at  is the Riemannian gradient of $\delta\cG(\nu)$ evaluated at $(m,\Sigma)$, i.e., the Bures-Wasserstein gradient of $\delta\cG(\nu)$ at $\mu=\cN(m,\Sigma)$. 
 Using the formulas from the previous section,
 the Wasserstein gradient flow of $\cG$ is the curve $(\nu_t)_{t\geq 0}$ described as follows: $\nu_t=\text{Law}(m_t,\Sigma_t)$, where the random variables $m_t$ and $\Sigma_t$ are described by 
 
@@ -207,7 +207,14 @@ and $X_t\sim\cN(m_t,\Sigma_t)$.
 
 # Fisher-Rao Geometry
 
+
+
+When $\mu_0,\mu_1$ are probability measures, then 
+
+$$\d_{\rm FR}(\mu_0,\mu_1):=\int (\sqrt{\mu_0}-\sqrt{\mu_1})^2$$
+
 Hellinger distance
+
 
 reaction equation 
 
