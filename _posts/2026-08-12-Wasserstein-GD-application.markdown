@@ -152,7 +152,11 @@ Fisher-Rao gradient flow can also be implemented by a stochastic birth–death p
 
 The NPMLE problem can be mathematically reformulated as minimizing an entropic optimal transport cost, which can be approached via gradient flows.
 
+Consider a Gaussian mixture on $\RR^d$ with density given by:
 
+$$
+G_\rho=\int_{\RR^d}\phi(\cdot-y)\rho(\d y)=\phi * \rho.
+$$
 
 
 # Mean-Field Neural Networks

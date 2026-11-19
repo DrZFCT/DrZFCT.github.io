@@ -176,7 +176,8 @@ and $X_t\sim\mu_t$.
 # Gaussian Mixtures: Wasserstein over Bures-Wasserstein
 
 Gaussian mixture are typically introduced as distributions of the form $\sum_{k=1}^K w_k\cN(m_k,\Sigma_k)$ for mixing weights $w_k\geq 0,\sum_{k=1}^K w_k=1$.
-But we can define a Gaussian mixture more broadly as a measure of the form $\int \cN(m,\Sigma)\nu(\mathrm{d}m,\mathrm{d}\Sigma)$. This leads to a natural interpretation
+But we can define a Gaussian mixture more broadly as a measure of the form $\int \cN(m,\Sigma)\nu(\mathrm{d}m,\mathrm{d}\Sigma)$. 
+This leads to a natural interpretation: *a mixing measure for a Gaussian mixture is simply a probability measure over the Bures-Wasserstein space.*
 
 
 Given $\nu\in\cP_2({\rm BW}(\RR^d))$, let $G_\nu$ denotes the corresponding Gaussian mixture $G_\nu=\int \cN(m,\Sigma)\nu(\mathrm{d}m,\mathrm{d}\Sigma)$.
@@ -209,11 +210,14 @@ and $X_t\sim\cN(m_t,\Sigma_t)$.
 
 
 
-When $\mu_0,\mu_1$ are probability measures, then 
+
 
 $$\d_{\rm FR}(\mu_0,\mu_1):=\int (\sqrt{\mu_0}-\sqrt{\mu_1})^2$$
 
-Hellinger distance
+When $\mu_0,\mu_1$ are probability measures, then this coincides with the Hellinger distance.
+
+Geometrically, $\mu\mapsto\sqrt{\mu}$ be an isometry into the Hilbert space $L^2(\RR^d)$.
+
 
 
 reaction equation 
@@ -228,12 +232,19 @@ $$
 \frac{1}{4}\int \alpha^2\mathrm{d}\mu.
 $$
 
+- unbalanced Fisher-Rao
+- Fisher Rao
 
 # Wasserstein-Fisher-Rao Geometry
 
+We now combine both the Wasserstein and Fisher-Rao geometries into a hybrid geometry that incorporates both mass transport and creation/destruction.
+The idea is to simply consider the continuity equation with reaction 
+
 $$
-\partial_t\mu_t+{\rm div}(\mu_t v_t)=\alpha_t\mu_t
+\partial_t\mu_t+{\rm div}(\mu_t v_t)=\alpha_t\mu_t.
 $$
+
+
 
 $$
 T_\mu \cM_{+}(\RR^d):=\overline{\{(\psi,\nabla\psi)|\psi:\RR^d\to\RR \text{ compactly supported, smooth}\}}^{L^2(\mu)}.
